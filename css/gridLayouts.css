@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+  }
+  
+  .row > div {
+    flex: 1;
+    background: lightgrey;
+    border: 1px solid grey;
+  }
+
+  .topPart {
+      height: 20%;
+  }
+
+  .indexDims {
+      height: 80%;
+  }
+
+  .indexNews {
+      width: 20%;
+  }
