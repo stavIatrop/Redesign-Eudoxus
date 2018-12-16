@@ -17,6 +17,60 @@
       </div>
     </div>
     <div class="row indexDims">
+      <div class="col" style="padding-left: 2%;">
+        <div class="row infoContainer borderContainer" style="width:100%;">
+          <div class="col-md-2">
+            <div class="row" style="height:25%">
+              <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
+            </div>
+            <div class="row" style="height:25%">
+              <button id="ekdotis" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-book"></i>    Εκδότης</button>
+            </div>
+            <div class="row" style="height:25%">
+              <button id="grammateia" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-landmark"></i>    Γραμματεία</button>
+            </div>
+            <div class="row" style="height:25%">
+              <button id="shmeio" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-truck"></i>    <span>Σημείο<br>Διανομής</span></button>
+            </div>
+          </div>
+          <div id="defaultInfo" class="col-md-10">
+            <p class="infoTitle" style="padding-top:24%;"><i style="padding-right:2%;" class="fas fa-arrow-left"></i>Επίλεξε απο τα αριστερά την κατηγορία σου</p>
+          </div>
+          <div id="foititisInfo" class="col-md-10" style="display: none;">
+            <p class=" pull-right infoTitle">Ο φοιτητής μπορεί να:</p>
+            <ul style="padding-left: 15%;">
+              <li class="infoAbility">πραγματοποιήσει <a href="url">δήλωση συγγραμμάτων</a></li>
+              <li class="infoAbility">μεταβεί στην <a href="url">τροποποίηση τρέχουσας δήλωσης</a></li>
+              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
+            </ul>
+            <p class="infοDeadline">Προθεσμία Δηλώσεων Συγγραμμάτων: 17/11/2018</p>
+          </div>
+          <div id="ekdotisInfo" class="col-md-10" style="display: none;">
+            <p class=" pull-right infoTitle">Ο εκδότης μπορεί να:</p>
+            <ul style="padding-left: 15%;">
+              <li class="infoAbility"><a href="url">καταχωρήσει</a> ένα συγγραμμα</li>
+              <li class="infoAbility">επεξεργαστεί τα τρέχοντα <a href="url">καταχωρημένα συγγράμματα</a></li>
+              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
+            </ul>
+          </div>
+          <div id="grammateiaInfo" class="col-md-10" style="display: none;">
+            <p class=" pull-right infoTitle">Η γραμματεία μπορεί να:</p>
+            <ul style="padding-left: 15%;">
+              <li class="infoAbility">Lorem ipsum dolor sit amet <a href="url">Lorem ipsum </a></li>
+              <li class="infoAbility">Lorem <a href="url">Lorem ipsumt amet</a></li>
+              <li class="infoAbility"><a href="url">Lorem ipsum </a> Lorem ipsum</li>
+            </ul>
+          </div>
+          <div id="shmeioInfo" class="col-md-10" style="display: none;">
+            <p class=" pull-right infoTitle">Το σημείο διανομής μπορεί να:</p>
+            <ul style="padding-left: 15%;">
+              <li class="infoAbility">Lorem ipsum dolor sit amet <a href="url">Lorem ipsum </a></li>
+              <li class="infoAbility">Lorem <a href="url">Lorem ipsumt amet</a></li>
+              <li class="infoAbility"><a href="url">Lorem ipsum </a> Lorem ipsum</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="col-md-3">
          <!--Carousel Wrapper-->
          <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -67,60 +121,6 @@
             <span class="sr-only">Next</span>
           </a>
           
-        </div>
-      </div>
-      <div class="col";>
-        <div class="row infoContainer borderContainer" style="width:95%;">
-          <div class="col-md-2">
-            <div class="row" style="height:25%">
-              <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
-            </div>
-            <div class="row" style="height:25%">
-              <button id="ekdotis" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-book"></i>    Εκδότης</button>
-            </div>
-            <div class="row" style="height:25%">
-              <button id="grammateia" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-landmark"></i>    Γραμματεία</button>
-            </div>
-            <div class="row" style="height:25%">
-              <button id="shmeio" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-truck"></i>    <span>Σημείο<br>Διανομής</span></button>
-            </div>
-          </div>
-          <div id="defaultInfo" class="col-md-10">
-            <p class="infoTitle" style="padding-top:24%;"><i style="padding-right:2%;" class="fas fa-arrow-left"></i>Επίλεξε απο τα αριστερά την κατηγορία σου</p>
-          </div>
-          <div id="foititisInfo" class="col-md-10" style="display: none;">
-            <p class=" pull-right infoTitle">Ο φοιτητής μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility">πραγματοποιήσει <a href="url">δήλωση συγγραμμάτων</a></li>
-              <li class="infoAbility">μεταβεί στην <a href="url">τροποποίηση τρέχουσας δήλωσης</a></li>
-              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
-            </ul>
-            <p class="infοDeadline">Προθεσμία Δηλώσεων Συγγραμμάτων: 17/11/2018</p>
-          </div>
-          <div id="ekdotisInfo" class="col-md-10" style="display: none;">
-            <p class=" pull-right infoTitle">Ο εκδότης μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility"><a href="url">καταχωρήσει</a> ένα συγγραμμα</li>
-              <li class="infoAbility">επεξεργαστεί τα τρέχοντα <a href="url">καταχωρημένα συγγράμματα</a></li>
-              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
-            </ul>
-          </div>
-          <div id="grammateiaInfo" class="col-md-10" style="display: none;">
-            <p class=" pull-right infoTitle">Η γραμματεία μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility">Lorem ipsum dolor sit amet <a href="url">Lorem ipsum </a></li>
-              <li class="infoAbility">Lorem <a href="url">Lorem ipsumt amet</a></li>
-              <li class="infoAbility"><a href="url">Lorem ipsum </a> Lorem ipsum</li>
-            </ul>
-          </div>
-          <div id="shmeioInfo" class="col-md-10" style="display: none;">
-            <p class=" pull-right infoTitle">Το σημείο διανομής μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility">Lorem ipsum dolor sit amet <a href="url">Lorem ipsum </a></li>
-              <li class="infoAbility">Lorem <a href="url">Lorem ipsumt amet</a></li>
-              <li class="infoAbility"><a href="url">Lorem ipsum </a> Lorem ipsum</li>
-            </ul>
-x          </div>
         </div>
       </div>
     </div>
