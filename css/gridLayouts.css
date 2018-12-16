@@ -1,74 +1,70 @@
-/*.row {
+.row {
     display: flex;
   }
   
-  .row > div {
-    flex: 1;
-    background: rgb(255, 255, 255);
-    border: 1px solid grey;
-  }*/
+.row > div {
+  flex: 1;
+  background: rgb(255, 255, 255);
+  border: 1px solid grey;
+}
 
-  .borderContainer {
-    border: 2px solid rgb(0, 0, 0);
-  }
+.borderContainer {
+  border: 2px solid rgb(0, 0, 0);
+}
 
-  .topPart {
-      height: 20%;
-  }
+.indexDims {
+    height: 75%;
+}
 
-  .indexDims {
-      height: 80%;
-  }
+.indexNews {
+    width: 20%;
+}
 
-  .indexNews {
-      width: 20%;
-  }
+.infoContainer {
+    height: 90%;
+}
 
-  .infoContainer {
-      height: 90%;
-  }
+.infoButton {
+  height: 100%;
+  width: 100%;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: #000000;
+  font-size: 20pt;
+  background-color: inherit;
+  font-weight: bold;
+}
 
-  .infoButton {
-    height: 100%;
-    width: 100%;
+.infoTitle {
+    padding: 5%;
     font-family: 'Helvetica', 'Arial', sans-serif;
     color: #000000;
-    font-size: 20pt;
-    background-color: inherit;
-    font-weight: bold;
-  }
-
-  .infoTitle {
-      padding: 5%;
-      font-family: 'Helvetica', 'Arial', sans-serif;
-      color: #000000;
-      font-size: 28pt;
-      background-color: inherit;
-      font-style: italic;
-      font-weight: bold;
-  }
-
-  .infoAbility {
-    padding-bottom: 3%;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    color: #000000;
-    font-size: 20pt;
-    background-color: inherit;
-    font-weight: bold;
-  }
-
-  .infοDeadline {
-    padding-top: 5%;
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    color: #000000;
-    font-size: 24pt;
+    font-size: 28pt;
     background-color: inherit;
     font-style: italic;
-    text-align: center;
-  }
+    font-weight: bold;
+}
 
-  .btnMiddle {
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-right: 2px solid rgb(0, 0, 0);
+.infoAbility {
+  padding-bottom: 3%;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: #000000;
+  font-size: 20pt;
+  background-color: inherit;
+  font-weight: bold;
+}
 
-  }
+.infοDeadline {
+  padding-top: 5%;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: #000000;
+  font-size: 24pt;
+  background-color: inherit;
+  font-style: italic;
+  text-align: center;
+}
+
+.btnMiddle {
+  border-bottom: 2px solid rgb(0, 0, 0);
+  border-right: 2px solid rgb(0, 0, 0);
+
+}

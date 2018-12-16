@@ -6,14 +6,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
-
+  <link href="css/topPart.css" rel="stylesheet" type="text/css"  media="all">
+  
   <script src="js/homepage.js"></script>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row topPart">
       <div class="col">
-        Top
+        <div class="row topTopPart">
+          <div>SubRow1</div>
+        </div>
+        <div class="row navBarRow">
+          <div>SubRow2</div>
+        </div>
       </div>
     </div>
     <div class="row indexDims">
