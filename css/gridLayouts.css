@@ -4,7 +4,7 @@
   
   .row > div {
     flex: 1;
-    background: lightgrey;
+    background: rgb(255, 255, 255);
     border: 1px solid grey;
   }
 
@@ -18,4 +18,47 @@
 
   .indexNews {
       width: 20%;
+  }
+
+  .infoContainer {
+      height: 90%;
+  }
+
+  .infoButton {
+    height: 100%;
+    width: 100%;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #000000;
+    font-size: 20pt;
+    background-color: inherit;
+    font-weight: bold;
+  }
+
+  .infoTitle {
+      padding: 5%;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      color: #000000;
+      font-size: 28pt;
+      background-color: inherit;
+      font-style: italic;
+      font-weight: bold;
+  }
+
+  .infoAbility {
+    padding-bottom: 3%;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #000000;
+    font-size: 20pt;
+    background-color: inherit;
+    font-weight: bold;
+  }
+
+  .infοDeadline {
+    padding-top: 5%;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #000000;
+    font-size: 24pt;
+    background-color: inherit;
+    font-style: italic;
+    text-align: center;
   }
