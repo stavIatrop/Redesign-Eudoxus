@@ -33,10 +33,10 @@
               <button id="shmeio" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-truck"></i>    <span>Σημείο<br>Διανομής</span></button>
             </div>
           </div>
-          <div id="defaultInfo" class="col-md-10">
+          <!-- <div id="defaultInfo" class="col-md-10">
             <p class="infoTitle" style="padding-top:24%;"><i style="padding-right:2%;" class="fas fa-arrow-left"></i>Επίλεξε απο τα αριστερά την κατηγορία σου</p>
-          </div>
-          <div id="foititisInfo" class="col-md-10" style="display: none;">
+          </div> -->
+          <div id="foititisInfo" class="col-md-10">
             <p class=" pull-right infoTitle">Ο φοιτητής μπορεί να:</p>
             <ul style="padding-left: 15%;">
               <li class="infoAbility">πραγματοποιήσει <a href="url">δήλωση συγγραμμάτων</a></li>
