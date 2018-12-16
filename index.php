@@ -21,7 +21,7 @@
         <div class="row infoContainer borderContainer" style="width:100%;">
           <div class="col-md-2">
             <div class="row" style="height:25%">
-              <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
+              <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btn-outline-dark btnMiddle rounded-0 active"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
             </div>
             <div class="row" style="height:25%">
               <button id="ekdotis" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-book"></i>    Εκδότης</button>
