@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"></head>
   <link rel="stylesheet" type="text/css" href="css/carouselIndicators.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
   <div class="container-fluid">
@@ -65,7 +66,6 @@
           </a>
           
         </div>
-
       </div>
       <div class="col">
         <div class="row infoContainer">
