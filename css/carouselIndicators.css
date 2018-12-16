@@ -1,3 +1,65 @@
 .pointer {
     cursor: pointer;
 }
+
+.announcement {
+
+    color: black;
+    margin-bottom: 7%
+}
+
+.body {
+    background-color: #333333;
+  }
+  
+  .carousel-content {
+      color:black;
+      display:flex;
+      align-items:center;
+  }
+  
+  #text-carousel {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+  }
+
+  .carousel-indicators li {
+    background-color: #999;
+    background-color: rgba(70,70,70,.25);
+  }
+  
+  .carousel-indicators .active {
+    background-color: #444;
+  }
+
+  .carousel-control-prev span {
+
+    background-color: #444;
+
+  }
+
+  .carousel-control-next span {
+
+    background-color: #444;
+
+  }
+
+  .topleft {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: 18px;
+    
+  }
+
+  .center {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    height: 45%;
+  }
+  
