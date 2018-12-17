@@ -15,3 +15,46 @@
 
     height: 60%;
 }
+
+/*Above navbar*/
+.logo {
+    height: 70%;
+    width: 70%;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.tagline {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 22pt;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.searchBar {
+    width: 80%;
+    margin-top: 1%;
+}
+
+.topIcons {
+    font-size:60px;
+    margin-top: 17%;
+    margin-left: 22%;
+}
+
+.loginText {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.flag {
+    height: 23%;
+    width: 35%;
+    margin-top: 20%;
+    margin-right: 9%;
+    margin-left: 4%;
+}
