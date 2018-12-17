@@ -1,0 +1,21 @@
+.nav-item {
+  font-size: 26px;
+  margin-top: -1%;
+  margin-bottom: -1%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: rgb(14, 13, 13);
+  padding-left: 5%;
+}
+
+.dropdown-menu > a:hover {
+  background-color: rgb(100, 96, 96);
+}
+
+.nav-item > .active {
+  color: white;
+}
+

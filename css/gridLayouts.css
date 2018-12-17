@@ -1,4 +1,4 @@
-.row {
+/* .row {
     display: flex;
   }
   
@@ -6,14 +6,10 @@
   flex: 1;
   background: rgb(255, 255, 255);
   border: 1px solid grey;
-}
+} */
 
 .borderContainer {
   border: 2px solid rgb(0, 0, 0);
-}
-
-.indexDims {
-    height: 75%;
 }
 
 .indexNews {
@@ -22,6 +18,7 @@
 
 .infoContainer {
     height: 90%;
+    
 }
 
 .infoButton {
@@ -67,4 +64,8 @@
   border-bottom: 2px solid rgb(0, 0, 0);
   border-right: 2px solid rgb(0, 0, 0);
 
+}
+
+#carouselContent {
+  background-color: rgb(243, 234, 234);
 }
