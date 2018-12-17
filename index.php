@@ -161,24 +161,38 @@
         <h3 style="color:black;text-align:center;"> <i><u>Ανακοινώσεις</u></i> </h3>
         <br>
         
-        <!-- <div id="carouselContent" class="carousel slide center" data-ride="carousel"  data-interval="5000">
+        <div id="carouselContent" class="carousel slide center rounded" data-ride="carousel"  data-interval="5000">
           <ol class="carousel-indicators" >
             <li data-target="#carouselContent" data-slide-to="0" class="active"></li>
             <li data-target="#carouselContent" data-slide-to="1"></li>
+            <li data-target="#carouselContent" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active text-center p-4">
-                  <div class="topleft"> <i>Για τον Φοιτητή:</i> </div>
-                  
-                    <h5>Προθεσμία Δήλωσης Συγγραμμάτων</h5>
-                    <p>Παρασκευή 21 Δεκεμβρίου 2018</p>
-                  
-              </div>
-              <div class="carousel-item text-center p-4">
-                  <h5>Προθεσμία Καταχώρησης Συγγραμμάτων</h5>
-                  <p>Παρασκευή 27 Ιουλίου 2018</p>
-                  
-              </div>
+            <div id="text-carousel" class="carousel-item active ">
+              <i class="topleft">Για τον Φοιτητή...</i> 
+              
+              <h5>Προθεσμία Δήλωσης Συγγραμμάτων:</h5>
+              <p>Παρασκευή 21 Δεκεμβρίου 2018</p>
+              <h5>Προθεσμία Παραλαβής Συγγραμμάτων:<h5>
+              <p>Παρασκευή 18 Ιανουαριου 2019</p>
+                
+            </div>
+            <div id="text-carousel" class="carousel-item">
+              <i class="topleft">Για τον Εκδότη...</i>
+                
+              <h5>Προθεσμία Καταχώρησης Συγγραμμάτων:</h5>
+              <p>Παρασκευή 27 Ιουλίου 2018</p>
+
+            </div>
+
+            <div id="text-carousel" class="carousel-item">
+              <i class="topleft">Για τη Γραμματεία...</i>
+                
+              <h5>Προθεσμία Καταχώρησης Προγράμματος Σπουδών:</h5>
+              <p>Παρασκευή 14 Σεπτεμβρίου 2018</p>
+
+            
+            </div>
           </div>
           <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -188,9 +202,9 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
           </a>
-        </div> -->
+        </div>
 
-        <div class="content-slider">
+        <!-- <div class="content-slider">
           <div class="slider">
             <div class="mask">
               <ul>
@@ -221,7 +235,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
         
