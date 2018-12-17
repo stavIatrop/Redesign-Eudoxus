@@ -12,63 +12,75 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/homepage.js"></script>
-  <script src="js/navBar.js"></script>
-
 
 </head>
 <body>
   <div class="container-fluid">
-    <div class="row topPart" style="position:relative; z-index:0">
+    <div class="row topPart">
       <div class="col">
         <div class="row topTopPart">
           <div>SubRow1</div>
         </div>
-        <div class="row navBarRow ">
-          <div>
-          
-            <!-- <nav class="navbar navbar-inverse rounded" role="navigation">
-             
-                
-                <div class="container" >
-                  <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="row navBarRow">
+          <div class="col-12-md">
+            <nav style="background-color: rgb(169, 173, 177);" class="navbar navbar-expand-lg">
+              <div class="" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Αρχική</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Φοιτητής
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Δήλωση Συγγραμμάτων</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Αναζήτηση Συγγραμμάτων</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Επισκόπηση Δήλωσης</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Εκδότης
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Καταχώρηση Συγγράμματος</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Διαχείρηση Συγγραμμάτων</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Γραμματεία
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="#">Action</a>
+                      <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                  <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Σημεια Διανομής
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="#">Action</a>
+                      <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                
-            </nav> -->
-            <div class="navbar">
-  
-              <div class="dropdown">
-                <button class="dropbtn">Dropdown 
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 2</a>
-                  <a href="#">Link 3</a>
-                </div>
-              </div> 
-            </div>
-
-
-
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Επικοινωνία</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
