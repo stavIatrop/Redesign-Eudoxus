@@ -18,10 +18,21 @@
 
 /*Above navbar*/
 .logo {
-    height: 70%;
-    width: 70%;
+    height: 55%;
+    width: 60%;
     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 30%;
+}
+
+.logoText {
+    color: gray;
+    font-size: 20px;
+    margin-left: 30%;
+    font-weight: bold;
+}
+
+.logoDiv:hover{
+    text-decoration: none;
 }
 
 .tagline {

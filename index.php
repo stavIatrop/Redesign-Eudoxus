@@ -7,6 +7,8 @@
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/topPart.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/navBar.css" rel="stylesheet" type="text/css"  media="all">
+  <link href="css/footer.css" rel="stylesheet" type="text/css"  media="all">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,7 +22,7 @@
       <div class="col-md-12">
         <div class="row topTopPart">
           <div class="col-md-1">
-            <a href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"></a>
+            <a class="logoDiv" href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
           </div>
           <div class="col-md-8">
             <div class="row" style="height: 50%;">
@@ -212,4 +214,39 @@
       </div>
     </div>
   </div>
+  <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
+        <div class="container">
+          <div style="padding-top:5%;" class="row row-30">
+            <div style="border-right: 1px solid grey"class="col-md-3 col-xl-4">
+              <div class="pr-xl-3">
+                <p class="footerHeader">Εύδοξος</p>
+                <!-- Rights-->
+                <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>Stavroula Iatropoulou, Mike Xydas</span><span>. </span><p>All Rights Reserved.</p></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>Επικοινωνία</h5>
+              <dl class="contact-list">
+                <dt>email επικοινωνίας:</dt>
+                <dd><a href="mailto:#">help@eudoxos.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>Τηλέφωνο:</dt>
+                <dd><a href="tel:#">210-6711223</a>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-md-4 col-xl-3">
+              <h5>Σύνδεσμοι</h5>
+              <ul class="nav-list">
+                <li><a href="#">Φοιτητής</a></li>
+                <li><a href="#">Εκδότης</a></li>
+                <li><a href="#">Γραμματεία</a></li>
+                <li><a href="#">Σημεία Διανομής</a></li>
+                <li><a href="#">Πληροφορίες</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
