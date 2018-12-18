@@ -36,11 +36,14 @@
 }
 
 .tagline {
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
+    color: rgb(77, 76, 76);
     font-size: 22pt;
     font-weight: bold;
+    font-style: italic;
     text-align: center;
-    padding-top: 1%;
+    padding-top: 3%;
+    text-shadow: 1px 1px 1px grey;
 }
 
 .searchBar {
@@ -53,6 +56,15 @@
     margin-top: 17%;
     margin-left: 22%;
 }
+
+.iconText {
+    color: #3D8A3A;
+}
+
+.iconText:hover{
+    text-decoration: none;
+}
+
 
 .loginText {
     font-family: 'Helvetica', 'Arial', sans-serif;
@@ -68,6 +80,7 @@
     margin-top: 20%;
     margin-right: 9%;
     margin-left: 4%;
+    box-shadow: 2px 2px 3px grey;
 }
 
 .navBarStyle {

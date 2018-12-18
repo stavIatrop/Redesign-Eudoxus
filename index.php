@@ -32,15 +32,14 @@
             </div>
             <div class="row" style="height: 50%;">
               <div class="col">
-                <div style="margin-left:5%;"><input type="text" class="searchBar" placeholder="Αναζήτησε πληροφορίες, τίτλο συγγράμματος, συγγραφέα..."><button style="height:55%; margin-left:1%;" class="btn btn-dark"> Αναζήτηση </button></div>
               </div>
             </div>
           </div>
           <div class="col-md-1">
-            <a href="Login"><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+            <a class="iconText" href="Login"><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
           </div>
           <div class="col-md-1">
-            <a href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
+            <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
           </div>
           <div class="col-md-1">
             <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
@@ -49,7 +48,7 @@
         </div>
         <div class="row navBarRow">
           <div class="col-md-12">
-            <nav style="background-color: rgb(169, 173, 177);" class="navbar rounded navbar-expand-lg">
+            <nav style="" class="navbar rounded navbar-expand-lg">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                   <a class="nav-link active" href="#">Αρχική</a>
@@ -104,26 +103,30 @@
                   <a class="nav-link " href="#">Επικοινωνία</a>
                 </li>
               </ul>
+              <form action="#" method="post" class="form-inline my-2 mylg-0">
+                <input type="search" name="search" id="search" class="form-control mr-sm-2" placeholder="Τίτλος, πληροφορίες..." aria-label="Search">
+                <button class="btn btn-dark" type="submit">Αναζήτηση</button>
+              </form>
             </nav>
           </div>
         </div>
       </div>
     </div>
     <div class="row indexDims" style="position:relative; z-index:0">
-      <div class="col" style="padding-left: 2%;">
+      <div class="col" style="padding-left: 2%; ">
         <div class="row infoContainer borderContainer" style="width:100%;">
           <div class="col-md-2">
             <div class="row" style="height:25%">
-              <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btn-outline-dark btnMiddle rounded-0 active"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
+              <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btnMiddle rounded-0 active"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
             </div>
             <div class="row" style="height:25%">
-              <button id="ekdotis" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-book"></i>    Εκδότης</button>
+              <button id="ekdotis" onclick="selectInfo(this.id)" class="infoButton btn btnMiddle rounded-0"><i class="fas fa-book"></i>    Εκδότης</button>
             </div>
             <div class="row" style="height:25%">
-              <button id="grammateia" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-landmark"></i>    Γραμματεία</button>
+              <button id="grammateia" onclick="selectInfo(this.id)" class="infoButton btn btnMiddle rounded-0"><i class="fas fa-landmark"></i>    Γραμματεία</button>
             </div>
             <div class="row" style="height:25%">
-              <button id="shmeio" onclick="selectInfo(this.id)" class="infoButton btn btn-outline-dark btnMiddle rounded-0"><i class="fas fa-truck"></i>    <span>Σημείο<br>Διανομής</span></button>
+              <button id="shmeio" onclick="selectInfo(this.id)" class="infoButton btn btnMiddle rounded-0"><i class="fas fa-truck"></i>    <span>Σημείο<br>Διανομής</span></button>
             </div>
           </div>
          
@@ -216,15 +219,15 @@
   </div>
   <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
         <div class="container">
-          <div style="padding-top:5%;" class="row row-30">
-            <div style="border-right: 1px solid grey"class="col-md-3 col-xl-4">
+          <div style="padding-top:5%; padding-bottom: 3%;" class="row row-30">
+            <div style="border-right: 1px solid grey;" class="col-md-3 col-xl-4">
               <div class="pr-xl-3">
                 <p class="footerHeader">Εύδοξος</p>
                 <!-- Rights-->
                 <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>Stavroula Iatropoulou, Mike Xydas</span><span>. </span><p>All Rights Reserved.</p></p>
               </div>
             </div>
-            <div class="col-md-4">
+            <div style="border-right: 1px solid grey; margin-left: 6%;" class="col-md-3">
               <h5>Επικοινωνία</h5>
               <dl class="contact-list">
                 <dt>email επικοινωνίας:</dt>
@@ -236,7 +239,7 @@
                 </dd>
               </dl>
             </div>
-            <div class="col-md-4 col-xl-3">
+            <div style="margin-left: 5%;" class="col-md-4 col-xl-3">
               <h5>Σύνδεσμοι</h5>
               <ul class="nav-list">
                 <li><a href="#">Φοιτητής</a></li>
