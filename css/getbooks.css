@@ -27,3 +27,24 @@
     margin-bottom: 5%;
     padding-bottom: 2%;
 }
+
+.bookList > li{
+    list-style-type: none;
+}
+
+.bookList > li > div > div > img {
+    height: 150px;
+    width: 115px;
+    box-shadow: 2px 2px 3px rgb(112, 111, 111);
+    margin-bottom: 15%;
+}
+
+.bookRow {
+    border-bottom: 2px solid grey; 
+    margin-top: 5%;
+}
+
+.bookList > li:last-child > div {
+    border-bottom: none;
+}
+

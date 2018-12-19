@@ -52,10 +52,10 @@
             <nav style="" class="navbar rounded navbar-expand-lg">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Αρχική</a>
+                  <a class="nav-link" href="#">Αρχική</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Φοιτητής
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -142,35 +142,89 @@
           </div>
           <div class="col-md-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Τμήμα:</span>
-              <select style="margin-left: 8%;" class="uniSelect custom-select mb-3">
-                <option selected>Επίλεξε Τμήμα</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
+            <select style="margin-left: 8%;" class="uniSelect custom-select mb-3">
+              <option selected>Επίλεξε Τμήμα</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
           </div>
-          <div style="" class="row dropdownRow">
-            <div class="col-md-6">
-              <span class="dropdownTitles" style="vertical-align: middle;">Εξάμηνο:</span>
-              <select style="margin-left: 13%;" class="uniSelect custom-select mb-3">
-                <option selected>Επίλεξε Εξάμηνο</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <span class="dropdownTitles" style="vertical-align: middle;">Μάθημα:</span>
-                <select class="uniSelect custom-select mb-3">
-                  <option selected>Επίλεξε Μάθημα</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+        </div>
+        <div style="" class="row dropdownRow">
+          <div class="col-md-6">
+            <span class="dropdownTitles" style="vertical-align: middle;">Εξάμηνο:</span>
+            <select style="margin-left: 13%;" class="uniSelect custom-select mb-3">
+              <option selected>Επίλεξε Εξάμηνο</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <span class="dropdownTitles" style="vertical-align: middle;">Μάθημα:</span>
+            <select class="uniSelect custom-select mb-3">
+              <option selected>Επίλεξε Μάθημα</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <ul class="bookList">
+            <li><div class="row bookRow">
+              <div class="col-md-3">
+                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
               </div>
-            </div>
-          </div>
+              <div class="col-md-6">
+                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
+                <p>Συγγραφέας: Όνομα Επίθετο</p>
+                <p>Σελίδες: 156</p>
+              </div>
+              <div class="col-md-3">
+                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
+              </div>
+            </div></li>
+            <li><div class="row bookRow">
+              <div class="col-md-3">
+                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
+              </div>
+              <div class="col-md-6">
+                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
+                <p>Συγγραφέας: Όνομα Επίθετο</p>
+                <p>Σελίδες: 156</p>
+              </div>
+              <div class="col-md-3">
+                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
+              </div>
+            </div></li>
+            <li><div class="row bookRow">
+              <div class="col-md-3">
+                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
+              </div>
+              <div class="col-md-6">
+                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
+                <p>Συγγραφέας: Όνομα Επίθετο</p>
+                <p>Σελίδες: 156</p>
+              </div>
+              <div class="col-md-3">
+                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
+              </div>
+            </div></li>
+            <li><div class="row bookRow" style="">
+              <div class="col-md-3">
+                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
+              </div>
+              <div class="col-md-6">
+                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
+                <p>Συγγραφέας: Όνομα Επίθετο</p>
+                <p>Σελίδες: 156</p>
+              </div>
+              <div class="col-md-3">
+                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
+              </div>
+            </div></li>
+          </ul>
         </div>
       </div>
       <div class="col-md-3">
@@ -179,7 +233,7 @@
   </div>
 
 
-  <!-- <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
+  <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
         <div class="container">
           <div style="padding-top:5%; padding-bottom: 3%;" class="row row-30">
             <div style="border-right: 1px solid grey;" class="col-md-3 col-xl-4">
@@ -212,5 +266,5 @@
             </div>
           </div>
         </div>
-      </footer> -->
+      </footer>
 </body>
