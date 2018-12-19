@@ -8,7 +8,7 @@
 }
 
 .navbar {
-  height: 50px !important; /*i assume your navbar size 100px*/
+  height: 50px !important;
   /* background-color: #3D8A3A; */
   box-shadow: 2px 2px 8px grey;
   background-image: linear-gradient(to bottom right, rgb(77, 161, 74), rgb(35, 105, 33));
@@ -20,7 +20,7 @@
 }
 
 .dropdown-menu > a:hover {
-  background-color: rgb(100, 96, 96);
+  background-color: rgb(129, 0, 0);
 }
 
 .nav-item > .active {

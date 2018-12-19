@@ -88,3 +88,86 @@
     margin-left: 1%;
     margin-right: 1%;
 }
+
+/* Breadcrumb CSS */
+.breadcrumb {
+    background-color: inherit;
+}
+
+.breadcrumbT { 
+    list-style: none; 
+    overflow: hidden; 
+    font: 15px Sans-Serif;
+    margin-left: -3%;
+    margin-top: -1%;
+  }
+  .breadcrumbT li { 
+    float: left; 
+  }
+  .breadcrumbT li a {
+    color: black;
+    text-decoration: none; 
+    padding: 5px 0 5px 40px;
+    background: rgb(185, 185, 185); 
+    position: relative; 
+    display: block;
+    float: left;
+  }
+
+  .breadcrumbT li a::after { 
+    content: " "; 
+    display: block; 
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid rgb(185, 185, 185);
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    left: 100%;
+    z-index: 2; 
+  }
+
+  .breadcrumbT li a::before { 
+    content: " "; 
+    display: block; 
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent;       
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1; 
+  }
+
+  .breadcrumbT li:first-child a {
+    padding-left: 10px;
+  }
+  
+.breadcrumbT li:last-child  { 
+    border: 0;
+    background: #3D8A3A;
+    padding-right: 20px;
+
+  }
+
+  .breadcrumbT li:last-child a { 
+    background: #3D8A3A;
+  }
+
+  .breadcrumbT li:last-child a:after { 
+    border-left: 30px solid #3D8A3A;
+
+  }
+
+  .breadcrumbT li a:hover { 
+    background: #3D8A3A; 
+  }
+  .breadcrumbT li a:hover:after { 
+    border-left-color: #3D8A3A !important; 
+  }
