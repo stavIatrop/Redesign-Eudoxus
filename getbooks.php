@@ -11,6 +11,8 @@
   
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
   <!-- <script src="js/homepage.js"></script> -->
 
 </head>
@@ -119,14 +121,70 @@
         </ul>
       </div>
     </div>
+    <div class="getBooksContainer row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="getBooksTitle">Δήλωση Συγγραμμάτων - Προθεσμία Δήλωσης 17/11/2018</p>
+          </div>
+        </div>
+        <div style="" class="row dropdownRow">
+          <div class="col-md-6">
+            <span class="dropdownTitles" style="vertical-align: middle;">Πανεπιστήμιο:</span>
+            <select class="uniSelect custom-select mb-3">
+              <option selected>Επίλεξε Πανεπιστήμιο</option>
+              <option value="1">Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών - ΕΚΠΑ</option>
+              <option value="2">Εθνικό Μετσόβιο Πολυτεχνείο -ΕΜΠ</option>
+              <option value="3">Πανεπιστήμιο Πειραιώς</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <span class="dropdownTitles" style="vertical-align: middle;">Τμήμα:</span>
+              <select style="margin-left: 8%;" class="uniSelect custom-select mb-3">
+                <option selected>Επίλεξε Τμήμα</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div style="" class="row dropdownRow">
+            <div class="col-md-6">
+              <span class="dropdownTitles" style="vertical-align: middle;">Εξάμηνο:</span>
+              <select style="margin-left: 13%;" class="uniSelect custom-select mb-3">
+                <option selected>Επίλεξε Εξάμηνο</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <span class="dropdownTitles" style="vertical-align: middle;">Μάθημα:</span>
+                <select class="uniSelect custom-select mb-3">
+                  <option selected>Επίλεξε Μάθημα</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
   </div>
-  <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
+
+
+  <!-- <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
         <div class="container">
           <div style="padding-top:5%; padding-bottom: 3%;" class="row row-30">
             <div style="border-right: 1px solid grey;" class="col-md-3 col-xl-4">
               <div class="pr-xl-3">
                 <p class="footerHeader">Εύδοξος</p>
-                <!-- Rights-->
                 <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>Stavroula Iatropoulou, Mike Xydas</span><span>. </span><p>All Rights Reserved.</p></p>
               </div>
             </div>
@@ -154,5 +212,5 @@
             </div>
           </div>
         </div>
-      </footer>
+      </footer> -->
 </body>
