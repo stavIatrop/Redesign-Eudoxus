@@ -10,14 +10,16 @@
   
   
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/getbook.js"></script>
+
 
   <!-- <script src="js/homepage.js"></script> -->
 
 </head>
 
 <body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
   <div class="container-fluid">
     <div class="row topPart">
       <div class="col-md-12">
@@ -228,6 +230,90 @@
         </div>
       </div>
       <div class="col-md-3">
+        <div class="row getBooksTitle">
+          <div class="col-md-12" >
+            <p class="mybooks">Η δήλωσή μου</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <ul style="margin-top: 5%;" class="bookList">
+              <li>
+                <div style="padding-bottom: 7%; border-bottom: 2px solid grey;" class="row">
+                  <div class="col-md-2">
+                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
+                  </div>
+                  <div class="col-md-1">
+                  </div>
+                  <div style="margin-top: 2%;" class="col-md-6">
+                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
+                    <p>Μάθημα Εξάμηνο</p>
+                  </div>
+                  <div class="col-md-3">
+                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div style="padding-bottom: 7%; margin-top:7%; border-bottom: 2px solid grey;" class="row">
+                  <div class="col-md-2">
+                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
+                  </div>
+                  <div class="col-md-1">
+                  </div>
+                  <div style="margin-top: 2%;" class="col-md-6">
+                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
+                    <p>Μάθημα Εξάμηνο</p>
+                  </div>
+                  <div class="col-md-3">
+                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div style="padding-bottom: 7%; margin-top:7%; border-bottom: 2px solid grey;" class="row">
+                  <div class="col-md-2">
+                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
+                  </div>
+                  <div class="col-md-1">
+                  </div>
+                  <div style="margin-top: 2%;" class="col-md-6">
+                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
+                    <p>Μάθημα Εξάμηνο</p>
+                  </div>
+                  <div class="col-md-3">
+                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div style="padding-bottom: 7%; margin-top:7%; border-bottom: 2px solid grey;" class="row">
+                  <div class="col-md-2">
+                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
+                  </div>
+                  <div class="col-md-1">
+                  </div>
+                  <div style="margin-top: 2%;" class="col-md-6">
+                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
+                    <p>Μάθημα Εξάμηνο</p>
+                  </div>
+                  <div class="col-md-3">
+                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <button style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%;" class="btns btn-lg btn-primary">Ολοκλήρωση</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

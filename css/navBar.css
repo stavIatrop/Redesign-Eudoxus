@@ -20,7 +20,7 @@
 }
 
 .dropdown-menu > a:hover {
-  background-color: rgb(146, 134, 134);
+  background-color: rgb(238, 43, 43) !important;
 }
 
 .nav-item > .active {
