@@ -12,7 +12,7 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/getbook.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- <script src="js/homepage.js"></script> -->
 
@@ -135,44 +135,44 @@
         <div style="" class="row dropdownRow">
           <div class="col-md-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Πανεπιστήμιο:</span>
-            <select class="uniSelect custom-select mb-3">
-              <option selected>Επίλεξε Πανεπιστήμιο</option>
-              <option value="1">Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών - ΕΚΠΑ</option>
-              <option value="2">Εθνικό Μετσόβιο Πολυτεχνείο -ΕΜΠ</option>
-              <option value="3">Πανεπιστήμιο Πειραιώς</option>
+            <select id="selUni" class="uniSelect custom-select mb-3">
+              <option id="defUni" onclick="chooseUni(this.value)" value="0" selected>Επίλεξε Πανεπιστήμιο</option>
+              <option onclick="chooseUni(this.value)" value="1">Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών - ΕΚΠΑ</option>
+              <option onclick="chooseUni(this.value)" value="2">Εθνικό Μετσόβιο Πολυτεχνείο -ΕΜΠ</option>
+              <option onclick="chooseUni(this.value)" value="3">Πανεπιστήμιο Πειραιώς</option>
             </select>
           </div>
           <div class="col-md-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Τμήμα:</span>
-            <select style="margin-left: 8%;" class="uniSelect custom-select mb-3">
-              <option selected>Επίλεξε Τμήμα</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select id="selDep" style="margin-left: 8%;" disabled class="uniSelect custom-select mb-3">
+              <option id="defDep" onclick="chooseDep(this.value)" value="0" selected>Επίλεξε Τμήμα</option>
+              <option onclick="chooseDep(this.value)" value="1">One</option>
+              <option onclick="chooseDep(this.value)" value="2">Two</option>
+              <option onclick="chooseDep(this.value)" value="3">Three</option>
             </select>
           </div>
         </div>
-        <div style="" class="row dropdownRow">
+        <div style="visibility:hidden;" id="semCourseRow" class="row dropdownRow">
           <div class="col-md-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Εξάμηνο:</span>
-            <select style="margin-left: 13%;" class="uniSelect custom-select mb-3">
-              <option selected>Επίλεξε Εξάμηνο</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select id="selSem" style="margin-left: 13%;" disabled class="uniSelect custom-select mb-3">
+              <option id="defSem" onclick="chooseSem(this.value)" value="0" selected>Επίλεξε Εξάμηνο</option>
+              <option onclick="chooseSem(this.value)" value="1">One</option>
+              <option onclick="chooseSem(this.value)" value="2">Two</option>
+              <option onclick="chooseSem(this.value)" value="3">Three</option>
             </select>
           </div>
           <div class="col-md-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Μάθημα:</span>
-            <select class="uniSelect custom-select mb-3">
-              <option selected>Επίλεξε Μάθημα</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select id="selCourse" disabled class="uniSelect custom-select mb-3">
+              <option id="defCourse" onclick="chooseCourse(this.value)" value="0" selected>Επίλεξε Μάθημα</option>
+              <option onclick="chooseCourse(this.value)" value="1">One</option>
+              <option onclick="chooseCourse(this.value)" value="2">Two</option>
+              <option onclick="chooseCourse(this.value)" value="3">Three</option>
             </select>
           </div>
         </div>
-        <div>
+        <div id="showBooks" style="display: none;">
           <ul class="bookList">
             <li><div class="row bookRow">
               <div class="col-md-3">
@@ -311,7 +311,7 @@
                 </div>
               </li>
             </ul>
-            <button style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%;" class="btns btn-lg btn-primary">Ολοκλήρωση</button>
+            <button style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button>
           </div>
         </div>
       </div>
