@@ -12,6 +12,8 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/searchbooks.js"></script>
+  <script src="js/totop.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- <script src="js/homepage.js"></script> -->
@@ -123,7 +125,7 @@
         </ul>
       </div>
     </div>
-    <div class="row" style="min-height:500px;">
+    <div class="row" style="min-height:400px;">
         <div class="col-md-12">
           <div style="padding-bottom: 4%; padding-top: 3%;" class="row">
             <div class="col-md-2"></div>

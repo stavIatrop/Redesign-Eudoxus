@@ -12,6 +12,7 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/getbook.js"></script>
+  <script src="js/totop.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- <script src="js/homepage.js"></script> -->

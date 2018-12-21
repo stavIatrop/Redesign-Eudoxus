@@ -5,6 +5,7 @@ function choosePages(pagesId) {
 }
 
 window.onload = function() {
+    document.getElementById("searchInp").value = '';
     document.getElementById("selSem").selectedIndex = 0;
     document.getElementById("selYear").selectedIndex = 0;
     document.getElementById("pag1").checked = false;
@@ -12,7 +13,6 @@ window.onload = function() {
     document.getElementById("pag3").checked = false;
     document.getElementById("pag4").checked = false;
     document.getElementById("pag5").checked = false;
-    document.getElementById("searchInp").value = '';
 };
 
 function cancelFilter(filterId) {
