@@ -1,0 +1,17 @@
+.inputSearch {
+    box-shadow: 2px 2px 3px rgb(179, 177, 177);
+}
+
+.filterTitle {
+    text-align: center;
+    font-size: 30px;
+}
+
+.filterCancel {
+    margin-top: -1% !important;
+}
+
+.filterCancel:hover {
+    color: rgb(187, 9, 9);
+}
+
