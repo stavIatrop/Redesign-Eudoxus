@@ -51,7 +51,7 @@
             <a href="englishVersion"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
           </div>
         </div>
-        <div style="margin-top: 1%;" class="row navBarRow">
+        <div class="row navBarRow">
           <div class="col-md-12">
             <nav style="" class="navbar rounded navbar-expand-lg">
               <ul class="navbar-nav mr-auto">
@@ -119,7 +119,7 @@
     </div>
     <div class="row breadcrumb">
       <div class="col-md-12">
-        <ul style="margin-top: 2%;" class="breadcrumbT">
+        <ul class="breadcrumbT">
           <li><a href="#">Αρχική</a></li>
           <li><a href="#">Αναζήτηση Συγγραμμάτων</a></li>
         </ul>
@@ -139,7 +139,7 @@
             </div>
             <div class="col-md-2"></div>
           </div>
-          <div style="visibility: hidden;" id="searchList" class="row">
+          <div style="display: none;" id="searchList" class="row">
             <div class="col-md-2">
               <p class="filterTitle">Φίλτρα</p>
               <!-- <div class="row" style="border-bottom: 2px solid #3D8A3A; padding-bottom: 5%;">

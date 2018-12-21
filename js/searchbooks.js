@@ -38,7 +38,7 @@ function search() {
         document.getElementById("searchInp").style.backgroundColor='#ffcccc';
     }
     else {
-        document.getElementById("searchList").style.removeProperty("visibility");
+        document.getElementById("searchList").style.removeProperty("display");
         document.getElementById("searchInp").style.backgroundColor='white';
 
     }
