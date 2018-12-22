@@ -59,7 +59,7 @@
 }
 
 .topIcons {
-    font-size:60px;
+    font-size: 360%;
     margin-top: 20%;
     margin-left: 22%;
     color: #3D8A3A;
@@ -75,7 +75,7 @@
 
 .iconText:hover{
     text-decoration: none;
-    color: rgb(28, 68, 26) !important;
+    color: rgb(29, 77, 29) !important;
 }
 
 

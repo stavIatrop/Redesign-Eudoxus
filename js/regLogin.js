@@ -25,4 +25,8 @@ $(document).ready(function(){
             $("#publNumb").show();
         }
     });
+
+    $('#loginForm input').change(function() { 
+        somethingChanged = true; 
+   }); 
 });

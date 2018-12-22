@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="col-md-1">
-            <a type="button" class="iconText btn" data-toggle="modal" data-target="#popUpWindow"><i class="fas fa-sign-in-alt topIconsLogin"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
           </div>
           <div class="col-md-1">
             <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
