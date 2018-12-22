@@ -51,10 +51,22 @@
     margin-top: 1%;
 }
 
+.topIconsLogin {
+    font-size:60px;
+    margin-top: 14%;
+    /* margin-left: 22%; */
+    color: #3D8A3A;
+}
+
 .topIcons {
     font-size:60px;
-    margin-top: 17%;
+    margin-top: 20%;
     margin-left: 22%;
+    color: #3D8A3A;
+}
+
+.topIcons:hover, .topIconsLogin:hover {
+    color: rgb(30, 77, 29);
 }
 
 .iconText {
@@ -63,6 +75,7 @@
 
 .iconText:hover{
     text-decoration: none;
+    color: rgb(28, 68, 26) !important;
 }
 
 
@@ -72,6 +85,7 @@
     font-weight: bold;
     text-align: center;
     padding-top: 5%;
+    color: #3D8A3A;
 }
 
 .flag {
@@ -167,9 +181,45 @@
   }
 
   .breadcrumbT li a:hover { 
-    background: #3D8A3A; 
+    background: #3D8A3A;
   }
   .breadcrumbT li a:hover:after { 
     border-left-color: #3D8A3A !important; 
   }
-  
+
+  /* Login modal */
+  .loginTitle {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      /* padding-top: 20%; */
+      /* margin-left: 30%; */
+  }
+
+  .loginRegButton {
+      margin-left:30%;
+      margin-bottom: 10%;
+      box-shadow: 1px 1px 2px rgb(221, 218, 218);
+  }
+
+  .forgetPass {
+    color: grey;
+    font-style: italic;
+    text-align: center;
+    margin-left: 10%;
+  }
+
+  .forgetPass:hover {
+      color: rgb(22, 54, 21);
+      text-decoration: none;
+  }
+
+  .closeModal {
+    margin-top: 60%; 
+    font-size:30px;
+    color: #3D8A3A;
+  }
+
+  .closeModal:hover {
+      color: rgb(27, 66, 26);
+  }

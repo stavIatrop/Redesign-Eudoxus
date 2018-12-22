@@ -17,6 +17,56 @@
 </head>
 <body>
   <div class="container-fluid">
+    <div class="modal fade" style="margin-left:-24%;" id="popUpWindow">
+      <div class="modal-dialog">
+        <div style="width: 200%;" class="modal-content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-11"></div>
+              <div class="col-md-1">
+                <a href="#"><i class="fas fa-window-close closeModal"></i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <p style="padding-top:20%;"class="loginTitle">Είσοδος</p>
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Όνομα χρήστη">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός">
+                <button class="btn btn-success mt-5 disabled loginRegButton">Σύνδεση</button>
+                <div style="margin-bottom: 20%;"><a href="#" class="forgetPass">Έχω ξεχάσει τον κωδικό μου</a></div>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1"></div>
+              <div class="col-md-4">
+                <p class="loginTitle mb-5">Εγγραφή</p>
+                <form>
+                  <div class="form-group">
+                    <select class="form-control" id="selCateg">
+                      <option>Επίλεξε κατηγορία</option>
+                      <option>Φοιτητής</option>
+                      <option>Εκδότης</option>
+                    </select>
+                  </div>
+                </form>
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Επιβεβαίωση κωδικού">
+                <div id="studNumb" style="display: none;">
+                  <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου">
+                </div>
+                <div id="publNumb" style="display: none;">
+                  <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότης">
+                </div>
+                <button style="margin-bottom:25%;" class="btn disabled btn-success mt-5 loginRegButton">Εγγραφή</button>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row topPart">
       <div class="col-md-12">
         <div class="row topTopPart">
@@ -35,7 +85,7 @@
             </div>
           </div>
           <div class="col-md-1">
-            <a class="iconText" href="Login"><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+            <a type="button" class="iconText btn" data-toggle="modal" data-target="#popUpWindow"><i class="fas fa-sign-in-alt topIconsLogin"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
           </div>
           <div class="col-md-1">
             <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
