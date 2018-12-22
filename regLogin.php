@@ -1,21 +1,28 @@
 <head>
-
-  <script src="js/jquery.js"></script>
-	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"></head>
-  <link rel="stylesheet" type="text/css" href="css/carouselContainer.css">
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/topPart.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/navBar.css" rel="stylesheet" type="text/css"  media="all">
+  <link href="css/getbooks.css" rel="stylesheet" type="text/css"  media="all">
+  <link href="css/regLogin.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/footer.css" rel="stylesheet" type="text/css"  media="all">
-
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/homepage.js"></script>
+  <script src="js/totop.js"></script>
+  <script src="js/regLogin.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <!-- <script src="js/homepage.js"></script> -->
 
 </head>
+
 <body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
   <div class="container-fluid">
     <div class="row topPart">
       <div class="col-md-12">
@@ -35,7 +42,7 @@
             </div>
           </div>
           <div class="col-md-1">
-            <a type="button" class="iconText btn" data-toggle="modal" data-target="#popUpWindow"><i class="fas fa-sign-in-alt topIconsLogin"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+            <a class="iconText" href="Login"><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
           </div>
           <div class="col-md-1">
             <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
@@ -50,10 +57,10 @@
             <nav style="" class="navbar rounded navbar-expand-lg">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Αρχική</a>
+                  <a class="nav-link" href="#">Αρχική</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Φοιτητής
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -111,118 +118,59 @@
         </div>
       </div>
     </div>
-    <div class="row indexDims" style="position:relative; z-index:0">
-      <div class="col" style="padding-left: 2%; ">
-        <div class="row infoContainer borderContainer" style="width:100%;">
-          <div class="col-md-2">
-            <div class="row" style="height:25%">
-              <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btnMiddle rounded-0 active"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
-            </div>
-            <div class="row" style="height:25%">
-              <button id="ekdotis" onclick="selectInfo(this.id)" class="infoButton btn btnMiddle rounded-0"><i class="fas fa-book"></i>    Εκδότης</button>
-            </div>
-            <div class="row" style="height:25%">
-              <button id="grammateia" onclick="selectInfo(this.id)" class="infoButton btn btnMiddle rounded-0"><i class="fas fa-landmark"></i>    Γραμματεία</button>
-            </div>
-            <div class="row" style="height:25%">
-              <button id="shmeio" onclick="selectInfo(this.id)" class="infoButton btn btnMiddle rounded-0"><i class="fas fa-truck"></i>    <span>Σημείο<br>Διανομής</span></button>
-            </div>
-          </div>
-         
-          <div id="foititisInfo" class="col-md-10">
-            <p class=" pull-right infoTitle">Ο φοιτητής μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility">πραγματοποιήσει <a href="url">δήλωση συγγραμμάτων</a></li>
-              <li class="infoAbility">μεταβεί στην <a href="url">τροποποίηση τρέχουσας δήλωσης</a></li>
-              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
-            </ul>
-            <p class="infοDeadline">Προθεσμία Δηλώσεων Συγγραμμάτων: 17/11/2018</p>
-          </div>
-          <div id="ekdotisInfo" class="col-md-10" style="display: none;">
-            <p class=" pull-right infoTitle">Ο εκδότης μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility"><a href="url">καταχωρήσει</a> ένα συγγραμμα</li>
-              <li class="infoAbility">επεξεργαστεί τα τρέχοντα <a href="url">καταχωρημένα συγγράμματα</a></li>
-              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
-            </ul>
-          </div>
-          <div id="grammateiaInfo" class="col-md-10" style="display: none;">
-            <p class=" pull-right infoTitle">Η γραμματεία μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility">Lorem ipsum dolor sit amet <a href="url">Lorem ipsum </a></li>
-              <li class="infoAbility">Lorem <a href="url">Lorem ipsumt amet</a></li>
-              <li class="infoAbility"><a href="url">Lorem ipsum </a> Lorem ipsum</li>
-            </ul>
-          </div>
-          <div id="shmeioInfo" class="col-md-10" style="display: none;">
-            <p class=" pull-right infoTitle">Το σημείο διανομής μπορεί να:</p>
-            <ul style="padding-left: 15%;">
-              <li class="infoAbility">Lorem ipsum dolor sit amet <a href="url">Lorem ipsum </a></li>
-              <li class="infoAbility">Lorem <a href="url">Lorem ipsumt amet</a></li>
-              <li class="infoAbility"><a href="url">Lorem ipsum </a> Lorem ipsum</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-         
-        <h3 style="color:black;text-align:center;"> <i>Ανακοινώσεις</i> </h3>
-        <br>
-        
-        <div id="carouselContent" class="carousel slide center rounded" data-ride="carousel"  data-interval="5000">
-          <ol class="carousel-indicators pointer" >
-            <li data-target="#carouselContent" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselContent" data-slide-to="1"></li>
-            <li data-target="#carouselContent" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div id="text-carousel" class="carousel-item active ">
-              <i class="topleft">Για τον Φοιτητή...</i> 
-              
-              <h5>Προθεσμία Δήλωσης Συγγραμμάτων:</h5>
-              <p>Παρασκευή 21 Δεκεμβρίου 2018</p>
-              <h5>Προθεσμία Παραλαβής Συγγραμμάτων:<h5>
-              <p>Παρασκευή 18 Ιανουαριου 2019</p>
-                
-            </div>
-            <div id="text-carousel" class="carousel-item">
-              <i class="topleft">Για τον Εκδότη...</i>
-                
-              <h5>Προθεσμία Καταχώρησης Συγγραμμάτων:</h5>
-              <p>Παρασκευή 27 Ιουλίου 2018</p>
-
-            </div>
-
-            <div id="text-carousel" class="carousel-item">
-              <i class="topleft">Για τη Γραμματεία...</i>
-                
-              <h5>Προθεσμία Καταχώρησης Προγράμματος Σπουδών:</h5>
-              <p>Παρασκευή 14 Σεπτεμβρίου 2018</p>
-
-            
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-          </a>
-        </div>
-       
-       
+    <div class="row breadcrumb">
+      <div class="col-md-12">
+        <ul class="breadcrumbT">
+          <li><a href="#">Αρχική</a></li>
+          <li><a href="#">Σύνδεση / Εγγραφή</a></li>
+        </ul>
       </div>
     </div>
+    <div class="row regLoginRow">
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+            <p style="padding-top:20%;"class="loginTitle">Είσοδος</p>
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Όνομα χρήστη">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός">
+            <button class="btn btn-success mt-5 disabled loginRegButton">Σύνδεση</button>
+            <div style="margin-bottom: 20%;"><a href="#" class="forgetPass">Έχω ξεχάσει τον κωδικό μου</a></div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-2">
+        <p class="loginTitle mb-5">Εγγραφή</p>
+        <form>
+            <div class="form-group">
+                <select class="form-control" id="selCateg">
+                    <option>Επίλεξε κατηγορία</option>
+                    <option>Φοιτητής</option>
+                    <option>Εκδότης</option>
+                </select>
+            </div>
+        </form>
+        <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη">
+        <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email">
+        <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός">
+        <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Επιβεβαίωση κωδικού">
+        <div id="studNumb" style="display: none;">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου">
+        </div>
+        <div id="publNumb" style="display: none;">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότης">
+        </div>
+        <button style="margin-bottom:25%;" class="btn disabled btn-success mt-5 loginRegButton">Εγγραφή</button>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
   </div>
+
+
   <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
         <div class="container">
           <div style="padding-top:5%; padding-bottom: 3%;" class="row row-30">
             <div style="border-right: 1px solid grey;" class="col-md-3 col-xl-4">
               <div class="pr-xl-3">
                 <p class="footerHeader">Εύδοξος</p>
-                <!-- Rights-->
                 <p class="rights"><span>©  </span><span class="copyright-year">2018</span><span> </span><span>Stavroula Iatropoulou, Mike Xydas</span><span>. </span><p>All Rights Reserved.</p></p>
               </div>
             </div>
