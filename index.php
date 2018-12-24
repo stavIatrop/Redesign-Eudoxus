@@ -3,16 +3,18 @@
   <script src="js/jquery.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"></head>
-  <link rel="stylesheet" type="text/css" href="css/carouselContainer.css">
+  <link rel="stylesheet" type="text/css" href="css/newsContainer.css">
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/topPart.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/navBar.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/footer.css" rel="stylesheet" type="text/css"  media="all">
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/homepage.js"></script>
+  <script src="js/newsContainer.js"></script>
 
 </head>
 <body>
@@ -166,10 +168,28 @@
       </div>
       <div class="col-md-3">
          
-        <h3 style="color:black;text-align:center;"> <i>Ανακοινώσεις</i> </h3>
-        <br>
-        
-        <div id="carouselContent" class="carousel slide center rounded" data-ride="carousel"  data-interval="5000">
+        <div class="card" style="width: 20rem;">
+          <div class="card-header"> <i class="fa fa-list-alt" ></i><b>Ανακοινώσεις</b></div>
+          <div class="card-body">
+            
+                <ul id="demo3">
+                  <li class="news-item">Προθεσμία Δήλωσης Συγγραμμάτων: Παρασκευή 21 Δεκεμβρίου 2018 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
+                  <li class="news-item">Προθεσμία Παραλαβής Συγγραμμάτων: Παρασκευή 18 Ιανουαριου 2019 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
+                  <li class="news-item">Προθεσμία Καταχώρησης Συγγραμμάτων: Παρασκευή 27 Ιουλίου 2018 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
+                  <li class="news-item">Προθεσμία Καταχώρησης Προγράμματος Σπουδών: Παρασκευή 14 Σεπτεμβρίου 2018<a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
+                </ul>
+          </div>
+          <div class="card-footer">
+          <nav aria-label="News navigation">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#"><i class="fa fa-arrow-down"></i></a></li>
+              <li class="page-item"><a class="page-link" href="#"><i class="fa fa-arrow-up"></i></a></li>
+            </ul>
+          </nav>
+          </div>
+        </div>
+
+        <!-- <div id="carouselContent" class="carousel slide center rounded" data-ride="carousel"  data-interval="5000">
           <ol class="carousel-indicators pointer" >
             <li data-target="#carouselContent" data-slide-to="0" class="active"></li>
             <li data-target="#carouselContent" data-slide-to="1"></li>
@@ -210,7 +230,7 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
           </a>
-        </div>
+        </div> -->
        
        
       </div>
