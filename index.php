@@ -16,7 +16,6 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/homepage.js"></script>
   <script src="js/newsContainer.js"></script>
-  <script src="js/bootstrap.js"></script>
 
 </head>
 <body>
@@ -146,7 +145,7 @@
         </div>
       </div>
     </div>
-    <div class="row indexDims" style="position:relative; z-index:0">
+    <div class="row indexDims" style="position:relative; margin-top: 2%; z-index:0">
       <div class="col" style="padding-left: 2%; ">
         <div class="row infoContainer borderContainer rounded" style="width:100%;">
           <div class="col-lg-2 col-md-4">
