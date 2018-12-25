@@ -15,6 +15,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/homepage.js"></script>
   <script src="js/newsContainer.js"></script>
+  <script src="js/bootstrap.js"></script>
 
 </head>
 <body>
@@ -115,7 +116,7 @@
     </div>
     <div class="row indexDims" style="position:relative; z-index:0">
       <div class="col" style="padding-left: 2%; ">
-        <div class="row infoContainer borderContainer" style="width:100%;">
+        <div class="row infoContainer borderContainer rounded" style="width:100%;">
           <div class="col-md-2">
             <div class="row" style="height:25%">
               <button id="foititis" onclick="selectInfo(this.id)"  class="infoButton btn btnMiddle rounded-0 active"><i class="fas fa-graduation-cap"></i>    Φοιτητής</button>
@@ -172,7 +173,7 @@
           <div class="card-header"> <i class="fa fa-list-alt" ></i><b>Ανακοινώσεις</b></div>
           <div class="card-body">
             
-                <ul id="demo3">
+                <ul id="demo1">
                   <li class="news-item">Προθεσμία Δήλωσης Συγγραμμάτων: Παρασκευή 21 Δεκεμβρίου 2018 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
                   <li class="news-item">Προθεσμία Παραλαβής Συγγραμμάτων: Παρασκευή 18 Ιανουαριου 2019 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
                   <li class="news-item">Προθεσμία Καταχώρησης Συγγραμμάτων: Παρασκευή 27 Ιουλίου 2018 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
