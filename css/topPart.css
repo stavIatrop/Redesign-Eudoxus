@@ -8,12 +8,13 @@
 
 .navBarRow {
 
-    height: 40%;
+    padding-top: -20%;
+    padding-bottom: -20%;
 }
 
 .topTopPart {
 
-    height: 60%;
+    /* height: 60%; */
 }
 
 /*Above navbar*/
