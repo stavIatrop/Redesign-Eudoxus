@@ -52,66 +52,71 @@
           </div>
         </div>
         <div class="row navBarRow">
-          <div class="col-md-12">
-            <nav style="" class="navbar rounded navbar-expand-lg">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Αρχική</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Φοιτητής
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Δήλωση Συγγραμμάτων</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Αναζήτηση Συγγραμμάτων</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Επισκόπηση Δήλωσης</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Βοήθεια</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Εκδότης
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Καταχώρηση Συγγράμματος</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Διαχείρηση Συγγραμμάτων</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Βοήθεια</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Γραμματεία
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Σημεια Διανομής
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link " href="#">Επικοινωνία</a>
-                </li>
-              </ul>
-              <form action="#" method="post" class="form-inline my-2 mylg-0">
-                <input type="search" name="search" id="search" class="form-control mr-sm-2" placeholder="Τίτλος, πληροφορίες..." aria-label="Search">
-                <button class="btn btn-dark" type="submit">Αναζήτηση</button>
-              </form>
+          <div class="col-12">
+            <nav class="navbar rounded navbar-expand-lg navbar-light bg-light">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span style="color: black;" class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Αρχική</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Φοιτητής
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Δήλωση Συγγραμμάτων</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Αναζήτηση Συγγραμμάτων</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Επισκόπηση Δήλωσης</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Εκδότης
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Καταχώρηση Συγγράμματος</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Διαχείρηση Συγγραμμάτων</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Γραμματεία
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Σημεια Διανομής
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="#">Επικοινωνία</a>
+                  </li>
+                </ul>
+                <form action="#" method="post" class="form-inline my-2 my-lg-0">
+                  <input type="search" name="search" id="search" class="form-control mr-sm-2" placeholder="Τίτλος, πληροφορίες..." aria-label="Search">
+                  <button class="btn btn-dark" type="submit">Αναζήτηση</button>
+                </form>
+              </div>
             </nav>
           </div>
         </div>
