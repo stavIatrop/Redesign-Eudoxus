@@ -1,4 +1,7 @@
 <head>
+  <title>Εύδοξος - Δήλωση</title>
+  <link rel="icon" href="images/favicon.ico" type="image/ico">
+
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"></head>
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
@@ -25,39 +28,41 @@
     <div class="row topPart">
       <div class="col-md-12">
         <div class="row topTopPart">
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
             <a class="logoDiv" href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
           </div>
-          <div class="col-md-8">
-            <div class="row" style="height: 50%;">
+          <div class="col-xl-8 d-lg-none d-xl-block">
+            <div class="row">
               <div class="col">
                 <p class="tagline">Σύντομη πρόταση περιγραφής του ιστοχώρου</p>
               </div>
             </div>
-            <div class="row" style="height: 50%;">
+            <div class="row">
               <div class="col">
               </div>
             </div>
           </div>
-          <div class="col-md-1">
-            <a class="iconText" href="Login"><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+          <div class="d-xl-none d-lg-block col-lg-4">
           </div>
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
+            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+          </div>
+          <div class="col-xl-1 col-lg-2">
             <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
           </div>
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
             <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
             <a href="englishVersion"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
           </div>
         </div>
         <div class="row navBarRow">
           <div class="col-12">
-            <nav class="navbar rounded navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar rounded navbar-expand-xl navbar-light bg-light">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span style="color: black;" class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
                   <li class="nav-item">
                     <a class="nav-link" href="#">Αρχική</a>
                   </li>
@@ -139,7 +144,7 @@
           </div>
         </div>
         <div style="" class="row dropdownRow">
-          <div class="col-md-6">
+          <div class="col-xl-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Πανεπιστήμιο:</span>
             <select id="selUni" class="uniSelect custom-select mb-3">
               <option id="defUni" onclick="chooseUni(this.value)" value="0" selected>Επίλεξε Πανεπιστήμιο</option>
@@ -148,7 +153,7 @@
               <option onclick="chooseUni(this.value)" value="3">Πανεπιστήμιο Πειραιώς</option>
             </select>
           </div>
-          <div class="col-md-6">
+          <div class="col-xl-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Τμήμα:</span>
             <select id="selDep" style="margin-left: 8%;" disabled class="uniSelect custom-select mb-3">
               <option id="defDep" onclick="chooseDep(this.value)" value="0" selected>Επίλεξε Τμήμα</option>
@@ -159,7 +164,7 @@
           </div>
         </div>
         <div style="visibility:hidden;" id="semCourseRow" class="row dropdownRow">
-          <div class="col-md-6">
+          <div class="col-xl-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Εξάμηνο:</span>
             <select id="selSem" style="margin-left: 13%;" disabled class="uniSelect custom-select mb-3">
               <option id="defSem" onclick="chooseSem(this.value)" value="0" selected>Επίλεξε Εξάμηνο</option>
@@ -168,7 +173,7 @@
               <option onclick="chooseSem(this.value)" value="3">Three</option>
             </select>
           </div>
-          <div class="col-md-6">
+          <div class="col-xl-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Μάθημα:</span>
             <select id="selCourse" disabled class="uniSelect custom-select mb-3">
               <option id="defCourse" onclick="chooseCourse(this.value)" value="0" selected>Επίλεξε Μάθημα</option>
@@ -246,19 +251,19 @@
             <ul style="margin-top: 5%;" class="bookList">
               <li>
                 <div style="padding-bottom: 7%; border-bottom: 2px solid grey;" class="row">
-                  <div class="col-md-2">
+                  <div class="col-lg-2 d-md-none d-lg-block">
                     <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
                   </div>
-                  <div class="col-md-1">
+                  <div class="col-lg-1 d-md-none d-lg-block">
                   </div>
-                  <div style="margin-top: 2%;" class="col-md-6">
+                  <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
                     <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
                     <p>Μάθημα Εξάμηνο</p>
                   </div>
-                  <div class="col-md-3">
-                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
+                  <div class="col-lg-3">
+                    <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
                   </div>
                 </div>
               </li>

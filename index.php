@@ -1,5 +1,8 @@
 <head>
 
+  <title>Εύδοξος - Αρχική</title>
+  <link rel="icon" href="images/favicon.ico" type="image/ico">
+
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="js/jquery.js"></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -23,27 +26,29 @@
     <div class="row topPart">
       <div class="col-md-12">
         <div class="row topTopPart">
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
             <a class="logoDiv" href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
           </div>
-          <div class="col-md-8">
-            <div class="row" style="height: 50%;">
+          <div class="col-xl-8 d-lg-none d-xl-block">
+            <div class="row">
               <div class="col">
                 <p class="tagline">Σύντομη πρόταση περιγραφής του ιστοχώρου</p>
               </div>
             </div>
-            <div class="row" style="height: 50%;">
+            <div class="row">
               <div class="col">
               </div>
             </div>
           </div>
-          <div class="col-md-1">
+          <div class="d-xl-none d-lg-block col-lg-4">
+          </div>
+          <div class="col-xl-1 col-lg-2">
             <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
           </div>
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
             <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
           </div>
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
             <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
             <a href="englishVersion"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
           </div>
@@ -76,12 +81,12 @@
         </div> -->
         <div class="row navBarRow">
           <div class="col-12">
-            <nav class="navbar rounded navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar rounded navbar-expand-xl navbar-light bg-light">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span style="color: black;" class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
                   <li class="nav-item">
                     <a class="nav-link active" href="#">Αρχική</a>
                   </li>
@@ -146,7 +151,7 @@
       </div>
     </div>
     <div class="row indexDims" style="position:relative; margin-top: 2%; z-index:0">
-      <div class="col" style="padding-left: 2%; ">
+      <div class="col-lg-9" style="padding-left: 2%; ">
         <div class="row infoContainer borderContainer rounded" style="width:100%;">
           <div class="col-lg-2 col-md-4">
             <div class="row" style="height:25%">
@@ -198,7 +203,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3">
          
         <div class="card" style="width: 20rem;">
           <div class="card-header"> <i class="fa fa-list-alt" ></i><b>Ανακοινώσεις</b></div>
@@ -268,7 +273,11 @@
       </div>
     </div>
   </div>
-  <footer class="section footer-classic context-dark bg-image" style="background: #E7E7E7;">
+  <div style="background: #E7E7E7;" class="row">
+    <div  class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <footer class="section footer-classic context-dark bg-image">
         <div class="container">
           <div style="padding-top:5%; padding-bottom: 3%;" class="row row-30">
             <div style="border-right: 1px solid grey;" class="col-md-3 col-xl-4">
@@ -303,4 +312,8 @@
           </div>
         </div>
       </footer>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
 </body>

@@ -1,4 +1,8 @@
 <head>
+  <title>Εύδοξος - Αναζήτηση</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="images/favicon.ico" type="image/ico">
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"></head>
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
@@ -26,39 +30,41 @@
     <div class="row topPart">
       <div class="col-md-12">
         <div class="row topTopPart">
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
             <a class="logoDiv" href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
           </div>
-          <div class="col-md-8">
-            <div class="row" style="height: 50%;">
+          <div class="col-xl-8 d-lg-none d-xl-block">
+            <div class="row">
               <div class="col">
                 <p class="tagline">Σύντομη πρόταση περιγραφής του ιστοχώρου</p>
               </div>
             </div>
-            <div class="row" style="height: 50%;">
+            <div class="row">
               <div class="col">
               </div>
             </div>
           </div>
-          <div class="col-md-1">
-            <a class="iconText" href="Login"><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+          <div class="d-xl-none d-lg-block col-lg-4">
           </div>
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
+            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+          </div>
+          <div class="col-xl-1 col-lg-2">
             <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
           </div>
-          <div class="col-md-1">
+          <div class="col-xl-1 col-lg-2">
             <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
             <a href="englishVersion"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
           </div>
         </div>
         <div class="row navBarRow">
           <div class="col-12">
-            <nav class="navbar rounded navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar rounded navbar-expand-xl navbar-light bg-light">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span style="color: black;" class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
                   <li class="nav-item">
                     <a class="nav-link" href="#">Αρχική</a>
                   </li>
@@ -131,18 +137,18 @@
       </div>
     </div>
     <div class="row" style="min-height:400px;">
-        <div class="col-md-12">
+        <div class="col-12">
           <div style="padding-bottom: 4%; padding-top: 3%;" class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-xl-2 col-lg-1"></div>
+            <div class="col-xl-8 col-lg-10">
               <form>
                 <div class="form-inline">
-                  <input type="text" class="form-control mr-3 inputSearch col-md-10" placeholder="Τίτλος, συγγραφέας, ISBN, λέξεις κλειδιά..." id="searchInp">
+                  <input type="text" class="form-control mr-3 inputSearch col-lg-10" placeholder="Τίτλος, συγγραφέας, ISBN, λέξεις κλειδιά..." id="searchInp">
                   <button onclick="search()" style="box-shadow: 2px 2px 3px rgb(179, 177, 177);" class="btn btn-success">Αναζήτηση</button>
                 </div>
               </form>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-xl-2 col-lg-1"></div>
           </div>
           <div style="display: none;" id="searchList" class="row">
             <div class="col-md-2">
@@ -206,19 +212,19 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8 col-md-10">
               <div id="showBooks" style="margin-top:-5%;">
                 <ul class="bookList">
                   <li><div class="row bookRow">
                     <div class="col-md-2">
                       <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
                     </div>
-                    <div class="col-md-3">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                      <p>Συγγραφέας: Όνομα Επίθετο</p>
-                      <p>Σελίδες: 156</p>
+                    <div class="col-lg-3 col-md-6">
+                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
+                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
+                      <p class="text-center">Σελίδες: 156</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3 d-md-none d-lg-block">
                       <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
                       <p>Έτος Έκδοσης: 2016</p>
                       <p>ISBN: 90-54321-76-1</p>
@@ -231,12 +237,12 @@
                     <div class="col-md-2">
                       <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
                     </div>
-                    <div class="col-md-3">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                      <p>Συγγραφέας: Όνομα Επίθετο</p>
-                      <p>Σελίδες: 156</p>
+                    <div class="col-lg-3 col-md-6">
+                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
+                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
+                      <p class="text-center">Σελίδες: 156</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3 d-md-none d-lg-block">
                       <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
                       <p>Έτος Έκδοσης: 2016</p>
                       <p>ISBN: 90-54321-76-1</p>
@@ -249,12 +255,12 @@
                     <div class="col-md-2">
                       <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
                     </div>
-                    <div class="col-md-3">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                      <p>Συγγραφέας: Όνομα Επίθετο</p>
-                      <p>Σελίδες: 156</p>
+                    <div class="col-lg-3 col-md-6">
+                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
+                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
+                      <p class="text-center">Σελίδες: 156</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3 d-md-none d-lg-block">
                       <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
                       <p>Έτος Έκδοσης: 2016</p>
                       <p>ISBN: 90-54321-76-1</p>
@@ -267,12 +273,12 @@
                     <div class="col-md-2">
                       <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
                     </div>
-                    <div class="col-md-3">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                      <p>Συγγραφέας: Όνομα Επίθετο</p>
-                      <p>Σελίδες: 156</p>
+                    <div class="col-lg-3 col-md-6">
+                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
+                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
+                      <p class="text-center">Σελίδες: 156</p>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-lg-3 d-md-none d-lg-block">
                       <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
                       <p>Έτος Έκδοσης: 2016</p>
                       <p>ISBN: 90-54321-76-1</p>
@@ -284,7 +290,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-lg-2 d-md-none d-lg-block">
             </div>
           </div>
         </div>
