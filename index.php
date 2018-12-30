@@ -210,10 +210,10 @@
           <div class="card-body">
             
                 <ul id="demo1">
-                  <li class="news-item">Προθεσμία Δήλωσης Συγγραμμάτων: Παρασκευή 21 Δεκεμβρίου 2018 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
-                  <li class="news-item">Προθεσμία Παραλαβής Συγγραμμάτων: Παρασκευή 18 Ιανουαριου 2019 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
-                  <li class="news-item">Προθεσμία Καταχώρησης Συγγραμμάτων: Παρασκευή 27 Ιουλίου 2018 <a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
-                  <li class="news-item">Προθεσμία Καταχώρησης Προγράμματος Σπουδών: Παρασκευή 14 Σεπτεμβρίου 2018<a href="#" style="color:rgb(35, 105, 33)">Περισσότερα...</a></li>
+                  <li class="news-item span4 collapse-group">Προθεσμία Δήλωσης Συγγραμμάτων: Παρασκευή 21 Δεκεμβρίου 2018<p class="collapse" id="viewdetails3">Προθεσμία Παραλαβής Συγγραμμάτων: Παρασκευή 18 Ιανουαριου 2019</p> <a onclick="isClicked()" id="lessIsMore" data-toggle="collapse" data-target="#viewdetails3" href="#" style="color:rgb(35, 105, 33)">Περισσότερα... </a></li>
+                  <li class="news-item">Προθεσμία Παραλαβής Συγγραμμάτων: Παρασκευή 18 Ιανουαριου 2019 </li>
+                  <li class="news-item">Προθεσμία Καταχώρησης Συγγραμμάτων: Παρασκευή 27 Ιουλίου 2018 </li>
+                  <li class="news-item">Προθεσμία Καταχώρησης Προγράμματος Σπουδών: Παρασκευή 14 Σεπτεμβρίου 2018 </li>
                 </ul>
           </div>
           <div class="card-footer">
