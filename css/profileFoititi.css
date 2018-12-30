@@ -1,0 +1,32 @@
+.menuCard {
+
+  box-shadow: 2px 2px 8px grey;
+  margin-right: 10%;
+  
+}
+
+.card-header
+{
+  box-shadow: 2px 2px 8px grey;
+  background-image: linear-gradient(to bottom right, rgb(77, 161, 74), rgb(35, 105, 33));
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-body
+{
+  box-shadow: 2px 2px 8px grey;
+}
+
+.profileCard {
+  
+  margin-block-end:10%;
+}
+
+
+.depSel {
+
+  width: 70%;
+  margin-top: 10%;
+}
