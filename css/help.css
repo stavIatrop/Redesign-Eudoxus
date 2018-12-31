@@ -1,0 +1,70 @@
+.nav-item > a:hover {
+
+    color:rgb(35, 105, 33);
+}
+
+.nav-item > a:link {
+
+    color: black;
+}
+
+.nav-item  > a:active {
+
+    color: rgb(25, 88, 23);
+}
+
+
+
+.helpMenu > a:link {
+
+    color: black;
+}
+
+.helpMenu > a:hover {
+
+    color: rgb(35, 105, 33);
+}
+
+.helpMenu {
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    padding-bottom: 10%;
+}
+
+
+
+#subList{
+
+    margin-top: 30px;
+    display: none;
+    
+}
+
+.subListMenu {
+
+    list-style:none;
+    padding: 0;
+    margin: 0;
+}
+
+#subList a{
+
+    font-size: 70%;
+    
+}
+
+#helpDhlwsh {
+
+    display: none;
+}
+
+#helpAcc {
+
+    display: none;
+}
+
+#helpMe {
+
+    display: none;
+}
