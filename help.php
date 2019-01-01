@@ -141,21 +141,23 @@
             <div class="col-1"></div>
             <div class="col-2 ">
                 <ul class="nav flex-column">
+
                     <h2 class="helpMenu">
                         <a id="h" href="#">Βοήθεια...</a>
                     </h2>
-                    <li class="nav-item" id="link1">
-                        <a onclick="showSubMenu()" class="nav-link" data-toggle="collapse" data-target="#subList" href="#">...για τον Φοιτητή</a>
-                        <div id="subList" class="collapse show" aria-labelledby="headingOne" data-parent="#link1">
+
+                    <li class="nav-item" id="foititis">
+                        <a id="foititoLink" onclick="showSubMenuFoit()" class="nav-link" data-toggle="collapse" data-target="#subListFoit" href="#">...για τον Φοιτητή</a>
+                        <div id="subListFoit" class="collapse show" aria-labelledby="headingOne" data-parent="#foititis">
                             <ul class="nav-list colapse flex-column subListMenu" >
+                                <li class="nav-item"  >
+                                    <a id="helpFoit1" onclick="showHelpDhl()" class="nav-link" data-toggle="collapse" data-target="#helpDhlwsh" href="#">Πώς να δηλώσω Συγγράμματα</a>
+                                </li>
                                 <li class="nav-item" >
-                                    <a onclick="showHelpDhl()" class="nav-link" data-toggle="collapse" data-target="#helpDhlwsh" href="#">Πώς να δηλώσω Συγγράμματα</a>
+                                    <a id="helpFoit2" onclick="showHelpAccount()" class="nav-link" data-toggle="collapse" data-target="#helpAcc" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a onclick="showHelpAccount()" class="nav-link" data-toggle="collapse" data-target="#helpAcc" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a onclick="showHelp()" class="nav-link" data-toggle="collapse" data-target="#helpMe" href="#">Τι κάνω σε αυτή τη ζωή;;</a>
+                                <li class="nav-item" >
+                                    <a id="helpFoit3" onclick="showHelp()" class="nav-link" data-toggle="collapse" data-target="#helpMe" href="#">Τι κάνω σε αυτή τη ζωή;;</a>
                                 </li>
                             
                             </ul>
@@ -165,8 +167,21 @@
                     </li>
                     
                     
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">...για τον Εκδότη</a>
+                    <li class="nav-item" id="ekdotis">
+                        <a id="ekdotoLink" onclick="showSubMenuEkdot()" class="nav-link" data-toggle="collapse" data-target="#subListEkdot" href="#">...για τον Εκδότη</a>
+                        <div id="subListEkdot" class="collapse show" aria-labelledby="headingOne" data-parent="#ekdotis">
+                            <ul class="nav-list colapse flex-column subListMenu" >
+                                <li class="nav-item"  >
+                                    <a id="helpEkdot1" onclick="showHelpKata()" class="nav-link" data-toggle="collapse" data-target="#helpKata" href="#">Πώς να καταχωρήσω Συγγράμματα</a>
+                                </li>
+                                <li class="nav-item" >
+                                    <a id="helpEkdot2" onclick="showHelpAccountEkdot()" class="nav-link" data-toggle="collapse" data-target="#helpAccEkdot" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
+                                </li>
+                                
+                            
+                            </ul>
+                    
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">...για την Γραμματεία</a>
@@ -185,7 +200,6 @@
                     <div class="card-header"> Οδηγίες για τη Δήλωση Συγγραμμάτων</div>
                     <div class="card-body">
 
-                        
                     
                     </div>
 
@@ -196,7 +210,6 @@
                     <div class="card-body">
 
                         
-                    
                     </div>
 
                 </div>
@@ -206,7 +219,24 @@
                     <div class="card-body">
 
                         
+                    </div>
+
+                </div>
+
+                <div class="card" id="helpKata">
+                    <div class="card-header"> Οδηγίες για την Καταχώρηση Συγγραμμάτων</div>
+                    <div class="card-body">
+
                     
+                    </div>
+
+                </div>
+
+                <div class="card" id="helpAccEkdot">
+                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
+                    <div class="card-body">
+
+                        
                     </div>
 
                 </div>
