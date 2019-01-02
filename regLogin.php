@@ -77,7 +77,7 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Αναζήτηση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Επισκόπηση Δήλωσης</a>
+                      <a class="dropdown-item" href="#">Τρέχουσα Δήλωση</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
