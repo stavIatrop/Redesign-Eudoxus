@@ -6,7 +6,7 @@
   
 }
 
-.card-header
+.profileCard > .card-header
 {
   box-shadow: 1px 1px 2px rgb(173, 171, 171);
   background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(255, 255, 255));
@@ -16,6 +16,9 @@
   
 }
 
+.historyCard {
+  text-align: left;
+}
 .card-body
 {
   box-shadow: 2px 2px 8px grey;
@@ -34,3 +37,20 @@
   margin-top: 10%;
 }
 
+.activeState {
+  color: #3D8A3A;
+}
+
+.historyCard > div > h5 > button {
+  color: black;
+}
+
+.historyCard > div > h5 > button:hover {
+  text-decoration: none;
+  color: #3D8A3A;
+}
+
+
+.bookList > li{
+  list-style-type: none;
+}
