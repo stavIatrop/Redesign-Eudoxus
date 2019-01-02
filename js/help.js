@@ -3,10 +3,13 @@ var helpDhl = 0;
 var helpAccount = 0;
 var help = 0;
 
-
 var disEkdot = 0;
 var helpKata = 0;
 var helpAccountEkdot = 0;
+
+var disGram = 0;
+var helpPro = 0;
+var helpAccountGram = 0;
 
 
 //gia ton Foititi
@@ -60,6 +63,18 @@ function showSubMenuFoit() {
         document.getElementById('helpEkdot2').style.color = 'black';
     }
 
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
+    }
+
 
     
 }
@@ -105,6 +120,18 @@ function showHelpDhl() {
         document.getElementById('helpAccEkdot').style.display = 'none';
         document.getElementById('helpEkdot2').style.color = 'black';
     }
+
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
+    }
 }
 
 function showHelpAccount() {
@@ -134,7 +161,7 @@ function showHelpAccount() {
 
         help = 0;
         document.getElementById('helpMe').style.display = 'none';
-        document.getElementById('helpFoit3').style.color = 'rgb(25, 88, 23)';
+        document.getElementById('helpFoit3').style.color = 'black';
 
 
     }
@@ -149,6 +176,18 @@ function showHelpAccount() {
         helpAccountEkdot = 0;
         document.getElementById('helpAccEkdot').style.display = 'none';
         document.getElementById('helpEkdot2').style.color = 'black';
+    }
+
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
     }
 
 }
@@ -193,6 +232,18 @@ function showHelp() {
         helpAccountEkdot = 0;
         document.getElementById('helpAccEkdot').style.display = 'none';
         document.getElementById('helpEkdot2').style.color = 'black';
+    }
+
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
     }
 
 }
@@ -251,6 +302,18 @@ function showSubMenuEkdot() {
         document.getElementById('helpFoit3').style.color = 'black';
 
     }
+
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
+    }
     
 
 
@@ -303,6 +366,17 @@ function showHelpKata() {
 
     }
     
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
+    }
 }
 
 function showHelpAccountEkdot() {
@@ -349,6 +423,221 @@ function showHelpAccountEkdot() {
         document.getElementById('helpMe').style.display = 'none';
         document.getElementById('helpFoit3').style.color = 'black';
 
+    }
+
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
+    }
+    
+
+}
+
+
+//gia th Grammateia
+function showSubMenuGram() {
+
+    
+    if(disGram == 0) {
+        
+        disGram = 1;
+        document.getElementById('subListGram').style.display = 'block';
+        document.getElementById('gramLink').style.color = 'rgb(25, 88, 23)';
+
+    }else {
+
+        disGram = 0;
+        document.getElementById('subListGram').style.display = 'none';
+        document.getElementById('gramLink').style.color = 'black';
+        document.getElementById('helpGram1').style.color = 'black';
+        document.getElementById('helpGram2').style.color = 'black';
+        
+        
+    }
+
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+
+    }
+
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+    }
+
+
+    if (helpDhl == 1) {
+        helpDhl = 0;
+        document.getElementById('helpDhlwsh').style.display = 'none';
+        document.getElementById('helpFoit1').style.color = 'black';
+        
+
+    }
+
+    if(helpAccount == 1) {
+        helpAccount = 0;
+        document.getElementById('helpAcc').style.display = 'none';
+        document.getElementById('helpFoit2').style.color = 'black';
+        
+    }
+    if(help == 1) {
+
+        help = 0;
+        document.getElementById('helpMe').style.display = 'none';
+        document.getElementById('helpFoit3').style.color = 'black';
+
+    }
+
+    if (helpKata == 1) {
+        helpKata = 0;
+        document.getElementById('helpKata').style.display = 'none';
+        document.getElementById('helpEkdot1').style.color = 'black';
+        
+
+    }
+
+    if(helpAccountEkdot == 1) {
+        helpAccountEkdot = 0;
+        document.getElementById('helpAccEkdot').style.display = 'none';
+        document.getElementById('helpEkdot2').style.color = 'black';
+        
+    }
+    
+
+
+    
+}
+
+function showHelpPro() {
+
+    
+    if(helpPro == 0) {
+        
+        helpPro = 1;
+        document.getElementById('helpPro').style.display = 'block';
+        document.getElementById('helpGram1').style.color = 'rgb(25, 88, 23)';
+        
+
+    }else {
+
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+
+    }
+    if(helpAccountGram == 1) {
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
+
+    }
+
+    if (helpDhl == 1) {
+        helpDhl = 0;
+        document.getElementById('helpDhlwsh').style.display = 'none';
+        document.getElementById('helpFoit1').style.color = 'black';
+        
+
+    }
+
+    if(helpAccount == 1) {
+        helpAccount = 0;
+        document.getElementById('helpAcc').style.display = 'none';
+        document.getElementById('helpFoit2').style.color = 'black';
+        
+    }
+    if(help == 1) {
+
+        help = 0;
+        document.getElementById('helpMe').style.display = 'none';
+        document.getElementById('helpFoit3').style.color = 'black';
+
+    }
+
+    if (helpKata == 1) {
+        helpKata = 0;
+        document.getElementById('helpKata').style.display = 'none';
+        document.getElementById('helpEkdot1').style.color = 'black';
+        
+
+    }
+
+    if(helpAccountEkdot == 1) {
+        helpAccountEkdot = 0;
+        document.getElementById('helpAccEkdot').style.display = 'none';
+        document.getElementById('helpEkdot2').style.color = 'black';
+        
+    }
+    
+}
+
+function showHelpAccountGram() {
+
+    if(helpAccountGram == 0) {
+        
+        helpAccountGram = 1;
+        document.getElementById('helpAccGram').style.display = 'block';
+        document.getElementById('helpGram2').style.color = 'rgb(25, 88, 23)';
+
+    }else {
+
+        helpAccountGram = 0;
+        document.getElementById('helpAccGram').style.display = 'none';
+        document.getElementById('helpGram2').style.color = 'black';
+
+    }
+
+    if (helpPro == 1) {
+        helpPro = 0;
+        document.getElementById('helpPro').style.display = 'none';
+        document.getElementById('helpGram1').style.color = 'black';
+
+
+    }
+
+    if (helpDhl == 1) {
+        helpDhl = 0;
+        document.getElementById('helpDhlwsh').style.display = 'none';
+        document.getElementById('helpFoit1').style.color = 'black';
+        
+
+    }
+
+    if(helpAccount == 1) {
+        helpAccount = 0;
+        document.getElementById('helpAcc').style.display = 'none';
+        document.getElementById('helpFoit2').style.color = 'black';
+        
+    }
+    if(help == 1) {
+
+        help = 0;
+        document.getElementById('helpMe').style.display = 'none';
+        document.getElementById('helpFoit3').style.color = 'black';
+
+    }
+
+    if (helpKata == 1) {
+        helpKata = 0;
+        document.getElementById('helpKata').style.display = 'none';
+        document.getElementById('helpEkdot1').style.color = 'black';
+        
+
+    }
+
+    if(helpAccountEkdot == 1) {
+        helpAccountEkdot = 0;
+        document.getElementById('helpAccEkdot').style.display = 'none';
+        document.getElementById('helpEkdot2').style.color = 'black';
+        
     }
     
 

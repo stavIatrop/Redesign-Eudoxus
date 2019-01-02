@@ -143,11 +143,10 @@
             
             <div class="col-3" style="border-right: 1px solid grey;">
                 <div class="list-group menuCard" id="list-tab" role="tablist" >
-                    <button onclick="activate(id, 'current', 'history', 'searchBooks')" class="list-group-item list-group-item-action active" id="profileManage" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Διαχείριση Προφίλ</button>
-                    <button onclick="activate(id, 'profileManage', 'history', 'searchBooks')"class="list-group-item list-group-item-action" id="current" data-toggle="list" href="#list-current" role="tab" aria-controls="current">Τρέχουσα Δήλωση</button>
-                    <button onclick="activate(id, 'profileManage', 'current', 'searchBooks' )" class="list-group-item list-group-item-action"  id="history" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Ιστορικό Δηλώσεων</button>
-                    <button onclick="activate(id, 'profileManage', 'current', 'history' )" class="list-group-item list-group-item-action"  id="searchBooks" data-toggle="list" href="#list-searchBooks" role="tab" aria-controls="searchBooks">Αναζήτηση Συγγραμμάτων</button>
-                    
+                    <button onclick="activate(id, 'current', 'history')" class="list-group-item list-group-item-action active" id="profileManage" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Διαχείριση Προφίλ</button>
+                    <button onclick="activate(id, 'profileManage', 'history')"class="list-group-item list-group-item-action" id="current" data-toggle="list" href="#list-current" role="tab" aria-controls="current">Τρέχουσα Δήλωση</button>
+                    <button onclick="activate(id, 'profileManage', 'current')" class="list-group-item list-group-item-action"  id="history" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Ιστορικό Δηλώσεων</button>
+                                        
                 </div>
             </div>
             <div class="col-1"></div>

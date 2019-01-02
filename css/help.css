@@ -1,4 +1,4 @@
-.helpMenu > a:link {
+/* .helpMenu > a:link {
 
     color: black;
 }
@@ -11,7 +11,7 @@
 .helpMenu > a:hover {
 
     color: rgb(35, 105, 33);
-}
+} */
 
 .helpMenu {
 
@@ -19,6 +19,67 @@
     font-style: italic;
     padding-bottom: 10%;
 }
+
+/* #foititis > a:link {
+
+    color: black;
+}
+
+#foititis > a:visited {
+
+    color: black;
+}
+
+#foititis > a:hover {
+
+    color:rgb(35, 105, 33);
+}
+
+#foititis  > a:active {
+
+    color: rgb(25, 88, 23);
+}
+
+#ekdotis > a:link {
+
+    color: black;
+}
+
+#ekdotis > a:visited {
+
+    color: black;
+}
+
+#ekdotis > a:hover {
+
+    color:rgb(35, 105, 33);
+}
+
+#ekdotis  > a:active {
+
+    color: rgb(25, 88, 23);
+}
+
+#grammateia > a:link {
+
+    color: black;
+}
+
+#grammateia > a:visited {
+
+    color: black;
+}
+
+#grammateia > a:hover {
+
+    color:rgb(35, 105, 33);
+}
+
+#grammateia  > a:active {
+
+    color: rgb(25, 88, 23);
+} */
+
 
 .nav-item > a:link {
 
@@ -35,31 +96,50 @@
     color:rgb(35, 105, 33);
 }
 
-.nav-item  > a:active {
+.nav-item > a:active {
 
     color: rgb(25, 88, 23);
 }
 
-
-#helpFoit:link {
-
-    color: black;
-}
-
-#helpFoit:visited {
+/* #helpFoit2 > a:link {
 
     color: black;
 }
 
-#helpFoit:hover {
+#helpFoit2 > a:visited {
+
+    color: black;
+}
+
+#helpFoit2 > a:hover {
 
     color:rgb(35, 105, 33);
 }
 
-#helpFoit:active {
+#helpFoit2 > a:active {
 
     color: rgb(25, 88, 23);
 }
+
+#helpFoit3 > a:link {
+
+    color: black;
+}
+
+#helpFoit3 > a:visited {
+
+    color: black;
+}
+
+#helpFoit3 > a:hover {
+
+    color:rgb(35, 105, 33);
+}
+
+#helpFoit3 > a:active {
+
+    color: rgb(25, 88, 23);
+} */
 
 
 
@@ -84,6 +164,19 @@
 }
 
 #subListEkdot a{
+
+    font-size: 70%;
+    
+}
+
+#subListGram{
+
+    margin-top: 30px;
+    display: none;
+    
+}
+
+#subListGram a{
 
     font-size: 70%;
     
@@ -118,6 +211,16 @@
 }
 
 #helpAccEkdot {
+
+    display: none;
+}
+
+#helpPro {
+
+    display: none;
+}
+
+#helpAccGram {
 
     display: none;
 }

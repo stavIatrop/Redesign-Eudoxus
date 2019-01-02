@@ -139,11 +139,11 @@
         <div class="row"> 
 
             <div class="col-1"></div>
-            <div class="col-2 ">
+            <div class="col-2">
                 <ul class="nav flex-column">
 
                     <h2 class="helpMenu">
-                        <a id="h" href="#">Βοήθεια...</a>
+                        Βοήθεια...
                     </h2>
 
                     <li class="nav-item" id="foititis">
@@ -166,7 +166,6 @@
                     
                     </li>
                     
-                    
                     <li class="nav-item" id="ekdotis">
                         <a id="ekdotoLink" onclick="showSubMenuEkdot()" class="nav-link" data-toggle="collapse" data-target="#subListEkdot" href="#">...για τον Εκδότη</a>
                         <div id="subListEkdot" class="collapse show" aria-labelledby="headingOne" data-parent="#ekdotis">
@@ -183,8 +182,22 @@
                     
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">...για την Γραμματεία</a>
+
+                    <li class="nav-item" id="grammateia">
+                        <a id="gramLink" onclick="showSubMenuGram()" class="nav-link" data-toggle="collapse" data-target="#subListGram" href="#">...για τη Γραμματεία</a>
+                        <div id="subListGram" class="collapse show" aria-labelledby="headingOne" data-parent="#grammateia">
+                            <ul class="nav-list colapse flex-column subListMenu" >
+                                <li class="nav-item"  >
+                                    <a id="helpGram1" onclick="showHelpPro()" class="nav-link" data-toggle="collapse" data-target="#helpPro" href="#">Πώς να καταχωρήσω Πρόγραμμα Σπουδών</a>
+                                </li>
+                                <li class="nav-item" >
+                                    <a id="helpGram2" onclick="showHelpAccountGram()" class="nav-link" data-toggle="collapse" data-target="#helpAccGram" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
+                                </li>
+                                
+                            
+                            </ul>
+                    
+                        </div>
                     </li>
                     
                 </ul>
@@ -241,10 +254,30 @@
 
                 </div>
 
+                <div class="card" id="helpPro">
+                    <div class="card-header"> Οδηγίες για την Καταχώρηση Προγράμματος Σπουδών</div>
+                    <div class="card-body">
+
+                    
+                    </div>
+
+                </div>
+
+                <div class="card" id="helpAccGram">
+                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
+                    <div class="card-body">
+
+                        
+                    </div>
+
+                </div>
+
             </div>
 
 
         </div>
+
+        <div class="row" style="min-height:50px"> </div>
     </div>
 
 
