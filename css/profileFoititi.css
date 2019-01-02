@@ -54,3 +54,7 @@
 .bookList > li{
   list-style-type: none;
 }
+
+.btnPointer:hover{
+  cursor: pointer;
+}
