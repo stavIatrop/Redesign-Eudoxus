@@ -204,8 +204,8 @@
                                 5ο Εξάμηνο - Χειμερινό 2018-2019
                             </button>
                             <span class="activeState"> Τρέχουσα Δήλωση</span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="fas fa-caret-down"></i>
+                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fas fa-caret-down" id="caret1"></i>
                             </button>
                         </h5>
                         </div>
@@ -276,8 +276,8 @@
                                 4ο Εξάμηνο - Εαρινό 2017-2018
                             </button>
                             <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-caret-down"></i>
+                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fas fa-caret-down" id="caret2"></i>
                             </button>
                         </h5>
                         </div>
@@ -348,8 +348,8 @@
                                 3ο Εξάμηνο - Χειμερινό 2017-2018
                             </button>
                             <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                <i class="fas fa-caret-down"></i>
+                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                <i class="fas fa-caret-down" id="caret3"></i>
                             </button>
                         </h5>
                         </div>
@@ -420,8 +420,8 @@
                                 2ο Εξάμηνο - Εαρινό 2016-2017
                             </button>
                             <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                <i class="fas fa-caret-down"></i>
+                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                <i class="fas fa-caret-down" id="caret4"></i>
                             </button>
                         </h5>
                         </div>
@@ -492,8 +492,8 @@
                                 1ο Εξάμηνο - Χειμερινό 2016-2017
                             </button>
                             <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                <i class="fas fa-caret-down"></i>
+                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                <i class="fas fa-caret-down" id="caret5"></i>
                             </button>
                         </h5>
                         </div>

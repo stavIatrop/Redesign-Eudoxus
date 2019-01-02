@@ -35,3 +35,4 @@ function activate(id, deactivate1, deactivate2) {
         document.getElementById("historyContent").style.display = 'block';
     }
 }
+
