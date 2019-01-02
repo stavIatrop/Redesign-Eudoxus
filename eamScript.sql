@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `eamDatabase`.`Book` (
   `pdfIndex` VARCHAR(200) NULL,
   `User_userId` INT NOT NULL,
   PRIMARY KEY (`bookId`, `User_userId`),
-  INDEX `fk_Book_User1_idx` (`User_userId` ASC) VISIBLE,
+  INDEX `fk_Book_User1_idx` (`User_userId` ASC) ,
   CONSTRAINT `fk_Book_User1`
     FOREIGN KEY (`User_userId`)
     REFERENCES `eamDatabase`.`User` (`userId`)
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `eamDatabase`.`Statement` (
   `current` INT NOT NULL,
   `User_userId` INT NOT NULL,
   PRIMARY KEY (`statementId`, `User_userId`),
-  INDEX `fk_Statement_User1_idx` (`User_userId` ASC) VISIBLE,
+  INDEX `fk_Statement_User1_idx` (`User_userId` ASC) ,
   CONSTRAINT `fk_Statement_User1`
     FOREIGN KEY (`User_userId`)
     REFERENCES `eamDatabase`.`User` (`userId`)
@@ -107,8 +107,8 @@ CREATE TABLE IF NOT EXISTS `eamDatabase`.`Book_has_Keyword` (
   `Book_bookId` INT NOT NULL,
   `Keyword_keywordId` INT NOT NULL,
   PRIMARY KEY (`Book_bookId`, `Keyword_keywordId`),
-  INDEX `fk_Book_has_Keyword_Keyword1_idx` (`Keyword_keywordId` ASC) VISIBLE,
-  INDEX `fk_Book_has_Keyword_Book_idx` (`Book_bookId` ASC) VISIBLE,
+  INDEX `fk_Book_has_Keyword_Keyword1_idx` (`Keyword_keywordId` ASC) ,
+  INDEX `fk_Book_has_Keyword_Book_idx` (`Book_bookId` ASC) ,
   CONSTRAINT `fk_Book_has_Keyword_Book`
     FOREIGN KEY (`Book_bookId`)
     REFERENCES `eamDatabase`.`Book` (`bookId`)
@@ -129,8 +129,8 @@ CREATE TABLE IF NOT EXISTS `eamDatabase`.`Book_has_Course` (
   `Book_bookId` INT NOT NULL,
   `Course_courseId` INT NOT NULL,
   PRIMARY KEY (`Book_bookId`, `Course_courseId`),
-  INDEX `fk_Book_has_Course_Course1_idx` (`Course_courseId` ASC) VISIBLE,
-  INDEX `fk_Book_has_Course_Book1_idx` (`Book_bookId` ASC) VISIBLE,
+  INDEX `fk_Book_has_Course_Course1_idx` (`Course_courseId` ASC) ,
+  INDEX `fk_Book_has_Course_Book1_idx` (`Book_bookId` ASC) ,
   CONSTRAINT `fk_Book_has_Course_Book1`
     FOREIGN KEY (`Book_bookId`)
     REFERENCES `eamDatabase`.`Book` (`bookId`)
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `eamDatabase`.`StatedBooks` (
   `Statement_statementId` INT NOT NULL,
   `Statement_User_userId` INT NOT NULL,
   PRIMARY KEY (`statedBooksId`, `Statement_statementId`, `Statement_User_userId`),
-  INDEX `fk_statedBooks_Statement1_idx` (`Statement_statementId` ASC, `Statement_User_userId` ASC) VISIBLE,
+  INDEX `fk_statedBooks_Statement1_idx` (`Statement_statementId` ASC, `Statement_User_userId` ASC) ,
   CONSTRAINT `fk_statedBooks_Statement1`
     FOREIGN KEY (`Statement_statementId` , `Statement_User_userId`)
     REFERENCES `eamDatabase`.`Statement` (`statementId` , `User_userId`)
