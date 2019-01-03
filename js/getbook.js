@@ -23,7 +23,7 @@ function chooseUni(val) {
               uni: val}
     });
 
-    console.log("reach");
+    //console.log("reach");
     request.done(function (response){
       // Log a message to the console
       console.log("RESPONSE WAS: " + response);
@@ -71,7 +71,46 @@ function chooseSem(val) {
 
   document.getElementById("showBooks").style.display = 'none';
   document.getElementById("selCourse").selectedIndex = 0;
+
+  if(val != 0) {
+
+    var selectedUni = document.getElementById("selUni");
+    var selectedDep = document.getElementById("selDep");
+    //var selectedSem = document.getElementById("selSem");
+    var valUni = selectedUni.options[selectedUni.selectedIndex].value;
+    var valDep = selectedDep.options[selectedDep.selectedIndex].value;
+    //var valSem = selectedSem.options[selectedSem.selectedIndex].value;
+
+    request = $.ajax({
+      url: "getbooksServer.php",
+      type: "post",
+      data: {action: 'UpdateCourses',
+              uni: valUni,
+              dep: valDep,
+              sem: val}
+    });
+
+    //console.log("reach");
+    request.done(function (response){
+      // Log a message to the console
+      console.log("RESPONSE WAS: " + response);
+      //$("#depOptions").html("aaaaaaaaaa");
+      document.getElementById("selCourse").innerHTML = '<option id="defCourse" onclick="chooseCourse(this.value)" value="0" selected>Επίλεξε Μάθημα</option>' + response;
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+      // Log the error to the console
+      console.error(
+          "The following error occurred: "+
+          textStatus, errorThrown
+      );
+    });
+
+
+  }
 }
+
 
 function chooseCourse(val) {
   if(val==0) {

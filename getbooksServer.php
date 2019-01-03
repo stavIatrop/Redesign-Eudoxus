@@ -54,7 +54,7 @@
 
         $optionsString = "";
         if (mysqli_num_rows($courseResults) > 0) {
-            while($row = mysqli_fetch_assoc($depResults)) {
+            while($row = mysqli_fetch_assoc($courseResults)) {
                 $optionsString .= '<option onclick="chooseCourse(this.value)" value="' . htmlspecialchars($row['courseId']) . '">' 
                 . htmlspecialchars($row['courseName']) 
                 . '</option>'; 
