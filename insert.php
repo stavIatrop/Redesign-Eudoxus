@@ -12,8 +12,9 @@ server with default setting (user 'root' with no password) */
     $categoryId = mysqli_real_escape_string($conn, $_REQUEST['category_Id']);
     $category = mysqli_real_escape_string($conn, $_REQUEST['category']);
 
+    
     // Attempt insert query execution
-    $sql = "INSERT INTO persons (first_name, last_name, email) VALUES ('$username', '$email', '$password', '$category', '$categoryId')";
+    $sql = "INSERT INTO User (username, email, password, userCategory, categoryId) VALUES ('$username', '$email', '$password', '$category', '$categoryId')";
     if(mysqli_query($conn, $sql)){
         echo "Records added successfully.";
     } else{

@@ -155,8 +155,8 @@
             <div class="form-group">
                 <select class="form-control" id="selCateg" name="category">
                     <option>Επίλεξε κατηγορία</option>
-                    <option>Φοιτητής</option>
-                    <option>Εκδότης</option>
+                    <option value="0">Φοιτητής</option>
+                    <option value="1">Εκδότης</option>
                 </select>
             </div>
           
@@ -168,10 +168,11 @@
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου" name="category_Id" id="catId">
             </div>
             <div id="publNumb" style="display: none;">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότης">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότη" name="category_Id" id="catId">
             </div>
+            <button type="submit" style="margin-bottom:25%;" class="btn disabled btn-success mt-4 loginRegButton">Εγγραφή</button>
           </form>
-          <button style="margin-bottom:25%;" class="btn disabled btn-success mt-4 loginRegButton">Εγγραφή</button>
+          
         </div>
         <div class="col-xl-3 col-lg-1"></div>
     </div>
