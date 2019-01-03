@@ -151,21 +151,21 @@
         <div class="col-md-1"></div>
         <div class="col-xl-2 col-lg-4">
           <p class="loginTitle mb-5">Εγγραφή</p>
-          <form>
+          <form action="insert.php" method="post">
             <div class="form-group">
-                <select class="form-control" id="selCateg">
+                <select class="form-control" id="selCateg" name="category">
                     <option>Επίλεξε κατηγορία</option>
                     <option>Φοιτητής</option>
                     <option>Εκδότης</option>
                 </select>
             </div>
           
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη">
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email">
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη" name="username" id="userName">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email" name="email" id="eMail">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" name="password" id="pass">
             <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Επιβεβαίωση κωδικού">
             <div id="studNumb" style="display: none;">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου" name="category_Id" id="catId">
             </div>
             <div id="publNumb" style="display: none;">
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότης">
