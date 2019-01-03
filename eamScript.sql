@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `eamDatabase`.`Book` (
   `pages` INT NULL,
   `dimensions` VARCHAR(45) NULL,
   `price` FLOAT NULL,
+  `cover` VARCHAR(45) NULL,
   `pdfPreview` VARCHAR(200) NULL,
   `pdfIndex` VARCHAR(200) NULL,
   `User_userId` INT NOT NULL,
