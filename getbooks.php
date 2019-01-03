@@ -146,20 +146,42 @@
         <div style="" class="row dropdownRow">
           <div class="col-xl-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Πανεπιστήμιο:</span>
-            <select id="selUni" class="uniSelect custom-select mb-3">
+            <select name="selUni" id="selUni" class="uniSelect custom-select mb-3">
               <option id="defUni" onclick="chooseUni(this.value)" value="0" selected>Επίλεξε Πανεπιστήμιο</option>
-              <option onclick="chooseUni(this.value)" value="1">Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών - ΕΚΠΑ</option>
+              <!-- <option onclick="chooseUni(this.value)" value="1">Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών - ΕΚΠΑ</option>
               <option onclick="chooseUni(this.value)" value="2">Εθνικό Μετσόβιο Πολυτεχνείο -ΕΜΠ</option>
-              <option onclick="chooseUni(this.value)" value="3">Πανεπιστήμιο Πειραιώς</option>
+              <option onclick="chooseUni(this.value)" value="3">Πανεπιστήμιο Πειραιώς</option> -->
+              <?php
+                include 'login.php';
+                $conn = OpenCon();
+                debug_to_console("Connected");
+                $uniesQuery = "SELECT DISTINCT(uniName) FROM `Course`";
+                $unies = $conn->query($uniesQuery);
+                if ($unies->num_rows > 0) {
+                  // output data of each row
+                  while($row = $unies->fetch_assoc()) {
+                      //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                      debug_to_console($row["uniName"]);
+                      echo '<option onclick="chooseUni(this.value)" value="' . htmlspecialchars($row['uniName']) . '">' 
+                      . htmlspecialchars($row['uniName']) 
+                      . '</option>';  
+                  }
+                } 
+                else {
+                    echo "0 results";
+                }
+                CloseCon($conn);
+              ?>
             </select>
           </div>
           <div class="col-xl-6">
             <span class="dropdownTitles" style="vertical-align: middle;">Τμήμα:</span>
             <select id="selDep" style="margin-left: 8%;" disabled class="uniSelect custom-select mb-3">
               <option id="defDep" onclick="chooseDep(this.value)" value="0" selected>Επίλεξε Τμήμα</option>
-              <option onclick="chooseDep(this.value)" value="1">One</option>
-              <option onclick="chooseDep(this.value)" value="2">Two</option>
-              <option onclick="chooseDep(this.value)" value="3">Three</option>
+                <!-- <option onclick="chooseDep(this.value)" value="1">One</option>
+                <option onclick="chooseDep(this.value)" value="2">Two</option>
+                <option onclick="chooseDep(this.value)" value="3">Three</option> -->
+              
             </select>
           </div>
         </div>
@@ -168,9 +190,14 @@
             <span class="dropdownTitles" style="vertical-align: middle;">Εξάμηνο:</span>
             <select id="selSem" style="margin-left: 13%;" disabled class="uniSelect custom-select mb-3">
               <option id="defSem" onclick="chooseSem(this.value)" value="0" selected>Επίλεξε Εξάμηνο</option>
-              <option onclick="chooseSem(this.value)" value="1">One</option>
-              <option onclick="chooseSem(this.value)" value="2">Two</option>
-              <option onclick="chooseSem(this.value)" value="3">Three</option>
+              <option onclick="chooseSem(this.value)" value="1">1ο Εξάμηνο - Χειμερινό</option>
+              <option onclick="chooseSem(this.value)" value="2">2ο Εξάμηνο - Εαρινό</option>
+              <option onclick="chooseSem(this.value)" value="3">3ο Εξάμηνο - Χειμερινό</option>
+              <option onclick="chooseSem(this.value)" value="4">4ο Εξάμηνο - Εαρινό</option>
+              <option onclick="chooseSem(this.value)" value="5">5ο Εξάμηνο - Χειμερινό</option>
+              <option onclick="chooseSem(this.value)" value="6">6ο Εξάμηνο - Εαρινό</option>
+              <option onclick="chooseSem(this.value)" value="7">7ο Εξάμηνο - Χειμερινό</option>
+              <option onclick="chooseSem(this.value)" value="8">8ο Εξάμηνο - Εαρινό</option>
             </select>
           </div>
           <div class="col-xl-6">

@@ -14,6 +14,33 @@ function chooseUni(val) {
   document.getElementById("selCourse").setAttribute("disabled", true);
   document.getElementById("showBooks").style.display = 'none';
 
+  if(val != 0) {
+               
+    request = $.ajax({
+      url: "getbooksServer.php",
+      type: "post",
+      data: {action: 'UpdateDeps',
+              uni: val}
+    });
+
+    console.log("reach");
+    request.done(function (response){
+      // Log a message to the console
+      console.log("RESPONSE WAS: " + response);
+      //$("#depOptions").html("aaaaaaaaaa");
+      document.getElementById("selDep").innerHTML = '<option id="defDep" onclick="chooseDep(this.value)" value="0" selected>Επίλεξε Τμήμα</option>' + response;
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+
+  }
 
 }
 
@@ -60,6 +87,9 @@ window.onload = function() {
   document.getElementById("selDep").selectedIndex = 0;
   document.getElementById("selSem").selectedIndex = 0;
   document.getElementById("selCourse").selectedIndex = 0;
+  document.getElementById("selDep").disabled = true;
+  document.getElementById("selSem").disabled = true;
+  document.getElementById("selCourse").disabled = true;
 };
 // $(document).ready(function(){
 //   $("#hide").click(function(){
