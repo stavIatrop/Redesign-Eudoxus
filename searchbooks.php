@@ -51,9 +51,8 @@
             <!-- <p class="loginText">Είσοδος/Εγγραφή</p> -->
             <?php
               
-              if (isset($_COOKIE['username'])) {
+              if (isset($_COOKIE['user'])) {
 
-                $username  = $_COOKIE['username'];
                 echo '<p class="loginText"> Έξοδος </p>';
               }
               else {
@@ -68,10 +67,13 @@
             <!-- <p class="loginText">Προφίλ</p> -->
             <?php
               
-              if (isset($_COOKIE['username'])) {
+              include("user.class.php");
+              
+              if (isset($_COOKIE['user'])) {
 
-                $username  = $_COOKIE['username'];
-                echo '<p class="loginText">'. $username . ' </p>';
+                $user = new User(0);
+                $user  = unserialize($_COOKIE['user']);
+                echo '<p class="loginText">'. $user->getUsername() . ' </p>';
               }
               else {
                 echo '<p class="loginText">Προφίλ</p>';

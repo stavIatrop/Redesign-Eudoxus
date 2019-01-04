@@ -12,7 +12,7 @@ var selPassword = 0;
 var selPassVer = 0;
 var selCatId = 0;
 
-var usernameLog = 0;
+var emailLog = 0;
 var passLog = 0;
 
 $(document).ready(function(){
@@ -342,35 +342,35 @@ function register() {
     }    
 }
 
-function typeUsernameLog(value) {
+function typeEmailLog(value) {
 
-    usrLog = value;
-    if (usrLog) {
-        console.log("Usr:" + usrLog);
+    emailLog = value;
+    if (emailLog) {
+        console.log("Usr:" + emailLog);
     }
 
-    if( usrLog !=0 && passLog != 0 ) {
+    if( emailLog !=0 && passLog != 0 ) {
         
         document.getElementById('logButton').disabled = false;
         document.getElementById('notPassLog').style.display = 'none';
-        document.getElementById('usernameLogError').style.display = 'none';
+        document.getElementById('emailLogError').style.display = 'none';
             
     } else {
         
-        // if(usrLog != 0) {
+        // if(emailLog != 0) {
 
         //     document.getElementById('notPassLog').style.display = 'block';
-        //     document.getElementById('usernameLogError').style.display = 'none';
+        //     document.getElementById('emailLogError').style.display = 'none';
 
         // }else if (passLog != 0) {
             
         //     document.getElementById('notPassLog').style.display = 'none';
-        //     document.getElementById('usernameLogError').style.display = 'block';
+        //     document.getElementById('emailLogError').style.display = 'block';
            
         // } else {
 
         //     document.getElementById('notPassLog').style.display = 'block';
-        //     document.getElementById('usernameLogError').style.display = 'block';
+        //     document.getElementById('emailLogError').style.display = 'block';
         // }
 
         document.getElementById('logButton').disabled = true;
@@ -385,28 +385,28 @@ function typePasswordLog(value) {
         console.log("Pass:" + passLog);
     }
 
-    if( usrLog !=0 && passLog != 0 ) {
+    if( emailLog !=0 && passLog != 0 ) {
         
         document.getElementById('logButton').disabled = false;
         document.getElementById('notPassLog').style.display = 'none';
-        document.getElementById('usernameLogError').style.display = 'none';
+        document.getElementById('emailLogError').style.display = 'none';
             
     } else {
         
-        // if(usrLog != 0) {
+        // if(emailLog != 0) {
 
-        //     document.getElementById('usernameLogError').style.display = 'none';
+        //     document.getElementById('emailLogError').style.display = 'none';
         //     document.getElementById('notPassLog').style.display = 'block';
 
         // }else if (passLog != 0) {
             
         //     document.getElementById('notPassLog').style.display = 'none';
-        //     document.getElementById('usernameLogError').style.display = 'block';
+        //     document.getElementById('emailLogError').style.display = 'block';
   
         // } else {
 
         //     document.getElementById('notPassLog').style.display = 'block';
-        //     document.getElementById('usernameLogError').style.display = 'block';
+        //     document.getElementById('emailLogError').style.display = 'block';
         // }
 
         document.getElementById('logButton').disabled = true;
@@ -422,7 +422,7 @@ function login() {
         url: "loginServer.php",
         type: "post",
         data: {action: 'AuthUser',
-                username: usrLog,
+                email: emailLog,
                 password: passLog}
     });
 

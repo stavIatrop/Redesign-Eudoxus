@@ -51,9 +51,8 @@
             <!-- <p class="loginText">Είσοδος / Εγγραφή</p> -->
             <?php
               
-              if (isset($_COOKIE['username'])) {
+              if (isset($_COOKIE['user'])) {
 
-                $username  = $_COOKIE['username'];
                 echo '<p class="loginText"> Έξοδος </p>';
               }
               else {
@@ -67,10 +66,13 @@
             <!-- <p class="loginText">Προφίλ</p> -->
             <?php
               
-              if (isset($_COOKIE['username'])) {
+              include("user.class.php");
+              
+              if (isset($_COOKIE['user'])) {
 
-                $username  = $_COOKIE['username'];
-                echo '<p class="loginText">'. $username . ' </p>';
+                $user = new User(0);
+                $user  = unserialize($_COOKIE['user']);
+                echo '<p class="loginText">'. $user->getUsername() . ' </p>';
               }
               else {
                 echo '<p class="loginText">Προφίλ</p>';
@@ -167,10 +169,10 @@
         <div class="col-xl-2 col-lg-4">
             <p style="padding-top:20%;"class="loginTitle">Είσοδος</p>
             <form id="loginForm">
-              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Όνομα χρήστη" id="usernameLog" oninput="typeUsernameLog(this.value)">
+              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Email" id="emailLog" oninput="typeEmailLog(this.value)">
               <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" id="passLog" oninput="typePasswordLog(this.value)">
               <button id="logButton" onclick="login()" class="btn btn-success mt-5 loginRegButton" disabled>Σύνδεση</button>
-              <p id="usernameLogError">Συμπλήρωσε το Όνομα Χρήστη σου για να συνδεθείς</p>
+              <p id="emailLogError">Συμπλήρωσε το email σου για να συνδεθείς</p>
               <p id="notPassLog">Συμπλήρωσε τον κωδικό σου για να συνδεθείς</p>
               <p id="authError">Λάθος στοιχεία χρήστη!</p>
             </form>

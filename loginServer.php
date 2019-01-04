@@ -5,19 +5,19 @@
     //debug_to_console("aaaaaaaaaaa");
     switch($_POST['action']) {
     case 'AuthUser':
-        $usernameLog = $_POST['username'];
+        $emailLog = $_POST['email'];
         $passLog = $_POST['password'];
-        AuthUser($usernameLog, $passLog);
+        AuthUser($emailLog, $passLog);
         break;
     default:
         // unknown / missing action
     }
 
-    function AuthUser($username, $password){
-        //include("login.php");
+    function AuthUser($email, $password){
+        include("user.class.php");
         $conn = OpenCon();
         
-        $userQuery = "SELECT username FROM `User` WHERE username = '$username' AND password = '$password'";
+        $userQuery = "SELECT * FROM `User` WHERE email = '$email' AND password = '$password'";
 
         $userResults = mysqli_query($conn, $userQuery);
         
@@ -26,8 +26,19 @@
             echo $val;
             return $val;
         } else {
+
+            $row = mysqli_fetch_assoc($userResults);
+            $user = new User(htmlspecialchars($row['userId']));
+            $user->setUsername(htmlspecialchars($row['username']));
+            $user->setEmail(htmlspecialchars($row['email']));
+            $user->setPassword(htmlspecialchars($row['password']));
+            $user->setCategory(htmlspecialchars($row['userCategory']));
+            $user->setCategoryId(htmlspecialchars($row['categoryId']));
+            $user->setUniName(htmlspecialchars($row['uniName']));
+            $user->setUniDepartment(htmlspecialchars($row['uniDepartment']));
+
             $val = 1;
-            setcookie('username', $username);
+            setcookie('user', serialize($user) );
             echo $val;
             return $val;
         }
