@@ -211,6 +211,28 @@ function addBook(bookId) {
     //$("#depOptions").html("aaaaaaaaaa");
     document.getElementById("statedBooksList").innerHTML = response;
     submitStateButton();
+    // request = $.ajax({
+    //   url: "getbooksServer.php",
+    //   type: "post",
+    //   data: {action: 'RefreshCookie'}
+    // });
+
+    // request.done(function (response){
+    //   // Log a message to the console
+    //   //console.log("RESPONSE WAS: " + response);
+    //   //$("#depOptions").html("aaaaaaaaaa");
+    //   console.log("Refreshed");
+    // });
+
+    // // Callback handler that will be called on failure
+    // request.fail(function (jqXHR, textStatus, errorThrown){
+    //   // Log the error to the console
+    //   console.error(
+    //       "The following error occurred: "+
+    //       textStatus, errorThrown
+    //   );
+    // });
+
   });
 
   // Callback handler that will be called on failure
@@ -221,6 +243,39 @@ function addBook(bookId) {
         textStatus, errorThrown
     );
   });
+}
+
+function deleteStatedBook(courseId) {
+  request = $.ajax({
+    url: "getbooksServer.php",
+    type: "post",
+    data: {action: 'DeleteStatedBook',
+            course: courseId}
+  });
+  request.done(function (response){
+    // Log a message to the console
+    console.log("RESPONSE WAS: " + response);
+    //$("#depOptions").html("aaaaaaaaaa");
+    console.log("REAACH");
+
+    document.getElementById("statedBooksList").innerHTML = response;
+    submitStateButton();
+  });
+
+  // Callback handler that will be called on failure
+  request.fail(function (jqXHR, textStatus, errorThrown){
+    // Log the error to the console
+    console.error(
+        "The following error occurred: "+
+        textStatus, errorThrown
+    );
+  });
+}
+
+function completeStatement() {
+  location.reload();
+
+  //TO DO
 }
 
 
