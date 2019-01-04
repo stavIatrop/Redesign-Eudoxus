@@ -16,8 +16,8 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/totop.js"></script>
-  <script src="js/regLogin.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/regLogin.js"></script>
 
 
   <!-- <script src="js/homepage.js"></script> -->
@@ -141,36 +141,43 @@
         <div class="col-xl-2 col-lg-4">
             <p style="padding-top:20%;"class="loginTitle">Είσοδος</p>
             <form id="loginForm">
-              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Όνομα χρήστη">
-              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός">
+              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Όνομα χρήστη" id="usernameLog" oninput="typeUsernameLog(this.value)">
+              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" id="passLog" oninput="typePasswordLog(this.value)">
+              <button id="logButton" onclick="login()" class="btn btn-success mt-5 loginRegButton" disabled>Σύνδεση</button>
+              <p id="usernameLogError">Συμπλήρωσε το Όνομα Χρήστη σου για να συνδεθείς</p>
+              <p id="notPassLog">Συμπλήρωσε τον κωδικό σου για να συνδεθείς</p>
+              <p id="authError">Λάθος στοιχεία χρήστη!</p>
             </form>
-            <button class="btn btn-success mt-5 disabled loginRegButton">Σύνδεση</button>
+            
             <div style="margin-bottom: 20%;"><a href="#" class="forgetPass">Έχω ξεχάσει τον κωδικό μου</a></div>
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-1"></div>
         <div class="col-xl-2 col-lg-4">
           <p class="loginTitle mb-5">Εγγραφή</p>
-          <form action="insert.php" method="post">
+          <form id="myForm"   data-toggle="validator" role="form">
             <div class="form-group">
-                <select class="form-control" id="selCateg" name="category">
-                    <option>Επίλεξε κατηγορία</option>
-                    <option value="0">Φοιτητής</option>
-                    <option value="1">Εκδότης</option>
+                <select class="form-control" id="selCateg" name="category" onchange="selectCategory(this.value)">
+                    <option value="0">Επίλεξε κατηγορία</option>
+                    <option value="1">Φοιτητής</option>
+                    <option value="2">Εκδότης</option>
                 </select>
             </div>
           
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη" name="username" id="userName">
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email" name="email" id="eMail">
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" name="password" id="pass">
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Επιβεβαίωση κωδικού">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη" name="username" id="userName" oninput="typeUsername(this.value)">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email" name="email" id="eMail" oninput="typeEmail(this.value)">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" name="password" id="pass" oninput="typePassword(this.value)">
+            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Επιβεβαίωση κωδικού" id="passVer" data-match="#pass" data-match-error="Whoops, these don't match" oninput="typePassVer(this.value)">
             <div id="studNumb" style="display: none;">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου" name="category_Id" id="catId">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου" name="category_Id" id="catId" oninput="typeCatId(this.value)">
             </div>
             <div id="publNumb" style="display: none;">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότη" name="category_Id" id="catId">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότη" name="category_Id" id="catIdEkdot" oninput="typeCatId(this.value)">
             </div>
-            <button type="submit" style="margin-bottom:25%;" class="btn disabled btn-success mt-4 loginRegButton">Εγγραφή</button>
+            <button id="regButton"  onclick="register()" type="submit" style="margin-bottom:25%;" class="btn btn-success mt-4 loginRegButton" disabled>Εγγραφή</button>
+            <p id="notPassVer">Οι κωδικοί δεν ταιριάζουν!</p>
+            <p id="emailError">Το Email υπάρχει ήδη!</p>
+            <p id="regSuccess">Εγγραφήκατε επιτυχώς!</p>
           </form>
           
         </div>
