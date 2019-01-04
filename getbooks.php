@@ -211,8 +211,8 @@
           </div>
         </div>
         <div id="showBooks" style="display: none;">
-          <ul class="bookList">
-            <li><div class="row bookRow">
+          <ul id="showBooksList" class="bookList">
+            <!-- <li><div class="row bookRow">
               <div class="col-md-3">
                 <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
               </div>
@@ -263,7 +263,7 @@
               <div class="col-md-3">
                 <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
               </div>
-            </div></li>
+            </div></li> -->
           </ul>
         </div>
       </div>
@@ -275,8 +275,67 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <ul style="margin-top: 5%;" class="bookList">
-              <li>
+            <ul id="statedBooksList" style="margin-top: 5%; min-height: 200px;" class="bookList">
+              <?php
+                if(!isset($_COOKIE['statement'])) {
+                  echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';
+                  //writeButton(1);
+                }
+                else {
+                  $statements = json_decode($_COOKIE['statement'], false);
+                  if(empty($statements)) {
+                    echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';
+                    //writeButton(1);
+                  }
+                  else {
+                    $conn = OpenCon();
+                    $stateString = "";
+                    //writeButton(0);
+                    foreach($statements as $whichState) {
+                        //debug_to_console("aaaa " . $whichState->bookId);
+                        $stateQuery = "SELECT Book.title, Course.courseName, Course.semester 
+                                        FROM Book, Course 
+                                        WHERE Book.bookId = '$whichState->bookId' and Course.courseId = '$whichState->courseId'";
+
+                        $stateResults = mysqli_query($conn, $stateQuery);
+                
+                        if (mysqli_num_rows($stateResults) > 0) {
+                            while($row = mysqli_fetch_assoc($stateResults)) {
+                                $stateString .= '<li>
+                                                <div style="padding-bottom: 7%; border-bottom: 2px solid grey;" class="row">
+                                                <div class="col-lg-2 d-md-none d-lg-block">
+                                                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
+                                                </div>
+                                                <div class="col-lg-1 d-md-none d-lg-block">
+                                                </div>
+                                                <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
+                                                    <p style="font-size: 110%;">'. htmlspecialchars($row['title']) .'</p>
+                                                    <p>'. htmlspecialchars($row['courseName']) .'</p>
+                                                    <p>'. htmlspecialchars($row['semester']) .'</p>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <button style="margin-top:60%;" class="btn btn-lg btn-danger">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </div>
+                                                </div>
+                                            </li>'; 
+                                //debug_to_console($row['uniDepartment']);
+                            }
+                            
+                        }
+                        else {
+                            debug_to_console("NO COURSES");
+                        }
+                    }
+                    CloseCon($conn);
+                    //debug_to_console($stateString);
+                    echo $stateString;
+                  }
+                }
+              ?>
+
+              <!-- <li>
                 <div style="padding-bottom: 7%; border-bottom: 2px solid grey;" class="row">
                   <div class="col-lg-2 d-md-none d-lg-block">
                     <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
@@ -285,10 +344,11 @@
                   </div>
                   <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
                     <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
-                    <p>Μάθημα Εξάμηνο</p>
+                    <p>Μάθημα</p>
+                    <p>Εξάμηνο</p>
                   </div>
                   <div class="col-lg-3">
-                    <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
+                    <button style="margin-top:60%;" class='btn btn-lg btn-danger'>
                       <i class="fas fa-trash-alt"></i>
                     </button>
                   </div>
@@ -347,9 +407,11 @@
                   </button>
                   </div>
                 </div>
-              </li>
+              </li> -->
             </ul>
-            <button style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button>
+            <div id="SubmitState">
+              <!-- <button style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button> -->
+            </div>
           </div>
         </div>
       </div>

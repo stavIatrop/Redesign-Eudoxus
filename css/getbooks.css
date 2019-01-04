@@ -46,9 +46,10 @@
 }
 
 .mybookImage {
-    height: 100px !important;
+    height: 110px !important;
     width: 70px !important;
     margin-left: -20%;
+    margin-top: 35%;
 }
 
 .bookList > li{
