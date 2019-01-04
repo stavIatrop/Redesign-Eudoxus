@@ -47,10 +47,36 @@
           <div class="d-xl-none d-lg-block col-lg-4">
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
+            <!-- <p class="loginText">Είσοδος / Εγγραφή</p> -->
+            <?php
+              
+              if (isset($_COOKIE['username'])) {
+
+                $username  = $_COOKIE['username'];
+                echo '<p class="loginText"> Έξοδος </p>';
+              }
+              else {
+                echo '<p class="loginText">Είσοδος/Εγγραφή</p>';
+              }
+            ?>
+            </a>
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
+            <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
+            <!-- <p class="loginText">Προφίλ</p> -->
+            <?php
+              
+              if (isset($_COOKIE['username'])) {
+
+                $username  = $_COOKIE['username'];
+                echo '<p class="loginText">'. $username . ' </p>';
+              }
+              else {
+                echo '<p class="loginText">Προφίλ</p>';
+              }
+            ?>
+            </a>
           </div>
           <div class="col-xl-1 col-lg-2">
             <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
@@ -165,6 +191,7 @@
             </div>
           
             <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη" name="username" id="userName" oninput="typeUsername(this.value)">
+            
             <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email" name="email" id="eMail" oninput="typeEmail(this.value)">
             <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" name="password" id="pass" oninput="typePassword(this.value)">
             <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Επιβεβαίωση κωδικού" id="passVer" data-match="#pass" data-match-error="Whoops, these don't match" oninput="typePassVer(this.value)">
@@ -174,9 +201,10 @@
             <div id="publNumb" style="display: none;">
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότη" name="category_Id" id="catIdEkdot" oninput="typeCatId(this.value)">
             </div>
+            <span id="emailError">Το Email υπάρχει ήδη!</span>
             <button id="regButton"  onclick="register()" type="submit" style="margin-bottom:25%;" class="btn btn-success mt-4 loginRegButton" disabled>Εγγραφή</button>
             <p id="notPassVer">Οι κωδικοί δεν ταιριάζουν!</p>
-            <p id="emailError">Το Email υπάρχει ήδη!</p>
+            
             <p id="regSuccess">Εγγραφήκατε επιτυχώς!</p>
           </form>
           

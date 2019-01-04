@@ -45,8 +45,8 @@
 #emailError {
 
     color: red;
-    margin-bottom: 30%; 
-    margin-top: -15%;
+    /* margin-bottom: 30%; 
+    margin-top: -15%; */
     font-style: italic;
     font-size: 18px;
     display: none;

@@ -46,10 +46,36 @@
                     <div class="d-xl-none d-lg-block col-lg-4">
                     </div>
                     <div class="col-xl-1 col-lg-2">
-                        <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
+                        <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
+                        <!-- <p class="loginText">Είσοδος/Εγγραφή</p> -->
+                        <?php
+                        
+                        if (isset($_COOKIE['username'])) {
+
+                            $username  = $_COOKIE['username'];
+                            echo '<p class="loginText"> Έξοδος </p>';
+                        }
+                        else {
+                            echo '<p class="loginText">Είσοδος/Εγγραφή</p>';
+                        }
+                        ?>
+                        </a>
                     </div>
                     <div class="col-xl-1 col-lg-2">
-                        <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
+                        <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
+                        <!-- <p class="loginText">Προφίλ</p> -->
+                        <?php
+                        
+                        if (isset($_COOKIE['username'])) {
+
+                            $username  = $_COOKIE['username'];
+                            echo '<p class="loginText">'. $username . ' </p>';
+                        }
+                        else {
+                            echo '<p class="loginText">Προφίλ</p>';
+                        }
+                        ?>
+                        </a>
                     </div>
                     <div class="col-xl-1 col-lg-2">
                         <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>

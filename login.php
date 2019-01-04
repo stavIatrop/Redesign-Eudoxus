@@ -4,7 +4,7 @@ function OpenCon()
  {
     $dbhost = "localhost";
     $dbuser = "root";
-    $dbpass = "";
+    $dbpass = "1234";
     $db = "eamDatabase";
     
     
