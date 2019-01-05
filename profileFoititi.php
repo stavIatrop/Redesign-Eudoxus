@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="setActive('profileManage', 'current', 'history')">
+<body>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <div class="container-fluid">
         <div class="row topPart">
