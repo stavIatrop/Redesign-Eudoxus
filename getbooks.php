@@ -182,14 +182,14 @@
               <?php
                 include 'login.php';
                 $conn = OpenCon();
-                debug_to_console("Connected");
+                //debug_to_console("Connected");
                 $uniesQuery = "SELECT DISTINCT(uniName) FROM `Course`";
                 $unies = $conn->query($uniesQuery);
                 if ($unies->num_rows > 0) {
                   // output data of each row
                   while($row = $unies->fetch_assoc()) {
                       //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-                      debug_to_console($row["uniName"]);
+                      //debug_to_console($row["uniName"]);
                       echo '<option onclick="chooseUni(this.value)" value="' . htmlspecialchars($row['uniName']) . '">' 
                       . htmlspecialchars($row['uniName']) 
                       . '</option>';  
@@ -339,7 +339,7 @@
                                                 <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
                                                     <p style="font-size: 110%;">'. htmlspecialchars($row['title']) .'</p>
                                                     <p>'. htmlspecialchars($row['courseName']) .'</p>
-                                                    <p>'. htmlspecialchars($row['semester']) .'</p>
+                                                    <p>'. htmlspecialchars($row['semester']) .'ο εξάμηνο</p>
                                                 </div>
                                                 <div class="col-lg-3">
                                                     <button onclick="deleteStatedBook(this.value)" value="' . htmlspecialchars($whichState->courseId) .'" style="margin-top:60%;" class="btn btn-lg btn-danger">

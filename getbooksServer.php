@@ -35,6 +35,9 @@
     case 'RefreshCookie':
         RefreshCookie();
         break;
+    case 'CompleteStatement':
+        CompleteStatement();
+        break;
     default:
         // unknown / missing action
     }
@@ -200,7 +203,7 @@
                                     <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
                                         <p style="font-size: 110%;">'. htmlspecialchars($row['title']) .'</p>
                                         <p>'. htmlspecialchars($row['courseName']) .'</p>
-                                        <p>Εξάμηνο: '. htmlspecialchars($row['semester']) .'ο</p>
+                                        <p>'. htmlspecialchars($row['semester']) .'ο εξάμηνο</p>
                                     </div>
                                     <div class="col-lg-3">
                                         <button onclick="deleteStatedBook(this.value)" value="' . $whichState->courseId .'" style="margin-top:60%;" class="btn btn-lg btn-danger">
@@ -311,7 +314,7 @@
                                         <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
                                             <p style="font-size: 110%;">'. htmlspecialchars($row['title']) .'</p>
                                             <p>'. htmlspecialchars($row['courseName']) .'</p>
-                                            <p>Εξάμηνο: '. htmlspecialchars($row['semester']) .'ο</p>
+                                            <p>'. htmlspecialchars($row['semester']) .'ο εξάμηνο</p>
                                         </div>
                                         <div class="col-lg-3">
                                             <button onclick="deleteStatedBook(this.value)" value="' . htmlspecialchars($tempCourseId) .'" style="margin-top:60%;" class="btn btn-lg btn-danger">
@@ -354,6 +357,60 @@
         return 0;
     }
 
+    function CompleteStatement() {
+        include("user.class.php");
 
+        $statements = json_decode($_COOKIE['statement'], false);
+        
+        if(isset($_COOKIE['user'])) {
+            $conn = OpenCon();
+            $user = new User(0);
+            $user  = unserialize($_COOKIE['user']);
+            $oldStateId = -1;
+            $userId = $user->getUserId();
+            $sqlSelOldStatement = "SELECT statementId FROM Statement WHERE current=1 and User_userId='$userId'";
+            $oldStatementRes = mysqli_query($conn, $sqlSelOldStatement);
+            if (mysqli_num_rows($oldStatementRes) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($oldStatementRes)) {
+                    $oldStateId = $row['statementId'];
+                }
+            } else {
+                echo "0 results";
+            }
 
+            if($oldStateId != -1) {
+                $sqlDelState = "DELETE FROM Statement where current=1 and User_userId='$userId'";
+                $sqlDelStatedBooks = "DELETE FROM StatedBooks where Statement_statementId='$oldStateId'";
+
+                $conn->query($sqlDelStatedBooks);
+                $conn->query($sqlDelState);
+            }
+            
+            
+            $sqlInsState = "INSERT INTO Statement (semesterStatement, current, User_userId)
+                        VALUES (5, 1, '$userId')";
+
+            $conn->query($sqlInsState);
+            $last_id = $conn->insert_id;
+
+            foreach($statements as $whichState) {
+                $insState = "INSERT INTO StatedBooks (bookId, courseId, Statement_statementId, Statement_User_userId)
+                            VALUES ('$whichState->bookId', '$whichState->courseId', '$last_id', '$userId')";
+                $conn->query($insState);
+            }
+
+            CloseCon($conn);
+
+            $retVal = 1;
+            echo $retVal;
+            return $retVal;
+        }
+        else {
+            $retVal = -1;
+            echo $retVal;
+            return $retVal;
+        }
+
+    }
 ?>

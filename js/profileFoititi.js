@@ -36,3 +36,20 @@ function activate(id, deactivate1, deactivate2) {
     }
 }
 
+window.onload = function() {
+    var url = new URL(window.location.href);
+    var c = url.searchParams.get("choice");
+    if(c == "curr") {
+        setActive('current', 'profileManage', 'history');
+        document.getElementById("profileManage").classList.remove("active");
+        document.getElementById("current").classList.add("active");
+
+        activate("current", "profileManage", "profContent");
+    }
+    else {
+        setActive('profileManage', 'current', 'history');
+        //activate('profileManage', 'current', 'history');
+    }
+
+}
+

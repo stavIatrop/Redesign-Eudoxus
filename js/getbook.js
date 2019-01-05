@@ -23,12 +23,11 @@ function submitStateButton() {
   //console.log("reach");
   request.done(function (response){
     // Log a message to the console
-    console.log("saaa" + response);
     if(response == 0) {
-      document.getElementById("SubmitState").innerHTML = '<button style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button>';
+      document.getElementById("SubmitState").innerHTML = '<button onclick="completeStatement()" style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button>';
     }
     else {
-      document.getElementById("SubmitState").innerHTML = '<button disabled style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button>';
+      document.getElementById("SubmitState").innerHTML = '<button disabled onclick="completeStatement()" style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button>';
     }
     //$("#depOptions").html("aaaaaaaaaa");
     
@@ -71,7 +70,6 @@ function chooseUni(val) {
     //console.log("reach");
     request.done(function (response){
       // Log a message to the console
-      console.log("RESPONSE WAS: " + response);
       //$("#depOptions").html("aaaaaaaaaa");
       document.getElementById("selDep").innerHTML = '<option id="defDep" onclick="chooseDep(this.value)" value="0" selected>Επίλεξε Τμήμα</option>' + response;
     });
@@ -138,7 +136,6 @@ function chooseSem(val) {
     //console.log("reach");
     request.done(function (response){
       // Log a message to the console
-      console.log("RESPONSE WAS: " + response);
       //$("#depOptions").html("aaaaaaaaaa");
       document.getElementById("selCourse").innerHTML = '<option id="defCourse" onclick="chooseCourse(this.value)" value="0" selected>Επίλεξε Μάθημα</option>' + response;
     });
@@ -207,13 +204,11 @@ function addBook(bookId) {
   //console.log("reach");
   request.done(function (response){
     // Log a message to the console
-    console.log("RESPONSE WAS: " + response);
     //$("#depOptions").html("aaaaaaaaaa");
     document.getElementById("statedBooksList").innerHTML = response;
     var counter = 0;
     var button  = document.getElementById( "addButton" + counter);
     while(button) {
-      console.log("aaa");
       if(button.value == bookId) {
         button.classList.remove("btn-success");
         button.classList.add("btn-danger");
@@ -262,7 +257,7 @@ function addBook(bookId) {
 }
 
 function deleteStatedBook(courseId) {
-  console.log(courseId);
+  //console.log(courseId);
   request = $.ajax({
     url: "getbooksServer.php",
     type: "post",
@@ -271,7 +266,6 @@ function deleteStatedBook(courseId) {
   });
   var selectedCourse = document.getElementById("selCourse");
   var valSelectedCourse = selectedCourse.options[selectedCourse.selectedIndex].value;
-  console.log("SEL: " + valSelectedCourse + " | DEL: " + courseId);
   if(valSelectedCourse == courseId) {
     var counter = 0;
     var button  = document.getElementById( "addButton" + counter);
@@ -293,9 +287,7 @@ function deleteStatedBook(courseId) {
   }
   request.done(function (response){
     // Log a message to the console
-    console.log("RESPONSE WAS: " + response);
     //$("#depOptions").html("aaaaaaaaaa");
-    console.log("REAACH");
 
     document.getElementById("statedBooksList").innerHTML = response;
 
@@ -340,7 +332,34 @@ function deleteStatedBook(courseId) {
 }
 
 function completeStatement() {
-  location.reload();
+  
+  request = $.ajax({
+    url: "getbooksServer.php",
+    type: "post",
+    data: {action: 'CompleteStatement'}
+  });
+
+  request.done(function (response){
+    // Log a message to the console
+    //console.log("RESPONSE WAS: " + response);
+    //$("#depOptions").html("aaaaaaaaaa");
+    if(response == 1) {
+      //window.location.replace("http://localhost/sdi1500048_sdi1500116/profileFoititi.php");
+      window.location.href = "http://localhost/sdi1500048_sdi1500116/profileFoititi.php?choice=curr";
+    }
+    else if(response == -1){
+      window.location.replace("http://localhost/sdi1500048_sdi1500116/regLogin.php");
+    }
+  });
+
+  // Callback handler that will be called on failure
+  request.fail(function (jqXHR, textStatus, errorThrown){
+    // Log the error to the console
+    console.error(
+        "The following error occurred: "+
+        textStatus, errorThrown
+    );
+  });
 
   //TO DO
 }
@@ -353,6 +372,8 @@ function removeBook(bookId) {
   
 
 }
+
+
 
 // $(document).ready(function(){
 //   $("#hide").click(function(){
