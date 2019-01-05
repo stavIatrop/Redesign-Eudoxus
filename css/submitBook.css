@@ -1,0 +1,69 @@
+#elementsTitle {
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+#decriptionTitle {
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.btn-circle.btn-lg {
+    width: 15px;
+    height: 15px;
+    padding: 0px 0px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+    margin-top: 95px;
+    color:rgb(5, 122, 5);
+}
+
+#aster0 {
+
+    font-size: 60%;
+    color:red;
+    margin-top: 110px;
+    margin-left: -20px;
+}
+
+#aster1 {
+
+    font-size: 60%;
+    color:red;
+    margin-top: 87px;
+    margin-left: -20px;
+}
+
+#aster2 {
+
+    font-size: 60%;
+    color:red;
+    margin-top: 87px;
+    margin-left: -20px;
+}
+
+#aster3 {
+
+    font-size: 60%;
+    color:red;
+    margin-top: 72px;
+    margin-left: -20px;
+}
+
+#aster4 {
+
+    font-size: 60%;
+    color:red;
+    margin-top: 85px;
+    margin-left: -20px;
+}
+
+#submitButton {
+
+    margin-left: 50%;
+    margin-top: 10%;
+}
+

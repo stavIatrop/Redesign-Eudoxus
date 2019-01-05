@@ -1,5 +1,5 @@
 <head>
-  <title>Εύδοξος - Σύνδεση</title>
+  <title>Εύδοξος - Καταχώρηση Συγγράμματος</title>
   <link rel="icon" href="images/favicon.ico" type="image/ico">
 
   <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -7,17 +7,16 @@
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/topPart.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/navBar.css" rel="stylesheet" type="text/css"  media="all">
-  <link href="css/getbooks.css" rel="stylesheet" type="text/css"  media="all">
-  <link href="css/regLogin.css" rel="stylesheet" type="text/css"  media="all">
+  <link href="css/submitBook.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/footer.css" rel="stylesheet" type="text/css"  media="all">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   
   
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/totop.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/regLogin.js"></script>
+  <script src="js/submitBook.js"></script>
+  
 
 
   <!-- <script src="js/homepage.js"></script> -->
@@ -160,59 +159,105 @@
       <div class="col-md-12">
         <ul class="breadcrumbT">
           <li><a href="#">Αρχική</a></li>
-          <li><a href="#">Σύνδεση / Εγγραφή</a></li>
+          <li><a href="#">Καταχώρηση Συγγράμματος</a></li>
         </ul>
       </div>
     </div>
-    <div class="row regLoginRow">
-        <div class="col-xl-3 col-lg-1"></div>
-        <div class="col-xl-2 col-lg-4">
-            <p style="padding-top:20%;"class="loginTitle">Είσοδος</p>
-            <form id="loginForm">
-              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Email" id="emailLog" oninput="typeEmailLog(this.value)">
-              <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" id="passLog" oninput="typePasswordLog(this.value)">
-              <button id="logButton" onclick="login()" class="btn btn-success mt-5 loginRegButton" disabled>Σύνδεση</button>
-              <p id="emailLogError">Συμπλήρωσε το email σου για να συνδεθείς</p>
-              <p id="notPassLog">Συμπλήρωσε τον κωδικό σου για να συνδεθείς</p>
-              <p id="authError">Λάθος στοιχεία χρήστη!</p>
+
+
+    <div style="min-height: -23px;" class="row">
+    <!-- <button id="example-popover" type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+        Tooltip on right
+    </button>           -->
+        <div class="col-1"></div>
+        <div class="col-4">
+            
+            <p id="elementsTitle">Στοιχεία Συγγράμματος</p>
+
+            <form id="elementsForm" data-toggle="validator" role="form">
+            
+          
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title" oninput="typeTitle(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Εκδόσεις" id="publisher" oninput="typePublisher(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Έτος Τρέχουσας Έκδοσης" name="publishYear" id="year" oninput="typeYear(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος" name="weight" id="weight" oninput="typeWeight(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)">
+                
+                
             </form>
             
-            <div style="margin-bottom: 20%;"><a href="#" class="forgetPass">Έχω ξεχάσει τον κωδικό μου</a></div>
+
         </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1"></div>
-        <div class="col-xl-2 col-lg-4">
-          <p class="loginTitle mb-5">Εγγραφή</p>
-          <form id="myForm"   data-toggle="validator" role="form">
-            <div class="form-group">
-                <select class="form-control" id="selCateg" name="category" onchange="selectCategory(this.value)">
-                    <option value="0">Επίλεξε κατηγορία</option>
-                    <option value="1">Φοιτητής</option>
-                    <option value="2">Εκδότης</option>
-                </select>
-            </div>
-          
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control"  placeholder="Όνομα χρήστη" name="username" id="userName" oninput="typeUsername(this.value)">
+        <div class="col-1"  style="border-right: 1px solid grey;margin-left:-130px; margin-right:70px">
             
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="email" class="form-control" placeholder="email" name="email" id="eMail" oninput="typeEmail(this.value)">
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Κωδικός" name="password" id="pass" oninput="typePassword(this.value)">
-            <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="password" class="form-control" placeholder="Επιβεβαίωση κωδικού" id="passVer" data-match="#pass" data-match-error="Whoops, these don't match" oninput="typePassVer(this.value)">
-            <div id="studNumb" style="display: none;">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός πάσου" name="category_Id" id="catId" oninput="typeCatId(this.value)">
+            
+            <div class="row">
+                <i id="aster0" class="fa fa-asterisk"></i>
             </div>
-            <div id="publNumb" style="display: none;">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218);" type="text" class="form-control" placeholder="Αριθμός εκδότη" name="category_Id" id="catIdEkdot" oninput="typeCatId(this.value)">
+            <div class="row">
+                <i id="aster1" class="fa fa-asterisk"></i>
+            </div>
+            <div class="row">
+                <span id="aster2" class="fa fa-asterisk"></span>
+                <button type="button" class="btn btn-default btn-circle  btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 90-12345-09-7 ή 978-960-530-165-1"><i class="fa fa-info-circle"></i></button>
+            </div>
+            <div class="row">
+                <i id="aster3" class="fa fa-asterisk"></i>
+            </div>
+            <div class="row">
+                <i id="aster4" class="fa fa-asterisk"></i>
             </div>
             
-            <button id="regButton"  onclick="register()" type="submit" style="margin-bottom:25%;" class="btn btn-success mt-4 loginRegButton" disabled>Εγγραφή</button>
-            <p id="notPassVer">Οι κωδικοί δεν ταιριάζουν!</p>
-            <p id="emailError">Το Email υπάρχει ήδη!</p>
-            <p id="regSuccess">Εγγραφήκατε επιτυχώς!</p>
-          </form>
-          
         </div>
-        <div class="col-xl-3 col-lg-1"></div>
+        <div class="col">
+
+            <p id="decriptionTitle">Περιγραφή Συγγράμματος</p>
+
+            <br><br>
+            <form id="descForm" data-toggle="validator" role="form">
+                <ul>
+                    <li>   
+                        <form>
+                            <div class="form-group">
+                                <label for="pdfPreview">Απόσπασμα Συγγράμματος(Αρχείο pdf):</label>
+                                <input type="file" class="form-control-file" id="pdfPreview">
+                            </div>
+                        </form>
+                    </li>
+                    <br><br>
+                    <li>
+                        <form>
+                            <div class="form-group">
+                                <label for="pdfPreview">Περιεχόμενα Συγγράμματος(Αρχείο pdf):</label>
+                                <input type="file" class="form-control-file" id="pdfIndex">
+                            </div>
+                        </form>
+                    </li>
+                    <br><br>
+                    <li>
+                        <form>
+                            <div class="form-group">
+                                <label for="pdfPreview">Εξώφυλλο Συγγράμματος(Αρχείο εικόνας):</label>
+                                <input type="file" class="form-control-file" id="cover">
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:60%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά(Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)">
+                
+            </form>
+            <button id="submitButton"  onclick="submit()" type="submit" class="btn btn-success " disabled>Καταχώρηση</button>
+        </div>
+
+
     </div>
+    <div class="row" style="min-height:50px"> </div>
   </div>
 
 
