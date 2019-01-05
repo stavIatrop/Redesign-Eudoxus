@@ -173,21 +173,37 @@
         <div class="col-1"></div>
         <div class="col-4">
             
-            <p id="elementsTitle">Στοιχεία Συγγράμματος</p>
+        	<p id="elementsTitle">Στοιχεία Συγγράμματος</p>
 
             <form id="elementsForm" data-toggle="validator" role="form">
             
           
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title" oninput="typeTitle(this.value)">
+            	<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title" oninput="typeTitle(this.value)">
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)">
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)">
+                <p id="ISBNError">Το ISBN δεν είναι συμβατό με ένα από τα δύο προτεινόμενα format!</p>
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Εκδόσεις" id="publisher" oninput="typePublisher(this.value)">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Έτος Τρέχουσας Έκδοσης" name="publishYear" id="year" oninput="typeYear(this.value)">
+				<!-- <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Έτος Τρέχουσας Έκδοσης" name="publishYear" id="year" oninput="typeYear(this.value)"> -->
+				<select style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" onchange="chooseYear(this.value)" name="selYear" id="selYear" class="custom-select mb-3">
+					<option id="defYear"  value="0" selected>Επίλεξε Έτος Τρέχουσας Έκδοσης</option>
+					
+					<?php
+						$j = 1;
+						for($i = 1997; $i < 2020; $i++ ) {
+							echo '<option id="defYear" onchange="chooseYear(this.value)" value="' . $j . '">' 
+							. $i 
+							. '</option>'; 
+							$j = $j + 1; 
+						}
+					?>
+				</select>
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος" name="weight" id="weight" oninput="typeWeight(this.value)">
+                <p id="weightError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">
+                <p id="dimError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="number" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)">
-                
+                <p id="priceError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
                 
             </form>
             
@@ -204,7 +220,7 @@
             </div>
             <div class="row">
                 <span id="aster2" class="fa fa-asterisk"></span>
-                <button type="button" class="btn btn-default btn-circle  btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 90-12345-09-7 ή 978-960-530-165-1"><i class="fa fa-info-circle"></i></button>
+                <button type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 90-12345-09-7 ή 978-960-530-165-1"><i class="fa fa-info-circle"></i></button>
             </div>
             <div class="row">
                 <i id="aster3" class="fa fa-asterisk"></i>
@@ -212,24 +228,34 @@
             <div class="row">
                 <i id="aster4" class="fa fa-asterisk"></i>
             </div>
+            <div class="row">
+              <button id="helpBtn0" type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 0.25 ή 14.0 "><i class="fa fa-info-circle"></i></button>
+            </div>
+            <div class="row">
+              <button id="helpBtn1" type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 12x43 ή 12.0x6.25"><i class="fa fa-info-circle"></i></button>
+            </div>
+            <div class="row">
+              <button id="helpBtn2" type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 20.25 ή 17.0  "><i class="fa fa-info-circle"></i></button>
+            </div>
             
         </div>
-        <div class="col">
+        <div class="col-4">
 
-            <p id="decriptionTitle">Περιγραφή Συγγράμματος</p>
+
+        	<p id="decriptionTitle">Περιγραφή Συγγράμματος</p>
 
             <br><br>
             <form id="descForm" data-toggle="validator" role="form">
                 <ul>
                     <li>   
-                        <form>
+                        <form >
                             <div class="form-group">
                                 <label for="pdfPreview">Απόσπασμα Συγγράμματος(Αρχείο pdf):</label>
                                 <input type="file" class="form-control-file" id="pdfPreview">
                             </div>
                         </form>
                     </li>
-                    <br><br>
+                    <br><br><br>
                     <li>
                         <form>
                             <div class="form-group">
@@ -238,7 +264,7 @@
                             </div>
                         </form>
                     </li>
-                    <br><br>
+                    <br><br><br>
                     <li>
                         <form>
                             <div class="form-group">
@@ -249,10 +275,20 @@
                     </li>
                 </ul>
 
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:60%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά(Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)">
+                <input style="margin-top: 17%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:100%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά(Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)">
                 
             </form>
-            <button id="submitButton"  onclick="submit()" type="submit" class="btn btn-success " disabled>Καταχώρηση</button>
+            <button id="submitButton"  onclick="submitBk()" type="submit" class="btn btn-success " disabled>Καταχώρηση</button>
+            <i id="aster6" class="fa fa-asterisk"></i><span >Υποχρεωτικό πεδίο<span>
+        </div>
+
+        <div class="col-1">
+              
+            <div class="row">
+                <i id="aster5" class="fa fa-asterisk"></i>
+                <button id="helpBtn3" type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. (Άνθρωπος, Μηχανή)  "><i class="fa fa-info-circle"></i></button>
+            </div>
+
         </div>
 
 

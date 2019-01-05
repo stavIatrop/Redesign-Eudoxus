@@ -17,7 +17,8 @@
     font-size: 18px;
     line-height: 1.33;
     border-radius: 25px;
-    margin-top: 95px;
+    margin-top: 90px;
+    margin-left: 10px;
     color:rgb(5, 122, 5);
 }
 
@@ -26,15 +27,15 @@
     font-size: 60%;
     color:red;
     margin-top: 110px;
-    margin-left: -20px;
+    margin-left: -27px;
 }
 
 #aster1 {
 
     font-size: 60%;
     color:red;
-    margin-top: 87px;
-    margin-left: -20px;
+    margin-top: 90px;
+    margin-left: -27px;
 }
 
 #aster2 {
@@ -42,28 +43,100 @@
     font-size: 60%;
     color:red;
     margin-top: 87px;
-    margin-left: -20px;
+    margin-left: -27px;
 }
 
 #aster3 {
 
     font-size: 60%;
     color:red;
-    margin-top: 72px;
-    margin-left: -20px;
+    margin-top: 75px;
+    margin-left: -27px;
 }
 
 #aster4 {
 
     font-size: 60%;
     color:red;
-    margin-top: 85px;
-    margin-left: -20px;
+    margin-top: 87px;
+    margin-left: -27px;
+}
+
+#aster5 {
+
+    font-size: 60%;
+    color:red;
+    margin-top: 580px;
+    margin-left: 15px;
+}
+
+#aster6 {
+
+    font-size: 60%;
+    color:red;
+    
 }
 
 #submitButton {
 
-    margin-left: 50%;
+    margin-left: 85%;
     margin-top: 10%;
 }
 
+#ISBNError {
+
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+    
+}
+
+#priceError {
+
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+}
+
+#weightError {
+
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+}
+
+#dimError {
+
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+}
+
+#helpBtn0 {
+    
+    margin-top: 110px;
+    margin-left: -5px;
+}
+
+
+#helpBtn1 {
+    
+    margin-top: 80px;
+    margin-left: -5px;
+}
+
+#helpBtn2 {
+    
+    margin-top: 177px;
+    margin-left: -5px;
+}
+
+#helpBtn3 {
+    
+    margin-top: 585px;
+    margin-left: 5px;
+}

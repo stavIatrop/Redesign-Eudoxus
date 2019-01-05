@@ -253,7 +253,6 @@ function register() {
 
     filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (filter.test(selEmail)) {
-      // Yay! valid
       
         var form = document.getElementById("myForm");
         form.addEventListener('submit', handleForm);
@@ -266,9 +265,9 @@ function register() {
         });
 
         request.done(function (response){
-            // Log a message to the console
+            
             console.log("RESPONSE WAS: " + response);
-            //$("#depOptions").html("aaaaaaaaaa");
+            
             if(response == 1) { 
             
                 document.getElementById("emailError").style.display = 'block';
