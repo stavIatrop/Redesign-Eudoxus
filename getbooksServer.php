@@ -26,6 +26,14 @@
     case 'isStateCookieEmpty':
         isStateCookieEmpty();
         break;
+    case 'DeleteStatedBook':
+        debug_to_console("ADSADSA");
+        $courseId = $_POST['course'];
+        DeleteStatedBook($courseId);
+        break;
+    case 'RefreshCookie':
+        RefreshCookie();
+        break;
     default:
         // unknown / missing action
     }
@@ -133,12 +141,16 @@
         $conn = OpenCon();
         if(!isset($_COOKIE['statement'])) {
             setcookie('statement', json_encode(array($newState)), time()+360000);
+            getcookie('statement');
+            //$_COOKIE['statement'] = json_encode(array($newState));
             $statements = array($newState);
         }
         else {
             $statements = json_decode($_COOKIE['statement'], false);
             $statements[] = $newState;
             setcookie('statement', json_encode($statements), time()+360000);
+            getcookie('statement');
+            //$_COOKIE['statement'] = json_encode($statements);
         }
         //Case: User is not logged in
         $stateString = "";
@@ -165,7 +177,7 @@
                                         <p>'. htmlspecialchars($row['semester']) .'</p>
                                     </div>
                                     <div class="col-lg-3">
-                                        <button style="margin-top:60%;" class="btn btn-lg btn-danger">
+                                        <button onclick="deleteStatedBook(this.value)" style="margin-top:60%;" class="btn btn-lg btn-danger">
                                         <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </div>
@@ -206,4 +218,89 @@
             }
         }
     }
+
+    function DeleteStatedBook($courseId) {
+        $statements = json_decode($_COOKIE['statement'], true);
+        //$statements = json_decode(getcookie('statement'), true);
+        //debug_to_console();
+        for ($whichState = 0; $whichState < count($statements); $whichState++) {
+            if($statements[$whichState]['courseId'] == $courseId) {
+                debug_to_console("DELETED");
+                unset($statements[$whichState]);
+                $statements = array_values($statements);
+            }
+        }
+        setcookie('statement', json_encode($statements), time()+360000);
+
+        if(empty($statements)) {
+            echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';
+            //writeButton(1);
+        }
+        else {
+            $conn = OpenCon();
+            $stateString = "";
+            //writeButton(0);
+            foreach($statements as $whichState) {
+                //debug_to_console("aaaa " . $whichState->bookId);
+                $tempBookId = $whichState['bookId'];
+                $tempCourseId = $whichState['courseId'];
+                $stateQuery = "SELECT Book.title, Course.courseName, Course.semester 
+                                FROM Book, Course 
+                                WHERE Book.bookId = '$tempBookId' and Course.courseId = '$tempCourseId'";
+
+                $stateResults = mysqli_query($conn, $stateQuery);
+        
+                if (mysqli_num_rows($stateResults) > 0) {
+                    while($row = mysqli_fetch_assoc($stateResults)) {
+                        $stateString .= '<li>
+                                        <div style="padding-bottom: 7%; border-bottom: 2px solid grey;" class="row">
+                                        <div class="col-lg-2 d-md-none d-lg-block">
+                                            <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
+                                        </div>
+                                        <div class="col-lg-1 d-md-none d-lg-block">
+                                        </div>
+                                        <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
+                                            <p style="font-size: 110%;">'. htmlspecialchars($row['title']) .'</p>
+                                            <p>'. htmlspecialchars($row['courseName']) .'</p>
+                                            <p>'. htmlspecialchars($row['semester']) .'</p>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <button onclick="deleteStatedBook(this.value)" value="' . htmlspecialchars($tempCourseId) .'" style="margin-top:60%;" class="btn btn-lg btn-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </li>'; 
+                        //debug_to_console($row['uniDepartment']);
+                    }
+                    
+                }
+                else {
+                    debug_to_console("NO COURSES");
+                }
+            }
+            CloseCon($conn);
+            //debug_to_console($stateString);
+            echo $stateString;
+        }
+    }
+
+    function getcookie($name) {
+        $cookies = [];
+        $headers = headers_list();
+        // see http://tools.ietf.org/html/rfc6265#section-4.1.1
+        foreach($headers as $header) {
+            if (strpos($header, 'Set-Cookie: ') === 0) {
+                $value = str_replace('&', urlencode('&'), substr($header, 12));
+                parse_str(current(explode(';', $value, 1)), $pair);
+                $cookies = array_merge_recursive($cookies, $pair);
+            }
+        }
+        return $cookies[$name];
+    }
+
+    function RefereshCookie() {
+        return 0;
+    }
+
 ?>

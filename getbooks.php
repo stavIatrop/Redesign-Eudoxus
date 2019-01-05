@@ -342,7 +342,7 @@
                                                     <p>'. htmlspecialchars($row['semester']) .'</p>
                                                 </div>
                                                 <div class="col-lg-3">
-                                                    <button style="margin-top:60%;" class="btn btn-lg btn-danger">
+                                                    <button onclick="deleteStatedBook(this.value)" value="' . htmlspecialchars($whichState->courseId) .'" style="margin-top:60%;" class="btn btn-lg btn-danger">
                                                     <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </div>
