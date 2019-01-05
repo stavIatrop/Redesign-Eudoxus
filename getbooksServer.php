@@ -1,5 +1,6 @@
 <?php
 
+    //$lastAdded = null;
     //$action = '';
     include("login.php");
     //debug_to_console("aaaaaaaaaaa");
@@ -69,6 +70,17 @@
     function ShowBooks($chosenCourse) {
         $conn = OpenCon();
         //debug_to_console("reach");
+        $bookAdded = -1;
+        if(isset($_COOKIE['statement'])) {
+            $statements = json_decode($_COOKIE['statement'], false);
+            //getcookie('statement');
+            foreach($statements as $whichState) {
+                if($whichState->courseId == $chosenCourse) {
+                    $bookAdded = $whichState->bookId;
+                }
+            }
+        }
+
         $bookQuery = "SELECT * FROM `Book_has_Course`, `Book` 
                         WHERE Book_has_Course.Course_courseId = '$chosenCourse' 
                         and Book.bookId = Book_has_Course.Book_bookId";
@@ -77,7 +89,9 @@
 
         $booksString = "";
         if (mysqli_num_rows($bookResults) > 0) {
+            $counter = 0;
             while($row = mysqli_fetch_assoc($bookResults)) {
+                
                 $booksString .= '<li><div class="row bookRow">
                                     <div class="col-md-3">
                                     <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
@@ -87,10 +101,20 @@
                                     <p>Συγγραφέας: '. htmlspecialchars($row['authors']) . '</p>
                                     <p>Σελίδες: '. htmlspecialchars($row['pages']) . '</p>
                                     </div>
-                                    <div class="col-md-3">
-                                    <button type="button" onclick="addBook(this.value)" value="'. htmlspecialchars($row['bookId']) . '"style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
-                                    </div>
+                                    <div class="col-md-3">';
+                if($bookAdded == -1) {
+                    $booksString .= '<button id="addButton' . $counter . '" type="button" onclick="addBook(this.value)" value="'. htmlspecialchars($row['bookId']) . '"style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>';
+                }
+                else if($bookAdded == $row['bookId']) {
+                    $booksString .= '<button id="addButton' . $counter . '" type="button" onclick="removeBook(this.value)" value="'. htmlspecialchars($row['bookId']) . '"style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-danger btn-lg">Αφαίρεση</button>';
+                }
+                else {
+                    $booksString .= '<button disabled id="addButton' . $counter . '" type="button" onclick="addBook(this.value)" value="'. htmlspecialchars($row['bookId']) . '"style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>';
+                }
+                                
+                $booksString .= '</div>
                                 </div></li>';
+                $counter++;
             }
             
         }
@@ -135,9 +159,11 @@
     }
 
     function AddBook($selCourse, $selBook) {
+        //global $lastAdded;
         $newState = new AddedBook();
         $newState->bookId = $selBook;
         $newState->courseId = $selCourse;
+        //$lastAdded = $newState;
         $conn = OpenCon();
         if(!isset($_COOKIE['statement'])) {
             setcookie('statement', json_encode(array($newState)), time()+360000);
@@ -174,10 +200,10 @@
                                     <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
                                         <p style="font-size: 110%;">'. htmlspecialchars($row['title']) .'</p>
                                         <p>'. htmlspecialchars($row['courseName']) .'</p>
-                                        <p>'. htmlspecialchars($row['semester']) .'</p>
+                                        <p>Εξάμηνο: '. htmlspecialchars($row['semester']) .'ο</p>
                                     </div>
                                     <div class="col-lg-3">
-                                        <button onclick="deleteStatedBook(this.value)" style="margin-top:60%;" class="btn btn-lg btn-danger">
+                                        <button onclick="deleteStatedBook(this.value)" value="' . $whichState->courseId .'" style="margin-top:60%;" class="btn btn-lg btn-danger">
                                         <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </div>
@@ -191,9 +217,11 @@
                 debug_to_console("NO COURSES");
             }
         }
-        CloseCon($conn);
+        
         //debug_to_console($stateString);
         echo $stateString;
+
+        CloseCon($conn);
         return $stateString;
     }
 
@@ -223,12 +251,33 @@
         $statements = json_decode($_COOKIE['statement'], true);
         //$statements = json_decode(getcookie('statement'), true);
         //debug_to_console();
+
+        // global $lastAdded;
+        // if($lastAdded != null) {
+        //     debug_to_console("REACH1");
+        //     if($statements[count($statements) - 1]['courseId'] != $lastAdded->courseId
+        //     && $statements[count($statements) - 1]['bookId'] != $lastAdded->bookId) {
+        //         debug_to_console("REACH2");
+        //         if(!isset($_COOKIE['statement'])) {
+        //             $statements = array($lastAdded);
+        //         }
+        //         else {
+        //             $statements[] = $lastAdded;
+        //         }
+        //     }
+        // }
+        
         for ($whichState = 0; $whichState < count($statements); $whichState++) {
             if($statements[$whichState]['courseId'] == $courseId) {
                 debug_to_console("DELETED");
                 unset($statements[$whichState]);
                 $statements = array_values($statements);
+                break;
             }
+            //if($whichState == count($statements) - 1) {
+            //   unset($statements[$whichState]);
+            //   $statements = array_values($statements);
+            //}
         }
         setcookie('statement', json_encode($statements), time()+360000);
 
@@ -262,7 +311,7 @@
                                         <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
                                             <p style="font-size: 110%;">'. htmlspecialchars($row['title']) .'</p>
                                             <p>'. htmlspecialchars($row['courseName']) .'</p>
-                                            <p>'. htmlspecialchars($row['semester']) .'</p>
+                                            <p>Εξάμηνο: '. htmlspecialchars($row['semester']) .'ο</p>
                                         </div>
                                         <div class="col-lg-3">
                                             <button onclick="deleteStatedBook(this.value)" value="' . htmlspecialchars($tempCourseId) .'" style="margin-top:60%;" class="btn btn-lg btn-danger">
@@ -300,7 +349,11 @@
     }
 
     function RefereshCookie() {
+        $conn = OpenCon();
+        setcookie('refreshCookie', "1");
         return 0;
     }
+
+
 
 ?>

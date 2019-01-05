@@ -210,6 +210,22 @@ function addBook(bookId) {
     console.log("RESPONSE WAS: " + response);
     //$("#depOptions").html("aaaaaaaaaa");
     document.getElementById("statedBooksList").innerHTML = response;
+    var counter = 0;
+    var button  = document.getElementById( "addButton" + counter);
+    while(button) {
+      console.log("aaa");
+      if(button.value == bookId) {
+        button.classList.remove("btn-success");
+        button.classList.add("btn-danger");
+        button.innerHTML = "Αφαίρεση"
+        button.onclick = function() { removeBook(this.value); }
+      }
+      else {
+        button.setAttribute("disabled", "");
+      }
+      counter++;
+      button  = document.getElementById( "addButton" + counter);
+    }
     submitStateButton();
     // request = $.ajax({
     //   url: "getbooksServer.php",
@@ -246,12 +262,35 @@ function addBook(bookId) {
 }
 
 function deleteStatedBook(courseId) {
+  console.log(courseId);
   request = $.ajax({
     url: "getbooksServer.php",
     type: "post",
     data: {action: 'DeleteStatedBook',
             course: courseId}
   });
+  var selectedCourse = document.getElementById("selCourse");
+  var valSelectedCourse = selectedCourse.options[selectedCourse.selectedIndex].value;
+  console.log("SEL: " + valSelectedCourse + " | DEL: " + courseId);
+  if(valSelectedCourse == courseId) {
+    var counter = 0;
+    var button  = document.getElementById( "addButton" + counter);
+    while(button) {
+      //console.log("aaa");
+      //if(button.value == bookId) {
+        button.classList.remove("btn-danger");
+        button.removeAttribute("disabled");
+        button.classList.add("btn-success");
+        button.innerHTML = "Προσθήκη"
+        button.onclick = function() { addBook(this.value); }
+     // }
+      //else {
+      //  button.removeAttribute("disabled");
+     // }
+      counter++;
+      button  = document.getElementById( "addButton" + counter);
+    }
+  }
   request.done(function (response){
     // Log a message to the console
     console.log("RESPONSE WAS: " + response);
@@ -259,7 +298,35 @@ function deleteStatedBook(courseId) {
     console.log("REAACH");
 
     document.getElementById("statedBooksList").innerHTML = response;
+
     submitStateButton();
+
+    
+    // request2 = $.ajax({
+    //   url: "getbooksServer.php",
+    //   type: "post",
+    //   data: {action: 'DeleteStatedBook',
+    //           course: courseId}
+    // });
+    // request2.done(function (response){
+    //   // Log a message to the console
+    //   console.log("RESPONSE WAS: " + response);
+    //   //$("#depOptions").html("aaaaaaaaaa");
+    //   console.log("REAACH");
+  
+    //   document.getElementById("statedBooksList").innerHTML = response;
+    //   submitStateButton();
+    // });
+  
+    // // Callback handler that will be called on failure
+    // request2.fail(function (jqXHR, textStatus, errorThrown){
+    //   // Log the error to the console
+    //   console.error(
+    //       "The following error occurred: "+
+    //       textStatus, errorThrown
+    //   );
+    // });
+
   });
 
   // Callback handler that will be called on failure
@@ -278,6 +345,14 @@ function completeStatement() {
   //TO DO
 }
 
+function removeBook(bookId) {
+  var selectedCourse = document.getElementById("selCourse");
+  var valCourse = selectedCourse.options[selectedCourse.selectedIndex].value;
+
+  deleteStatedBook(valCourse);
+  
+
+}
 
 // $(document).ready(function(){
 //   $("#hide").click(function(){
