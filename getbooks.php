@@ -303,7 +303,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <ul id="statedBooksList" style="margin-top: 5%; min-height: 200px;" class="bookList">
+            <ul id="statedBooksList" style="margin-top: 5%; min-height: 400px;" class="bookList">
               <?php
                 if(!isset($_COOKIE['statement'])) {
                   echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';

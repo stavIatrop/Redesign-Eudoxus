@@ -36,6 +36,10 @@ function activate(id, deactivate1, deactivate2) {
     }
 }
 
+function getbooks() {
+    window.location.replace("http://localhost/sdi1500048_sdi1500116/getbooks.php");
+}
+
 window.onload = function() {
     var url = new URL(window.location.href);
     var c = url.searchParams.get("choice");

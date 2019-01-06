@@ -225,367 +225,86 @@
             <div id="historyContent" style="display: none;" class="col-6">
                 <h2 class="mb-5" style="text-align: center;">Ιστορικό Δηλώσεων</h2>
                 <div class="accordion" id="accordionExample">
-                    <div class="card historyCard">
-                        <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                5ο Εξάμηνο - Χειμερινό 2018-2019
-                            </button>
-                            <span class="activeState"> Τρέχουσα Δήλωση</span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <i class="fas fa-caret-down" id="caret1"></i>
-                            </button>
-                        </h5>
-                        </div>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <ul class="bookList">
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card historyCard">
-                        <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                4ο Εξάμηνο - Εαρινό 2017-2018
-                            </button>
-                            <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-caret-down" id="caret2"></i>
-                            </button>
-                        </h5>
-                        </div>
+                    <?php
+                        include("login.php");
+                        if(isset($_COOKIE['user'])) {
+                            $conn = OpenCon();
+                            $user = new User(0);
+                            $user  = unserialize($_COOKIE['user']);
 
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <ul class="bookList">
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card historyCard">
-                        <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                3ο Εξάμηνο - Χειμερινό 2017-2018
-                            </button>
-                            <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                <i class="fas fa-caret-down" id="caret3"></i>
-                            </button>
-                        </h5>
-                        </div>
+                            $userId = $user->getUserId();
+                            $sqlGetStatesInfo = "SELECT statementId, current, semesterStatement 
+                                                FROM `Statement` WHERE User_userId = '$userId' 
+                                                ORDER BY semesterStatement DESC";
+                            $statementsRes = mysqli_query($conn, $sqlGetStatesInfo);
+                            if (mysqli_num_rows($statementsRes) > 0) {
+                                // output data of each row
+                                $counterCard = 0;
+                                while($rowState = mysqli_fetch_assoc($statementsRes)) {
+                                    echo '<div class="card historyCard">
+                                    <div class="card-header" id="heading' . $counterCard .'">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapse' . $counterCard .'" aria-expanded="false" aria-controls="collapse' . $counterCard .'">
+                                            ' . $rowState['semesterStatement'] .'ο Εξάμηνο';
+                                    if($rowState['semesterStatement'] % 2 == 0) {
+                                        echo ' Εαρινό';
+                                    }
+                                    else {
+                                        echo ' Χειμερινό';
+                                    }
+                                    echo '</button>';
+                                    if($rowState['current'] == 1) {
+                                        echo '<span class="activeState"> Τρέχουσα Δήλωση</span>';
+                                    }
+                                        
+                                    echo '<button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapse' . $counterCard .'" aria-expanded="true" aria-controls="collapse' . $counterCard .'">
+                                            <i class="fas fa-caret-down" id="caret1"></i>
+                                        </button>
+                                    </h5>
+                                    </div>
+                                    
+                                    <div id="collapse' . $counterCard .'" class="collapse" aria-labelledby="heading' . $counterCard .'" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <ul class="bookList">';
+                                    $stateId = $rowState['statementId'];
+                                    $sqlGetStateBooks = "SELECT Course.courseName, Book.title, Book.authors, Book.ISBN, Book.cover 
+                                                         FROM `StatedBooks`, `Book`, `Course` 
+                                                         WHERE Statement_statementId = '$stateId' and StatedBooks.bookId = Book.bookId 
+                                                         and StatedBooks.courseId = Course.courseId";
+                                    $statedBooksRes = mysqli_query($conn, $sqlGetStateBooks);
+                                    while($rowBook = mysqli_fetch_assoc($statedBooksRes)) {
+                                        echo '<li><div class="row bookRow">
+                                                <div class="col-md-3">
+                                                    <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: ' . $rowBook['courseName'] . '</p>
+                                                    <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: ' .$rowBook['title'] .'</p>
+                                                    <p class="">Συγγραφέας: ' . $rowBook['authors'] . '</p>
+                                                    <p>ISBN: ' . $rowBook['ISBN']. '</p>
+                                                </div>
+                                                <!-- <div class="col-md-3">
+                                                </div> -->
+                                            </div></li>';
+                                    }
 
-                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <ul class="bookList">
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card historyCard">
-                        <div class="card-header" id="headingFour">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                2ο Εξάμηνο - Εαρινό 2016-2017
-                            </button>
-                            <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                <i class="fas fa-caret-down" id="caret4"></i>
-                            </button>
-                        </h5>
-                        </div>
 
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <ul class="bookList">
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
+                                    echo '</ul>
                                         </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card historyCard">
-                        <div class="card-header" id="headingFive">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                1ο Εξάμηνο - Χειμερινό 2016-2017
-                            </button>
-                            <span style="display:none;" class="activeState"> Τρέχουσα </span>
-                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                <i class="fas fa-caret-down" id="caret5"></i>
-                            </button>
-                        </h5>
-                        </div>
+                                    </div>
+                                </div>';
+                                    $counterCard++;
+                                }
+                            } else {
+                                echo '<h4 style="text-align: center; margin-top:10%;" >Δεν έχετε πραγματοποιήσει δήλωση...</h4>
+                                      <div style="margin-top:5%;"class="text-center"><button onclick="getbooks()" class="btn btn-success btn-lg">Δήλωση Συγγραμμάτων</button></div>';
+                            }
+                            
+                            
 
-                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <ul class="bookList">
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                    <li><div class="row bookRow">
-                                        <div class="col-md-3">
-                                            <img style="width: 75%; height: 80%;" class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                                        </div>
-                                        <div class="col-md-9">
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: Μάθημα Συγγράμματος</p>
-                                            <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: Τίτλος Συγγράμματος</p>
-                                            <p class="">Συγγραφέας: Όνομα Επίθετο</p>
-                                            <p>ISBN: 90-54321-76-1</p>
-                                        </div>
-                                        <!-- <div class="col-md-3">
-                                        </div> -->
-                                    </div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
+                        }
+                    ?>
                 </div>
             </div>
             <div id="currentContent" style="display: none;" class="col-md-4">Current</div>

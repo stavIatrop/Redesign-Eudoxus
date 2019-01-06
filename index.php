@@ -4,7 +4,7 @@
   <link rel="icon" href="images/favicon.ico" type="image/ico">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <script src="js/jquery.js"></script>
+  <!-- <script src="js/jquery.js"></script> -->
 	<link href="css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"></head>
   <link rel="stylesheet" type="text/css" href="css/newsContainer.css">
@@ -13,8 +13,8 @@
   <link href="css/navBar.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/footer.css" rel="stylesheet" type="text/css"  media="all">
   
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/homepage.js"></script>
