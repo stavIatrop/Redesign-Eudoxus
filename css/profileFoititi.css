@@ -50,6 +50,14 @@
   color: #3D8A3A;
 }
 
+.historyCard > div > div > div > button {
+  color: black;
+}
+
+.historyCard > div > div > div > button:hover {
+  text-decoration: none;
+  color: #3D8A3A;
+}
 
 .bookList > li{
   list-style-type: none;
@@ -57,4 +65,21 @@
 
 .btnPointer:hover{
   cursor: pointer;
+}
+
+.stateHeaders {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.stateCardHead {
+  font-size: 18px;
+}
+
+.openPoint {
+  color: #3D8A3A;
+}
+
+.closePoint {
+  color: rgb(206, 8, 8);
 }

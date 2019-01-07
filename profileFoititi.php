@@ -307,7 +307,144 @@
                     ?>
                 </div>
             </div>
-            <div id="currentContent" style="display: none;" class="col-md-4">Current</div>
+            <div id="currentContent" style="display: none;" class="col-md-6">
+                <!-- <h4 class="mb-5" style="text-align: center;">Τρέχουσα Δήλωση - Χειμερινού Εξαμήνου 2018-2019</h4>
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col-2">
+                        <button style="width:180%;" onclick="getbooks()" class="btn btn-md btn-success"><i class="fas fa-edit mr-2"></i>Τροποποίηση Δήλωσης</button>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-10">
+                        <div class="row">
+                            <div class="col-5"><p class="stateHeaders">PIN παραλαβής: 123123213</p></div>
+                            <div class="col-6"><p class="stateHeaders">Προθεσμία Παραλαβής: 30/12/2018</p></div>
+                        </div>                        
+
+                    </div>
+                    <div class="col-2">
+                        <button style="width:180%;" class="btn btn-md btn-danger"><i class="fas fa-file-pdf mr-2"></i>Κατέβασμα ως PDF</button>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="card historyCard"> -->
+                            <?php
+                                if(isset($_COOKIE['user'])) {
+                                    $conn = OpenCon();
+                                    $user = new User(0);
+                                    $user  = unserialize($_COOKIE['user']);
+        
+                                    $userId = $user->getUserId();
+                                    $sqlGetCurrentCourses = "SELECT `courseName`, `title`, `weight`, `pages`, `cover`, `authors`, `publishYear`, `ISBN` FROM `StatedBooks`, `Book`, `Course`, `Statement`  
+                                                         WHERE `StatedBooks`.`Statement_statementId` = `Statement`.`statementId` 
+                                                         and Book.bookId = StatedBooks.bookId and Course.courseId = StatedBooks.courseId 
+                                                         and `Statement`.`current` = 1 and `Statement`.`User_userId` = '$userId'";
+                                    $statementsCoursesRes = mysqli_query($conn, $sqlGetCurrentCourses);
+                                    if (mysqli_num_rows($statementsCoursesRes) > 0) {
+                                        echo '<h4 class="mb-5" style="text-align: center;">Τρέχουσα Δήλωση - Χειμερινού Εξαμήνου 2018-2019</h4>
+                                                <div class="row">
+                                                    <div class="col-10"></div>
+                                                    <div class="col-2">
+                                                        <button style="width:180%;" onclick="getbooks()" class="btn btn-md btn-success"><i class="fas fa-edit mr-2"></i>Τροποποίηση Δήλωσης</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-10">
+                                                        <div class="row">
+                                                            <div class="col-5"><p class="stateHeaders">PIN παραλαβής: 123123213</p></div>
+                                                            <div class="col-6"><p class="stateHeaders">Προθεσμία Παραλαβής: 30/12/2018</p></div>
+                                                        </div>                        
+                                
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <button style="width:180%;" class="btn btn-md btn-danger"><i class="fas fa-file-pdf mr-2"></i>Κατέβασμα ως PDF</button>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-5">
+                                                    <div class="col-12">
+                                                        <div class="card historyCard">';
+                                        // output data of each row
+                                        $counterCourse = 0;
+                                        while($rowCourse = mysqli_fetch_assoc($statementsCoursesRes)) {
+                                            echo '<div class="card-header" id="headingCourse' . $counterCourse .'">
+                                                    <div class="row stateCardHead mb-0">
+                                                        <div class="col-4"><p>Μάθημα: ' . $rowCourse['courseName'] .'</p></div>
+                                                        <div class="col-5"><p> Σημείο Διανομής: Εκδόσεις Sci-Pub</p></div>
+                                                        <div class="col-2"><p class="openPoint">Ανοιχτό Τώρα</p></div>
+                                                        <div class="col-1">
+                                                            <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseCourse' . $counterCourse .'" aria-expanded="true" aria-controls="collapseCourse' . $counterCourse .'">
+                                                                <i class="fas fa-caret-down" id="caret1"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                    
+                                                <div id="collapseCourse' . $counterCourse .'" class="collapse" aria-labelledby="headingCourse' . $counterCourse .'" data-parent="#none">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div  style="border-right: 1px solid grey" class="col-6">
+                                                                <div class="row"><div class="col-12"><p style="font-weight: bold; text-align: center;">Επιλεγμένο Σύγγραμμα</p></div></div>
+                                                                <div class="row">
+                                                                    <div class="col-4"><img style="width: 65%; height: 75%;" class="rounded" src="images/book.jpeg" alt="Book cover missing"></div>
+                                                                    <div class="col-8">
+                                                                        <p>Τιτλος: ' . $rowCourse['title'] .'</p>
+                                                                        <p>Συγγραφέας: ' . $rowCourse['authors'] .'</p>
+                                                                        <p>Σελίδες: ' . $rowCourse['pages'] .'</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p>Έτος έκδοσης: ' . $rowCourse['publishYear'] .'</p>
+                                                                        <p>ISBN: ' . $rowCourse['ISBN'] .'</p>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <button class="btn btn-md mt-2 btn-info">Περισσότερα</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-1" style="margin-right:-3%;"></div>
+                                                            <div class="col-5">
+                                                                <div class="row"><div class="col-12"><p style="font-weight: bold; text-align: center;">Σημείο Διανομής</p></div></div>
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <p>Όνομα: Εκδόσεις Sci-Pub</p>
+                                                                        <p>Διεύθυνση: Akadimias 42, Athina Τ.Κ.: 10672</p>
+                                                                        <p>Ωράριο: Καθημερινές 9πμ - 2μμ</p>
+                                                                        <div class="row">
+                                                                            <div class="col-7">
+                                                                                <p class="openPoint">Αποθέματα: 53</p>
+                                                                                <p>Τηλέφωνο: 2101231231</p>
+                                                                            </div>
+                                                                            <div class="col-5"><button class="btn btn-md mt-4 btn-success"><i class="fas mr-2 fa-map-marked-alt"></i>Οδηγίες</button></div>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>';
+                                            $counterCourse++;
+                                        }
+                                        echo ' </div>
+                                                </div>
+                                            </div>
+                                        </div>';
+                                    } else {
+                                        echo '<h4 style="text-align: center; margin-top:10%;" >Δεν έχετε πραγματοποιήσει δήλωση...</h4>
+                                              <div style="margin-top:5%;"class="text-center"><button onclick="getbooks()" class="btn btn-success btn-lg">Δήλωση Συγγραμμάτων</button></div>';
+                                    }
+                                    
+                                    
+        
+                                }
+                            ?>
+                        <!-- </div>
+                    </div>
+                </div> -->
+            </div>
             <!-- <div class="col-2"></div> -->
 
         </div>
