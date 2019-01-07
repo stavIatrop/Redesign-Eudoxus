@@ -59,7 +59,7 @@
           </a>
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a class="iconText" href="#"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
+            <a class="iconText" href="#" onclick="profileGo('prof')"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
             <!-- <p class="loginText">Προφίλ</p> -->
             <?php
               
@@ -128,7 +128,7 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">Αναζήτηση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Τρέχουσα Δήλωση</a>
+                      <a class="dropdown-item" href="#" onclick="profileGo('curr')">Τρέχουσα Δήλωση</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
@@ -201,7 +201,7 @@
             <p class=" pull-right infoTitle">Ο φοιτητής μπορεί να:</p>
             <ul style="padding-left: 15%;">
               <li class="infoAbility">πραγματοποιήσει <a href="http://localhost/sdi1500048_sdi1500116/getbooks.php">δήλωση συγγραμμάτων</a></li>
-              <li class="infoAbility">μεταβεί στην <a href="#"> τρέχουσα δήλωση</a></li>
+              <li class="infoAbility">μεταβεί στην <a href="#" onclick="profileGo('curr')"> τρέχουσα δήλωση</a></li>
               <li class="infoAbility"><a href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">αναζητήσει</a> συγγράμματα</li>
             </ul>
             <p class="infοDeadline">Προθεσμία Δηλώσεων Συγγραμμάτων: 17/11/2018</p>

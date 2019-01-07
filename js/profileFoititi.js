@@ -50,6 +50,13 @@ window.onload = function() {
 
         activate("current", "profileManage", "profContent");
     }
+    else if(c == "hist") {
+        setActive('history', 'profileManage', 'current');
+        document.getElementById("profileManage").classList.remove("active");
+        document.getElementById("history").classList.add("active");
+
+        activate("history", "profileManage", "current");
+    }
     else {
         setActive('profileManage', 'current', 'history');
         //activate('profileManage', 'current', 'history');
