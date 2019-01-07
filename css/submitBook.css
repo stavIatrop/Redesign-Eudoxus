@@ -116,6 +116,24 @@
     display: none;
 }
 
+#pagesError {
+
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+}
+
+#keywordsError {
+
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+    text-align: center;
+
+}
+
 #helpBtn0 {
     
     margin-top: 110px;

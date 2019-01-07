@@ -175,7 +175,7 @@
             
         	<p id="elementsTitle">Στοιχεία Συγγράμματος</p>
 
-            <form id="elementsForm" data-toggle="validator" role="form">
+            <form id="elementsForm" data-toggle="validator" role="form" >
             
           
             	<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title" oninput="typeTitle(this.value)">
@@ -201,7 +201,8 @@
                 <p id="weightError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)">
                 <p id="dimError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="number" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">
+                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">
+                <p id="pagesError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
                 <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)">
                 <p id="priceError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
                 
@@ -220,7 +221,7 @@
             </div>
             <div class="row">
                 <span id="aster2" class="fa fa-asterisk"></span>
-                <button type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 90-12345-09-7 ή 978-960-530-165-1"><i class="fa fa-info-circle"></i></button>
+                <button id="isbnHelp" type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. 90-12345-09-7 ή 978-960-530-165-1"><i class="fa fa-info-circle"></i></button>
             </div>
             <div class="row">
                 <i id="aster3" class="fa fa-asterisk"></i>
@@ -276,9 +277,10 @@
                 </ul>
 
                 <input style="margin-top: 17%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:100%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά(Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)">
-                
+                <p id="keywordsError">Μη αποδεκτό format!</p>
+
             </form>
-            <button id="submitButton"  onclick="submitBk()" type="submit" class="btn btn-success " disabled>Καταχώρηση</button>
+            <button id="submitButton"  onclick="submitBk()" type="submit" class="btn btn-success" disabled>Καταχώρηση</button>
             <i id="aster6" class="fa fa-asterisk"></i><span >Υποχρεωτικό πεδίο<span>
         </div>
 
@@ -286,7 +288,7 @@
               
             <div class="row">
                 <i id="aster5" class="fa fa-asterisk"></i>
-                <button id="helpBtn3" type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. (Άνθρωπος, Μηχανή)  "><i class="fa fa-info-circle"></i></button>
+                <button id="helpBtn3" type="button" class="btn btn-default btn-circle btn-lg" data-toggle="tooltip" data-placement="right" title="π.χ. Άνθρωπος, Μηχανή  "><i class="fa fa-info-circle"></i></button>
             </div>
 
         </div>

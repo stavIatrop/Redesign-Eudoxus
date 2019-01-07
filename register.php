@@ -49,7 +49,7 @@
         //debug_to_console("reach");
         $emailQuery = "INSERT INTO User (username, email, password, userCategory, categoryId) VALUES ('$username', '$email', '$password', '$category', '$categoryId')";
 
-        if(mysqli_query($conn, $emailQuery)){  //Records added successfully
+        if(mysqli_query($conn, $emailQuery)){  //Record added successfully
             $val = 1;
             echo $val;
             return $val;
