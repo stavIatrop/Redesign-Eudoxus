@@ -15,6 +15,27 @@ var selCatId = 0;
 var emailLog = 0;
 var passLog = 0;
 
+var logginedType = -1;
+
+window.onload = function(){
+    request = $.ajax({
+        url: "getbooksServer.php",
+        type: "post",
+        data: {action: 'UserType'}
+      });
+
+      request.done(function (response){
+        logginedType =  response; 
+      });
+    
+      request.fail(function (jqXHR, textStatus, errorThrown){
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+      });
+}
+
 $(document).ready(function(){
 
     $("input").val("");

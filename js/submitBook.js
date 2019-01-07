@@ -10,6 +10,26 @@ var dimensionsInput = 0;
 var pagesInput = 0;
 var priceInput = 0;
 
+var logginedType = -1;
+
+window.onload = function() {
+	request = $.ajax({
+        url: "getbooksServer.php",
+        type: "post",
+        data: {action: 'UserType'}
+      });
+
+      request.done(function (response){
+        logginedType =  response; 
+      });
+    
+      request.fail(function (jqXHR, textStatus, errorThrown){
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+      });
+}
 $(document).ready(function() {
 
     $('#example-popover').popover(function(){

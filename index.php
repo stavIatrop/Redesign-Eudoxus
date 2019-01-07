@@ -19,6 +19,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/homepage.js"></script>
   <script src="js/newsContainer.js"></script>
+  
 
 </head>
 <body>
@@ -27,7 +28,7 @@
       <div class="col-md-12">
         <div class="row topTopPart">
           <div class="col-xl-1 col-lg-2">
-            <a class="logoDiv" href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
+            <a class="logoDiv" href="http://localhost/sdi1500048_sdi1500116/"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
           </div>
           <div class="col-xl-8 d-lg-none d-xl-block">
             <div class="row">
@@ -43,7 +44,7 @@
           <div class="d-xl-none d-lg-block col-lg-4">
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
+            <a href="http://localhost/sdi1500048_sdi1500116/regLogin.php" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
             <!-- <p class="loginText">Είσοδος/Εγγραφή</p> -->
             <?php
               
@@ -58,7 +59,7 @@
           </a>
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
+            <a class="iconText" href="#"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
             <!-- <p class="loginText">Προφίλ</p> -->
             <?php
               
@@ -77,8 +78,8 @@
             </a>
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
-            <a href="englishVersion"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
+            <a href="#"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
+            <a href="#"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
           </div>
         </div>
         <!-- <div class="row topTopPart">
@@ -116,16 +117,16 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">Αρχική</a>
+                    <a class="nav-link active" href="http://localhost/sdi1500048_sdi1500116/">Αρχική</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Φοιτητής
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Δήλωση Συγγραμμάτων</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/getbooks.php">Δήλωση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Αναζήτηση Συγγραμμάτων</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">Αναζήτηση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Τρέχουσα Δήλωση</a>
                       <div class="dropdown-divider"></div>
@@ -136,7 +137,7 @@
                       Εκδότης
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Καταχώρηση Συγγράμματος</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/submitBook.php">Καταχώρηση Συγγράμματος</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Διαχείρηση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
@@ -147,22 +148,22 @@
                       Γραμματεία
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Εισαγωγή Π.Σ.</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Επεξεργασία Π.Σ.</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Σημεια Διανομής
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Επικύρωση Παραλαβής</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Επεξεργασία Πληροφοριών</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link " href="#">Επικοινωνία</a>
@@ -199,18 +200,18 @@
           <div id="foititisInfo" class="col-lg-10 col-md-8">
             <p class=" pull-right infoTitle">Ο φοιτητής μπορεί να:</p>
             <ul style="padding-left: 15%;">
-              <li class="infoAbility">πραγματοποιήσει <a href="url">δήλωση συγγραμμάτων</a></li>
-              <li class="infoAbility">μεταβεί στην <a href="url">τροποποίηση τρέχουσας δήλωσης</a></li>
-              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
+              <li class="infoAbility">πραγματοποιήσει <a href="http://localhost/sdi1500048_sdi1500116/getbooks.php">δήλωση συγγραμμάτων</a></li>
+              <li class="infoAbility">μεταβεί στην <a href="#"> τρέχουσα δήλωση</a></li>
+              <li class="infoAbility"><a href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">αναζητήσει</a> συγγράμματα</li>
             </ul>
             <p class="infοDeadline">Προθεσμία Δηλώσεων Συγγραμμάτων: 17/11/2018</p>
           </div>
           <div id="ekdotisInfo" class="col-lg-10 col-md-8" style="display: none;">
             <p class=" pull-right infoTitle">Ο εκδότης μπορεί να:</p>
             <ul style="padding-left: 15%;">
-              <li class="infoAbility"><a href="url">καταχωρήσει</a> ένα συγγραμμα</li>
+              <li class="infoAbility"><a href="http://localhost/sdi1500048_sdi1500116/submitBook.php">καταχωρήσει</a> ένα συγγραμμα</li>
               <li class="infoAbility">επεξεργαστεί τα τρέχοντα <a href="url">καταχωρημένα συγγράμματα</a></li>
-              <li class="infoAbility"><a href="url">αναζητήσει</a> συγγράμματα</li>
+              <li class="infoAbility"><a href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">αναζητήσει</a> συγγράμματα</li>
             </ul>
           </div>
           <div id="grammateiaInfo" class="col-lg-10 col-md-8" style="display: none;">

@@ -1,5 +1,7 @@
 var checkedPages = null;
 
+var logginedType = -1;
+
 function choosePages(pagesId) {
     checkedPages = pagesId;
 }
@@ -13,6 +15,23 @@ window.onload = function() {
     document.getElementById("pag3").checked = false;
     document.getElementById("pag4").checked = false;
     document.getElementById("pag5").checked = false;
+
+    request = $.ajax({
+        url: "getbooksServer.php",
+        type: "post",
+        data: {action: 'UserType'}
+      });
+
+      request.done(function (response){
+        logginedType =  response; 
+      });
+    
+      request.fail(function (jqXHR, textStatus, errorThrown){
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+      });
 };
 
 function cancelFilter(filterId) {

@@ -1,4 +1,6 @@
 
+var logginedType = -1;
+
 window.onload = function() {
   document.getElementById("selUni").selectedIndex = 0;
   document.getElementById("selDep").selectedIndex = 0;
@@ -7,6 +9,23 @@ window.onload = function() {
   document.getElementById("selDep").disabled = true;
   document.getElementById("selSem").disabled = true;
   document.getElementById("selCourse").disabled = true;
+
+  request = $.ajax({
+    url: "getbooksServer.php",
+    type: "post",
+    data: {action: 'UserType'}
+  });
+
+  request.done(function (response){
+    logginedType =  response; 
+  });
+
+  request.fail(function (jqXHR, textStatus, errorThrown){
+    console.error(
+        "The following error occurred: "+
+        textStatus, errorThrown
+    );
+  });
 };
 
 $( document ).ready(function() {

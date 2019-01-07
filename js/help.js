@@ -11,6 +11,26 @@ var disGram = 0;
 var helpPro = 0;
 var helpAccountGram = 0;
 
+var logginedType = -1;
+
+window.onload = function() {
+    request = $.ajax({
+        url: "getbooksServer.php",
+        type: "post",
+        data: {action: 'UserType'}
+      });
+
+      request.done(function (response){
+        logginedType =  response; 
+      });
+    
+      request.fail(function (jqXHR, textStatus, errorThrown){
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+      });
+}
 
 //gia ton Foititi
 function showSubMenuFoit() {

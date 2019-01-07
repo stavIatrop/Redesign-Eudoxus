@@ -38,6 +38,9 @@
     case 'CompleteStatement':
         CompleteStatement();
         break;
+    case 'UserType':
+        UserType();
+        break;
     default:
         // unknown / missing action
     }
@@ -412,5 +415,21 @@
             return $retVal;
         }
 
+    }
+
+    function UserType() {
+        include("user.class.php");
+        if(isset($_COOKIE['user'])) {
+            $user = new User(0);
+            $user  = unserialize($_COOKIE['user']);
+            $userCat = $user->getCategory();
+            echo $userCat;
+            return $userCat;
+        }
+        else {
+            $retVal = 0;
+            echo $retVal;
+            return $retVal;
+        }
     }
 ?>
