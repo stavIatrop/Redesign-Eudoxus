@@ -29,7 +29,7 @@
       <div class="col-md-12">
         <div class="row topTopPart">
           <div class="col-xl-1 col-lg-2">
-            <a class="logoDiv" href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
+            <a class="logoDiv" href="http://localhost/sdi1500048_sdi1500116/"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
           </div>
           <div class="col-xl-8 d-lg-none d-xl-block">
             <div class="row">
@@ -45,7 +45,7 @@
           <div class="d-xl-none d-lg-block col-lg-4">
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
+            <a href="http://localhost/sdi1500048_sdi1500116/regLogin.php" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
             <!-- <p class="loginText">Είσοδος/Εγγραφή</p> -->
             <?php
               
@@ -57,10 +57,10 @@
                 echo '<p class="loginText">Είσοδος/Εγγραφή</p>';
               }
             ?>
-            </a>
+          </a>
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
+            <a class="iconText" href="#" onclick="profileGo('prof')"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i>
             <!-- <p class="loginText">Προφίλ</p> -->
             <?php
               
@@ -79,8 +79,8 @@
             </a>
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
-            <a href="englishVersion"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
+            <a href="#"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
+            <a href="#"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
           </div>
         </div>
         <div class="row navBarRow">
@@ -92,18 +92,18 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Αρχική</a>
+                    <a class="nav-link active" href="http://localhost/sdi1500048_sdi1500116/">Αρχική</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Φοιτητής
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Δήλωση Συγγραμμάτων</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/getbooks.php">Δήλωση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Αναζήτηση Συγγραμμάτων</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">Αναζήτηση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Τρέχουσα Δήλωση</a>
+                      <a class="dropdown-item" href="#" onclick="profileGo('curr')">Τρέχουσα Δήλωση</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
@@ -112,7 +112,7 @@
                       Εκδότης
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Καταχώρηση Συγγράμματος</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/submitBook.php">Καταχώρηση Συγγράμματος</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Διαχείρηση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
@@ -123,22 +123,22 @@
                       Γραμματεία
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Εισαγωγή Π.Σ.</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Επεξεργασία Π.Σ.</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Σημεια Διανομής
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Επικύρωση Παραλαβής</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Επεξεργασία Πληροφοριών</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link " href="#">Επικοινωνία</a>

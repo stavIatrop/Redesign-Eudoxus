@@ -1,5 +1,5 @@
 <head>
-  <title>Εύδοξος - Σύνδεση</title>
+  <title>Εύδοξος - Προφίλ</title>
   <link rel="icon" href="images/favicon.ico" type="image/ico">
 
   <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -7,15 +7,15 @@
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/topPart.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/navBar.css" rel="stylesheet" type="text/css"  media="all">
+  <link href="css/profileFoititi.css" rel="stylesheet" type="text/css"  media="all">
   <link href="css/footer.css" rel="stylesheet" type="text/css"  media="all">
-  <link href="css/help.css" rel="stylesheet" type="text/css"  media="all">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   
   
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/totop.js"></script>
-  <script src="js/help.js"></script>
+  <script src="js/profileEkdoti.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
@@ -159,150 +159,55 @@
             <div class="col-md-12">
                 <ul class="breadcrumbT">
                 <li><a href="http://localhost/sdi1500048_sdi1500116/">Αρχική</a></li>
-                <li><a href="#">Βοήθεια</a></li>
+                <li><a href="#">Προφίλ</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="row"> 
+        <div style="min-height: 600px;" class="row">
 
-            <div class="col-1"></div>
-            <div class="col-2">
-                <ul class="nav flex-column">
+            <!-- <div class="col-1"> </div> -->
 
-                    <h2 class="helpMenu">
-                        Βοήθεια...
-                    </h2>
-
-                    <li class="nav-item" id="foititis">
-                        <a id="foititoLink" onclick="showSubMenuFoit()" class="nav-link" data-toggle="collapse" data-target="#subListFoit" href="#">...για τον Φοιτητή</a>
-                        <div id="subListFoit" class="collapse show" aria-labelledby="headingOne" data-parent="#foititis">
-                            <ul class="nav-list colapse flex-column subListMenu" >
-                                <li class="nav-item"  >
-                                    <a id="helpFoit1" onclick="showHelpDhl()" class="nav-link" data-toggle="collapse" data-target="#helpDhlwsh" href="#">Πώς να δηλώσω Συγγράμματα</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpFoit2" onclick="showHelpAccount()" class="nav-link" data-toggle="collapse" data-target="#helpAcc" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpFoit3" onclick="showHelp()" class="nav-link" data-toggle="collapse" data-target="#helpMe" href="#">Τι κάνω σε αυτή τη ζωή;;</a>
-                                </li>
-                            
-                            </ul>
-                    
-                        </div>
-                    
-                    </li>
-                    
-                    <li class="nav-item" id="ekdotis">
-                        <a id="ekdotoLink" onclick="showSubMenuEkdot()" class="nav-link" data-toggle="collapse" data-target="#subListEkdot" href="#">...για τον Εκδότη</a>
-                        <div id="subListEkdot" class="collapse show" aria-labelledby="headingOne" data-parent="#ekdotis">
-                            <ul class="nav-list colapse flex-column subListMenu" >
-                                <li class="nav-item"  >
-                                    <a id="helpEkdot1" onclick="showHelpKata()" class="nav-link" data-toggle="collapse" data-target="#helpKata" href="#">Πώς να καταχωρήσω Συγγράμματα</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpEkdot2" onclick="showHelpAccountEkdot()" class="nav-link" data-toggle="collapse" data-target="#helpAccEkdot" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
-                                </li>
-                                
-                            
-                            </ul>
-                    
-                        </div>
-                    </li>
-
-                    <li class="nav-item" id="grammateia">
-                        <a id="gramLink" onclick="showSubMenuGram()" class="nav-link" data-toggle="collapse" data-target="#subListGram" href="#">...για τη Γραμματεία</a>
-                        <div id="subListGram" class="collapse show" aria-labelledby="headingOne" data-parent="#grammateia">
-                            <ul class="nav-list colapse flex-column subListMenu" >
-                                <li class="nav-item"  >
-                                    <a id="helpGram1" onclick="showHelpPro()" class="nav-link" data-toggle="collapse" data-target="#helpPro" href="#">Πώς να καταχωρήσω Πρόγραμμα Σπουδών</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpGram2" onclick="showHelpAccountGram()" class="nav-link" data-toggle="collapse" data-target="#helpAccGram" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
-                                </li>
-                                
-                            
-                            </ul>
-                    
-                        </div>
-                    </li>
-                    
-                </ul>
-
-                
+            
+            <div class="col-3" style="border-right: 1px solid grey;">
+                <div class="list-group menuCard ml-3" id="list-tab" role="tablist" >
+                    <button onclick="activate(id, 'current', 'history')" class="btnPointer list-group-item list-group-item-action active" id="profileManage" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Διαχείριση Προφίλ</button>
+                                        
+                </div>
             </div>
-
-                
             <div class="col-1"></div>
-            <div class="col-4">
+            <div id="profContent" class="col-5">
+                <div class="card profileCard">
 
-                <div class="card" id="helpDhlwsh">
-                    <div class="card-header"> Οδηγίες για τη Δήλωση Συγγραμμάτων</div>
+                    <div class="card-header"> Προφίλ </div>
+
                     <div class="card-body">
 
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputName">Όνομα Χρήστη</label>
+                                <input type="text" class="form-control" id="exampleInputName" value="AchilleasPap" autocomplete="off">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Νέος Κωδικός</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Νέος Κωδικός">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Επιβεβαίωση Νέου Κωδικού</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                            </div>
+                            <div class="text-center" style="margin-top: 25px">
+                                <button type="submit" class="btn btn-success" >Αποθήκευση</button>
+                            </div>
+                        </form>
+
+
+                    </div>
                     
-                    </div>
-
                 </div>
-
-                <div class="card" id="helpAcc">
-                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
-                    <div class="card-body">
-
-                        
-                    </div>
-
-                </div>
-
-                <div class="card" id="helpMe">
-                    <div class="card-header"> ΈΛΑ ΝΤΕ?!</div>
-                    <div class="card-body">
-
-                        
-                    </div>
-
-                </div>
-
-                <div class="card" id="helpKata">
-                    <div class="card-header"> Οδηγίες για την Καταχώρηση Συγγραμμάτων</div>
-                    <div class="card-body">
-
-                    
-                    </div>
-
-                </div>
-
-                <div class="card" id="helpAccEkdot">
-                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
-                    <div class="card-body">
-
-                        
-                    </div>
-
-                </div>
-
-                <div class="card" id="helpPro">
-                    <div class="card-header"> Οδηγίες για την Καταχώρηση Προγράμματος Σπουδών</div>
-                    <div class="card-body">
-
-                    
-                    </div>
-
-                </div>
-
-                <div class="card" id="helpAccGram">
-                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
-                    <div class="card-body">
-
-                        
-                    </div>
-
-                </div>
-
             </div>
-
-
+            <!-- <div class="col-2"></div> -->
         </div>
 
         <div class="row" style="min-height:50px"> </div>

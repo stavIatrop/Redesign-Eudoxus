@@ -82,32 +82,6 @@
             <a href="#"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
           </div>
         </div>
-        <!-- <div class="row topTopPart">
-          <div class="col-lg-1 col-md-3 col-sm-3 col-xs-3">
-            <a class="logoDiv" href="homepageUrl"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
-          </div>
-          <div class="col-lg-8 d-md-none d-sm-none d-xs-none">
-            <div class="row" style="height: 50%;">
-              <div class="col">
-                <p class="tagline">Σύντομη πρόταση περιγραφής του ιστοχώρου</p>
-              </div>
-            </div>
-            <div class="row" style="height: 50%;">
-              <div class="col">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-1 col-md-3 col-sm-3 col-xs-3">
-            <a href="Login" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i><p class="loginText">Είσοδος / Εγγραφή</p></a>
-          </div>
-          <div class="col-lg-1 col-md-3 col-sm-3 col-xs-3">
-            <a class="iconText" href="Login"><i style="margin-left: 29%;" class="fas fa-user topIcons"></i><p class="loginText">Προφίλ</p></a>
-          </div>
-          <div class="col-lg-1 col-md-3 col-sm-3 col-xs-3">
-            <a href="greekVersion"><img class="flag rounded" src="images/greek.png" alt="Greek flag"></a>
-            <a href="englishVersion"><img class="flag rounded" src="images/english.png" alt="Greek flag"></a>
-          </div>
-        </div> -->
         <div class="row navBarRow">
           <div class="col-12">
             <nav class="navbar rounded navbar-expand-xl navbar-light bg-light">

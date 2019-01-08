@@ -352,6 +352,11 @@ function deleteStatedBook(courseId) {
 
 function completeStatement() {
   
+  if(logginedType == 0 || logginedType == 2) {
+    window.location.replace("http://localhost/sdi1500048_sdi1500116/regLogin.php?msg=notGet");
+    return;
+  }
+
   request = $.ajax({
     url: "getbooksServer.php",
     type: "post",
@@ -396,7 +401,7 @@ function profileGo(where) {
           window.location.href = "http://localhost/sdi1500048_sdi1500116/profileFoititi.php";
       }
       else if(logginedType == 2) {
-          window.location.href = "#";
+          window.location.href = "http://localhost/sdi1500048_sdi1500116/profileEkdoti.php";
       }
       else {
           window.location.href = "http://localhost/sdi1500048_sdi1500116/regLogin.php";

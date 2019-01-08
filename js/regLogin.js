@@ -34,6 +34,8 @@ window.onload = function(){
             textStatus, errorThrown
         );
       });
+
+      errorMsg();
 }
 
 function profileGo(where) {
@@ -42,7 +44,7 @@ function profileGo(where) {
             window.location.href = "http://localhost/sdi1500048_sdi1500116/profileFoititi.php";
         }
         else if(logginedType == 2) {
-            window.location.href = "#";
+            window.location.href = "http://localhost/sdi1500048_sdi1500116/profileEkdoti.php";
         }
         else {
             window.location.href = "http://localhost/sdi1500048_sdi1500116/regLogin.php";
@@ -346,6 +348,7 @@ function register() {
                         document.getElementById('catIdEkdot').value = '';
                         $("#studNumb").hide();
                         $("#publNumb").hide();
+                        docLocation();
                         console.log("NAIII");
                         
 
@@ -478,9 +481,7 @@ function login() {
         if(response == 1) {
 
             console.log("NAIII");
-
-            location.href = 'index.php';
-
+            docLocation();
             
 
         } else {
@@ -500,4 +501,30 @@ function login() {
         textStatus, errorThrown
         );
     });
+}
+
+function docLocation() {
+    var url = new URL(window.location.href);
+    var msg = url.searchParams.get("msg");
+    console.log(msg);
+    if(msg == "notGet") {
+        window.location.replace("http://localhost/sdi1500048_sdi1500116/getbooks.php");
+    }
+    else if (msg == "notSubmit") {
+        window.location.replace("http://localhost/sdi1500048_sdi1500116/submitBook.php");
+    }
+    else {
+        location.href = 'index.php';
+    }
+}
+
+function errorMsg() {
+    var url = new URL(window.location.href);
+    var msg = url.searchParams.get("msg");
+    if(msg == "notGet") {
+        document.getElementById("errorGet").style.display = 'block';
+    }
+    else if (msg == "notSubmit") {
+        document.getElementById("errorSubmit").style.display = 'block';
+    }
 }
