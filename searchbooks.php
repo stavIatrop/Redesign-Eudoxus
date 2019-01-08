@@ -27,7 +27,7 @@
 <body>
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
   <div class="container-fluid">
-  <div class="row topPart">
+    <div class="row topPart">
       <div class="col-md-12">
         <div class="row topTopPart">
           <div class="col-xl-1 col-lg-2">
@@ -169,12 +169,10 @@
           <div style="padding-bottom: 4%; padding-top: 3%;" class="row">
             <div class="col-xl-2 col-lg-1"></div>
             <div class="col-xl-8 col-lg-10">
-              <form>
-                <div class="form-inline">
-                  <input type="text" class="form-control mr-3 inputSearch col-lg-10" placeholder="Τίτλος, συγγραφέας, ISBN, λέξεις κλειδιά..." id="searchInp">
-                  <button onclick="search()" style="box-shadow: 2px 2px 3px rgb(179, 177, 177);" class="btn btn-success">Αναζήτηση</button>
-                </div>
-              </form>
+              <div class="form-inline">
+                <input type="text" class="form-control mr-3 inputSearch col-lg-10" placeholder="Τίτλος, συγγραφέας, ISBN, λέξεις κλειδιά..." id="searchInp">
+                <button onclick="search()" style="box-shadow: 2px 2px 3px rgb(179, 177, 177);" class="btn btn-success">Αναζήτηση</button>
+              </div>
             </div>
             <div class="col-xl-2 col-lg-1"></div>
           </div>

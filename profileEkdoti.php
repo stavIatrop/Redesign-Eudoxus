@@ -27,7 +27,7 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <div class="container-fluid">
         <div class="row topPart">
-        <div class="col-md-12">
+            <div class="col-md-12">
             <div class="row topTopPart">
             <div class="col-xl-1 col-lg-2">
                 <a class="logoDiv" href="http://localhost/sdi1500048_sdi1500116/"><img class="logo" src="images/logo.png" alt="Logo"><p class="logoText">Εύδοξος</p></a>
