@@ -85,5 +85,28 @@ function search() {
         document.getElementById("searchList").style.removeProperty("display");
         document.getElementById("searchInp").style.backgroundColor='white';
 
+        request = $.ajax({
+            url: "searchBookServer.php",
+            type: "post",
+            data: {action: 'SearchBook',
+                   searchTerm: document.getElementById("searchInp").value }
+          });
+    
+          request.done(function (response){
+            if(response == "") {
+                document.getElementById("bookListId").innerHTML = '<p style="font-size: 180%; text-align: center; font-weight: bold; margin-top: 10%;">Δεν βρέθηκαν αποτελέσματα</p>';
+            }
+            else {
+                document.getElementById("bookListId").innerHTML = response;
+            }
+          });
+        
+          request.fail(function (jqXHR, textStatus, errorThrown){
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+          });
+
     }
 }
