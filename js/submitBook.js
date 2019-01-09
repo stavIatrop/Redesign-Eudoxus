@@ -10,6 +10,10 @@ var dimensionsInput = 0;
 var pagesInput = 0;
 var priceInput = 0;
 
+var pdfPreviewInput = 0;
+var pdfIndexInput = 0;
+var coverInput = 0;
+
 var logginedType = -1;
 
 window.onload = function() {
@@ -76,7 +80,6 @@ $(document).ready(function() {
 
 function chooseYear(value) {
 
-	console.log("CHANGED");
   	yearInput = value;
   	if (yearInput) {
 	  console.log("Year:" + yearInput);
@@ -90,6 +93,35 @@ function chooseYear(value) {
   	} else {
 
      	document.getElementById('submitButton').disabled = true;
+	}
+
+}
+
+function choosePreview(value) {
+
+	pdfPreviewInput = document.getElementById("pdfPreview").files[0].name;
+	// var path = document.getElementById("pdfPreview").files[0].path;
+
+  	if (pdfPreviewInput) {
+	  console.log("preview:" + pdfPreviewInput );
+  	}
+
+}
+
+function chooseIndex(value) {
+
+	pdfIndexInput = value;
+	if (pdfIndexInput) {
+	console.log("index:" + pdfIndexInput);
+	}
+
+}
+
+function chooseCover(value) {
+
+	coverInput = value;
+	if (coverInput) {
+	console.log("cover:" + coverInput);
 	}
 
 }
@@ -151,6 +183,18 @@ function typePublisher(value) {
 
 function typeWeight(value) {
 
+	if(document.getElementById("dimensionsError").style.display == 'block' && document.getElementById("pagesError").style.display == 'block') {
+		
+		document.getElementById("helpBtn2").style.marginTop = "205px";
+
+	}else if( document.getElementById("dimensionsError").style.display == 'block' || document.getElementById("pagessError").style.display == 'block') {
+
+		document.getElementById("helpBtn2").style.marginTop = "180px";
+
+	}else {
+
+		document.getElementById("helpBtn2").style.marginTop = "177px";
+	}
 	document.getElementById("helpBtn2").style.marginTop = "177px";
 	document.getElementById("helpBtn1").style.marginTop = "80px";
 	document.getElementById("weightError").style.display = 'none';
@@ -163,6 +207,19 @@ function typeWeight(value) {
 
 function typeDimensions(value) {
 
+	if(document.getElementById("weightError").style.display == 'block' && document.getElementById("pagesError").style.display == 'block') {
+		
+		document.getElementById("helpBtn2").style.marginTop = "205px";
+
+	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("pagessError").style.display == 'block') {
+
+		document.getElementById("helpBtn2").style.marginTop = "180px";
+
+	}else {
+
+		document.getElementById("helpBtn2").style.marginTop = "177px";
+	}
+	
 	document.getElementById("helpBtn2").style.marginTop = "177px";
 	document.getElementById("dimError").style.display = 'none';
 	$('#helpBtn1').tooltip('hide');
@@ -175,6 +232,19 @@ function typeDimensions(value) {
 
 function typePages(value) {
 
+	if(document.getElementById("weightError").style.display == 'block' && document.getElementById("dimensionsError").style.display == 'block') {
+		
+		document.getElementById("helpBtn2").style.marginTop = "205px";
+
+	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("dimensionsError").style.display == 'block') {
+
+		document.getElementById("helpBtn2").style.marginTop = "180px";
+
+	}else {
+
+		document.getElementById("helpBtn2").style.marginTop = "177px";
+	}
+	
 	document.getElementById("helpBtn2").style.marginTop = "177px";
 	document.getElementById("pagesError").style.display = 'none';
 
@@ -245,20 +315,15 @@ function handleForm(event) {
 
 function submitBk() {
 
-	if(logginedType == 0 || logginedType == 1) {
-		window.location.replace("http://localhost/sdi1500048_sdi1500116/regLogin.php?msg=notSubmit");
-		return;
-	}
-
 	var form = document.getElementById("descForm");
 	form.addEventListener('submit', handleForm);
 	
 	
 	var flag = 0;
 	var regexISBN0 = /^[0-9]{2}\-[0-9]{5}\-[0-9]{2}\-[0-9]{1}$/;
-	var regexISBN1 = /^[0-9]{2}\-[0-9]{5}\-[0-9]{2}\-[0-9]{1}$/;
+	var regexISBN1 = /^[0-9]{3}\-[0-9]{3}\-[0-9]{3}\-[0-9]{3}\-[0-9]{1}$/;
 
-	var regexKeywords = /^(([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([α-ω])*([ ])*)*,*$/;
+	var regexKeywords = /^(([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*),)*([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*)$/;
 	
 	if( regexKeywords.test(keywordsInput)) {
 
@@ -382,7 +447,7 @@ function submitBk() {
 
 	if( flag == 1)  {
 
-
+		console.log("HE");
 		request = $.ajax({
             url: "submitBookServer.php",
             type: "post",
@@ -396,19 +461,48 @@ function submitBk() {
 					weight: weightInput,
 					dimensions: dimensionsInput,
 					pages: pagesInput,
-					price: priceInput}
+					price: priceInput,
+					preview: pdfPreviewInput,
+					index: pdfIndexInput,
+					cover: coverInput}
 		});
 
 		request.done(function (response){
-			// Log a message to the console
-			//console.log("RESPONSE WAS: " + response);
-			//$("#depOptions").html("aaaaaaaaaa");
-			if(response == 1) {
-			  //window.location.replace("http://localhost/sdi1500048_sdi1500116/profileFoititi.php");
-			  window.location.href = "http://localhost/sdi1500048_sdi1500116/profileFoititi.php?choice=curr";
-			}
-			else if(response == -1){
-			  window.location.replace("http://localhost/sdi1500048_sdi1500116/regLogin.php");
+			
+			// if(logginedType == 0 || logginedType == 1) {
+			// 	window.location.replace("http://localhost/sdi1500048_sdi1500116/regLogin.php?msg=notSubmit");
+			// 	return;
+			// }
+			console.log("RESPONSE:" + response);
+			if(response == -2) {
+
+				document.getElementById("userError").style.display = 'block';
+			  
+			} else if(response == -1){
+
+				//something went wrong with record addition
+				console.log("Something went wrong");
+			}else if (response == 0) {
+
+				window.location.replace("http://localhost/sdi1500048_sdi1500116/regLogin.php?msg=notSubmit");
+
+			}else if (response == 1) {
+
+				document.getElementById('submitSuccess').style.display = 'block';
+				document.getElementById('selYear').value = 0;
+				document.getElementById('title').value = '';
+				document.getElementById('authors').value = '';
+				document.getElementById('ISBN').value = '';
+				document.getElementById('publisher').value = '';
+				document.getElementById('weight').value = '';
+				document.getElementById('dimensions').value = '';
+				document.getElementById('pages').value = 0;
+				document.getElementById('price').value = '';
+				document.getElementById('keywords').value = '';
+				document.getElementById('pdfPreview').value = '';
+				document.getElementById('pdfIndex').value = '';
+				document.getElementById('cover').value = '';
+				
 			}
 		  });
 		

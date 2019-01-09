@@ -334,7 +334,7 @@ function register() {
 
                 request.done(function(response){
 
-                    console.log("RESPONSE WAS: " + response);
+                    
 
                     if(response == 1) {
 
@@ -349,7 +349,7 @@ function register() {
                         $("#studNumb").hide();
                         $("#publNumb").hide();
                         docLocation();
-                        console.log("NAIII");
+                        
                         
 
                     } else {
@@ -480,13 +480,12 @@ function login() {
 
         if(response == 1) {
 
-            console.log("NAIII");
+            
             docLocation();
             
 
         } else {
 
-            console.log("OXI");
             document.getElementById('authError').style.display = 'block';
             document.getElementById('passLog').value = '';
 

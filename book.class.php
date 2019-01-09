@@ -11,7 +11,9 @@
         private $dimensions;
         private $pages;
         private $price;
-
+        private $preview;
+        private $index;
+        private $cover;
 
         function __construct() {
             $this->title = null;
@@ -133,7 +135,38 @@
             $this->price = $price;
         }
 
+        public function getPreview() {
+    
+            return $this->preview;
+            
+        }
+    
+        public function setPreview($preview) {
+            
+            $this->preview = $preview;
+        }
 
+        public function getIndex() {
+    
+            return $this->index;
+            
+        }
+    
+        public function setIndex($index) {
+            
+            $this->index = $index;
+        }
+
+        public function getCover() {
+    
+            return $this->cover;
+            
+        }
+    
+        public function setCover($cover) {
+            
+            $this->cover = $cover;
+        }
     }
 
 
