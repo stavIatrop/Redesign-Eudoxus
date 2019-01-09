@@ -240,8 +240,8 @@
             </div>
             <div class="col-lg-8 col-md-10">
               <div id="showBooks" style="margin-top:-5%;">
-                <ul class="bookList">
-                  <li><div class="row bookRow">
+                <ul id="bookListId" class="bookList">
+                  <!-- <li><div class="row bookRow">
                     <div class="col-md-2">
                       <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
                     </div>
@@ -312,7 +312,7 @@
                     <div class="col-md-3">
                       <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Περισσότερα </button>
                     </div>
-                  </div></li>
+                  </div></li> -->
                 </ul>
               </div>
             </div>
