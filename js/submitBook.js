@@ -32,8 +32,13 @@ window.onload = function() {
             "The following error occurred: "+
             textStatus, errorThrown
         );
-      });
-}
+	  });
+	  
+	// if(document.getElementById("title").value) {
+	// 	console.log("HEY");
+	// 	document.getElementById("title").style.removeProperty("display");
+	// }
+};
 
 function profileGo(where) {
     if(where == "prof") {
@@ -323,8 +328,8 @@ function submitBk() {
 	var regexISBN0 = /^[0-9]{2}\-[0-9]{5}\-[0-9]{2}\-[0-9]{1}$/;
 	var regexISBN1 = /^[0-9]{3}\-[0-9]{3}\-[0-9]{3}\-[0-9]{3}\-[0-9]{1}$/;
 
-	var regexKeywords = /^(([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*),)*([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*)$/;
-	
+	//var regexKeywords = /^(([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*),)*([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*)$/;
+	var regexKeywords = /^[a-zA-Z0-9](,([a-zA-Z0-9])*([a-zA-Z0-9]))*$/;
 	if( regexKeywords.test(keywordsInput)) {
 
 		flag = 1;

@@ -46,7 +46,7 @@
           <div class="d-xl-none d-lg-block col-lg-4">
           </div>
           <div class="col-xl-1 col-lg-2">
-            <a href="http://localhost/sdi1500048_sdi1500116/regLogin.php" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
+            <a href="#" onclick="logout()" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
             <!-- <p class="loginText">Είσοδος/Εγγραφή</p> -->
             <?php
               
@@ -180,12 +180,13 @@
 				<?php
 				
 					include("book.class.php");
-				
+          include("login.php");
+          
 					if (isset($_COOKIE['book'])) {
-
-						$book = new Book(0);
+            debug_to_console("iset");
+						$book = new Book();
 						$book  = unserialize($_COOKIE['book']);
-						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title"  oninput="typeTitle(this.value)" value="' .  htmlspecialchars($book->getTitle()) .'">' 
+						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title"  oninput="typeTitle(this.value)" value="' .  htmlspecialchars($book->getTitle()) .'" autocomplete="off">' 
 						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)" value="' .  htmlspecialchars($book->getAuthors()) .'">'
 						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)" value="' .  htmlspecialchars($book->getISBN()) .'">'
 						. '<p id="ISBNError">Το ISBN δεν είναι συμβατό με ένα από τα δύο προτεινόμενα format!</p>'
@@ -208,6 +209,7 @@
 
 					}
 					else {
+            debug_to_console("notset");
 						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title" oninput="typeTitle(this.value)">'
 						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)">'
 						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)">'

@@ -50,10 +50,29 @@
             $bookQuery = "INSERT INTO `Book` ( `title`, `authors`, `ISBN`, `publisher`, `publishYear`, `weight`, `pages`, `dimensions`, `price`, `pdfPreview`, `pdfIndex`, `User_userId`, `cover`)
              VALUES ('$title', '$authors', '$ISBN','$publisher', '$year', '$weight', '$pages', '$dimensions', '$price', '$preview', '$index', '$userId', '$cover')";
 
+            $keywords = preg_replace('/s+/', '', $keywords);
+            $keywords = str_replace(" ", "", $keywords);
+            $keywordsArray = explode(",", $keywords);
+
+            for($i = 0; $i < count($keywordsArray); $i++){
+
+                if($keywordsArray[$i] == null) {
+                    continue;
+                }
+                $word = $keywordsArray[$i];
+                $keywordQuery = "INSERT INTO `Keyword` (`word`) VALUES('$word')";
+                if(!mysqli_query($conn, $keywordQuery)) {
+                    $val = -1;
+                    debug_to_console("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
+                    return $val;
+                }
+            }
+
             if(mysqli_query($conn, $bookQuery)){  //Record added successfully
                 if( isset($_COOKIE['book'])) {
                     setcookie('book', serialize($book), time() - 360000 );
                 }
+                
                 $val = 1;
                 echo $val;
                 return $val;

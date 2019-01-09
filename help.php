@@ -46,7 +46,7 @@
             <div class="d-xl-none d-lg-block col-lg-4">
             </div>
             <div class="col-xl-1 col-lg-2">
-                <a href="http://localhost/sdi1500048_sdi1500116/regLogin.php" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
+                <a href="#" onclick="logout()" class="iconText" ><i class="fas fa-sign-in-alt topIcons"></i>
                 <!-- <p class="loginText">Είσοδος/Εγγραφή</p> -->
                 <?php
                 

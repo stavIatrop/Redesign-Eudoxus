@@ -9,6 +9,8 @@
         $passLog = $_POST['password'];
         AuthUser($emailLog, $passLog);
         break;
+    case 'Logout':
+        Logout();
     default:
         // unknown / missing action
     }
@@ -46,6 +48,17 @@
         CloseCon($conn);
         //debug_to_console($optionsString);
         
+    }
+
+    function Logout() {
+
+        if(isset($_COOKIE['user'])) {
+
+            setcookie('user', serialize(user), time() - 360000);
+
+        }
+        return;
+
     }
 
 ?>
