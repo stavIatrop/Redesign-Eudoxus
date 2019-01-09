@@ -15,14 +15,17 @@
         $dimensions = $_POST['dimensions'];
         $pages = $_POST['pages'];
         $price = $_POST['price'];
+        $preview = $_POST['preview'];
+        $index = $_POST['index'];
+        $cover = $_POST['cover'];
         
-        SubmitBook($title, $authors, $ISBN, $publisher, $year, $keywords, $weight, $dimensions, $pages, $price);
+        SubmitBook($title, $authors, $ISBN, $publisher, $year, $keywords, $weight, $dimensions, $pages, $price, $preview, $index, $cover);
         break;
     default:
         // unknown / missing action
     }
 
-    function SubmitBook($title, $authors, $ISBN, $publisher, $year, $keywords, $weight, $dimensions, $pages, $price){
+    function SubmitBook($title, $authors, $ISBN, $publisher, $year, $keywords, $weight, $dimensions, $pages, $price, $preview, $index, $cover){
         
         include("user.class.php");
         include("book.class.php");
@@ -31,12 +34,26 @@
 
             $user = new User(0);
             $user  = unserialize($_COOKIE['user']);
+            $userCat = $user->getCategory();
+
+            if( $userCat == 1) {
+                
+                $val = -2;
+                echo $val;
+                return $val;
+            }
+
+            
             $userId = $user->getUserId();
             $conn = OpenCon();
 
-            $bookQuery = "INSERT INTO User (authors, dimensions, ISBN, pages, price, publisher, publishYear, title, User_userId, weight) VALUES ('$authors', '$dimensions', '$ISBN', '$pages', '$price', '$publisher', '$year', '$title', '$userId', '$weight')";
+            $bookQuery = "INSERT INTO `Book` ( `title`, `authors`, `ISBN`, `publisher`, `publishYear`, `weight`, `pages`, `dimensions`, `price`, `pdfPreview`, `pdfIndex`, `User_userId`, `cover`)
+             VALUES ('$title', '$authors', '$ISBN','$publisher', '$year', '$weight', '$pages', '$dimensions', '$price', '$preview', '$index', '$userId', '$cover')";
 
             if(mysqli_query($conn, $bookQuery)){  //Record added successfully
+                if( isset($_COOKIE['book'])) {
+                    setcookie('book', serialize($book), time() - 360000 );
+                }
                 $val = 1;
                 echo $val;
                 return $val;
@@ -47,12 +64,26 @@
             }
         
         
-        CloseCon($conn);
-        //debug_to_console($optionsString);
+            CloseCon($conn);
 
         } else {
 
-            
+            $book = new Book();
+            $book->setTitle($title);
+            $book->setAuthors($authors);
+            $book->setISBN($ISBN);
+            $book->setPublisher($publisher);
+            $book->setYear($year);
+            $book->setKeywords($keywords);
+            $book->setWeight($weight);
+            $book->setDimensions($dimensions);
+            $book->setPages($pages);
+            $book->setPrice($price);
+            $book->setPreview($preview);
+            $book->setIndex($index);
+            $book->setCover($cover);
+
+            setcookie('book', serialize($book), time() + 360000 );
             $val = 0;      //User not connected
             echo $val;
             return $val;

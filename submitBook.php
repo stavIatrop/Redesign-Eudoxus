@@ -177,34 +177,64 @@
 
             <form id="elementsForm" data-toggle="validator" role="form" >
             
-          
-            	<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title" oninput="typeTitle(this.value)">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)">
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)">
-                <p id="ISBNError">Το ISBN δεν είναι συμβατό με ένα από τα δύο προτεινόμενα format!</p>
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Εκδόσεις" id="publisher" oninput="typePublisher(this.value)">
-				<!-- <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Έτος Τρέχουσας Έκδοσης" name="publishYear" id="year" oninput="typeYear(this.value)"> -->
-				<select style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" onchange="chooseYear(this.value)" name="selYear" id="selYear" class="custom-select mb-3">
-					<option id="defYear"  value="0" selected>Επίλεξε Έτος Τρέχουσας Έκδοσης</option>
-					
-					<?php
-						$j = 1;
+				<?php
+				
+					include("book.class.php");
+				
+					if (isset($_COOKIE['book'])) {
+
+						$book = new Book(0);
+						$book  = unserialize($_COOKIE['book']);
+						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title"  oninput="typeTitle(this.value)" value="' .  htmlspecialchars($book->getTitle()) .'">' 
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)" value="' .  htmlspecialchars($book->getAuthors()) .'">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)" value="' .  htmlspecialchars($book->getISBN()) .'">'
+						. '<p id="ISBNError">Το ISBN δεν είναι συμβατό με ένα από τα δύο προτεινόμενα format!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Εκδόσεις" id="publisher" oninput="typePublisher(this.value)" value="' .  htmlspecialchars($book->getPublisher()) .'">'
+						. '<select style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" onchange="chooseYear(this.value)" name="selYear" id="selYear" class="custom-select mb-3" value="' .  htmlspecialchars($book->getYear()) .'">'
+						. '<option id="defYear"  value="0" >Επίλεξε Έτος Τρέχουσας Έκδοσης</option>';
 						for($i = 1997; $i < 2020; $i++ ) {
-							echo '<option id="defYear" onchange="chooseYear(this.value)" value="' . $j . '">' 
+							echo '<option id="defYear" onchange="chooseYear(this.value)" value="' . $i . '">' 
+							. $i 
+							. '</option>'; 	
+						}
+						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος" name="weight" id="weight" oninput="typeWeight(this.value)" value="' .  htmlspecialchars($book->getWeight()) .'">'
+						. '<p id="weightError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)" value="' .  htmlspecialchars($book->getDimensions()) .'">'
+						. '<p id="dimError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)" value="' .  htmlspecialchars($book->getPages()) .'">'
+						. '<p id="pagesError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)" value="' .  htmlspecialchars($book->getPrice()) .'">'
+						. '<p id="priceError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>';
+
+					}
+					else {
+						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title" oninput="typeTitle(this.value)">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)">'
+						. '<p id="ISBNError">Το ISBN δεν είναι συμβατό με ένα από τα δύο προτεινόμενα format!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Εκδόσεις" id="publisher" oninput="typePublisher(this.value)">'
+						. '<select style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" onchange="chooseYear(this.value)" name="selYear" id="selYear" class="custom-select mb-3">'
+						. '<option id="defYear"  value="0" selected>Επίλεξε Έτος Τρέχουσας Έκδοσης</option>';
+							
+												
+						for($i = 1997; $i < 2020; $i++ ) {
+							echo '<option id="defYear" onchange="chooseYear(this.value)" value="' . $i . '">' 
 							. $i 
 							. '</option>'; 
-							$j = $j + 1; 
+							
 						}
-					?>
-				</select>
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος" name="weight" id="weight" oninput="typeWeight(this.value)">
-                <p id="weightError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)">
-                <p id="dimError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">
-                <p id="pagesError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
-                <input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)">
-                <p id="priceError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>
+						echo '</select>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος" name="weight" id="weight" oninput="typeWeight(this.value)">'
+						. '<p id="weightError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)">'
+						. '<p id="dimError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">'
+						. '<p id="pagesError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)">'
+						. '<p id="priceError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>';
+					}
+				?>
+            	
                 
             </form>
             
@@ -252,7 +282,26 @@
                         <form >
                             <div class="form-group">
                                 <label for="pdfPreview">Απόσπασμα Συγγράμματος(Αρχείο pdf):</label>
-                                <input type="file" class="form-control-file" id="pdfPreview">
+								<?php
+									
+				
+									if (isset($_COOKIE['book'])) {
+				
+										$book = new Book(0);
+										$book  = unserialize($_COOKIE['book']);
+										if( $book->getPreview() != 0) {
+											
+											echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)" value="' .  htmlspecialchars($book->getPreview()) .'">';
+									
+										}else {
+											echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)">';
+										}
+									} else {
+
+										echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)">';
+									}
+								?>
+                                
                             </div>
                         </form>
                     </li>
@@ -260,8 +309,26 @@
                     <li>
                         <form>
                             <div class="form-group">
-                                <label for="pdfPreview">Περιεχόμενα Συγγράμματος(Αρχείο pdf):</label>
-                                <input type="file" class="form-control-file" id="pdfIndex">
+                                <label for="pdfIndex">Περιεχόμενα Συγγράμματος(Αρχείο pdf):</label>
+                                <?php
+									
+				
+									if (isset($_COOKIE['book'])) {
+				
+										$book = new Book(0);
+										$book  = unserialize($_COOKIE['book']);
+										if( $book->getIndex() != 0) {
+											
+											echo '<input type="file" class="form-control-file" id="pdfIndex" oninput="chooseIndex(this.value)" value="' .  htmlspecialchars($book->getIndex()) .'">';
+									
+										}else {
+											echo '<input type="file" class="form-control-file" id="pdfIndex" oninput="chooseIndex(this.value)">';
+										}
+									} else {
+
+										echo '<input type="file" class="form-control-file" id="pdfIndex" oninput="chooseIndex(this.value)">';
+									}
+								?>
                             </div>
                         </form>
                     </li>
@@ -269,8 +336,26 @@
                     <li>
                         <form>
                             <div class="form-group">
-                                <label for="pdfPreview">Εξώφυλλο Συγγράμματος(Αρχείο εικόνας):</label>
-                                <input type="file" class="form-control-file" id="cover">
+                                <label for="pdfCover">Εξώφυλλο Συγγράμματος(Αρχείο εικόνας):</label>
+                                <?php
+									
+				
+									if (isset($_COOKIE['book'])) {
+				
+										$book = new Book(0);
+										$book  = unserialize($_COOKIE['book']);
+										if( $book->getCover() != 0) {
+											
+											echo '<input type="file" class="form-control-file" id="pdfCover" oninput="chooseCover(this.value)" value="' .  htmlspecialchars($book->getCover()) .'">';
+									
+										}else {
+											echo '<input type="file" class="form-control-file" id="pdfCover" oninput="chooseCover(this.value)">';
+										}
+									} else {
+
+										echo '<input type="file" class="form-control-file" id="pdfCover" oninput="chooseCover(this.value)">';
+									}
+								?>
                             </div>
                         </form>
                     </li>
@@ -281,6 +366,8 @@
 
             </form>
             <button id="submitButton"  onclick="submitBk()" type="submit" class="btn btn-success" disabled>Καταχώρηση</button>
+            <p id="userError">Μη επιτρεπτή ενέργεια! Μόνο οι Εκδότες μπορούν να καταχωρήσουν σύγγραμμα !</p>
+            <p id="submitSuccess">Η καταχώρηση του συγγράμματος έγινε με επιτυχία</p>
             <i id="aster6" class="fa fa-asterisk"></i><span >Υποχρεωτικό πεδίο<span>
         </div>
 

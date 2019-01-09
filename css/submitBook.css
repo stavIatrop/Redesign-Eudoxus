@@ -134,6 +134,26 @@
 
 }
 
+#userError {
+
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+    text-align: center;
+}
+
+#submitSuccess {
+
+    color: rgb(5, 110, 14);
+    margin-bottom: 30%;
+    margin-top: -15%;
+    font-style: italic;
+    font-size: 18px;
+    display: none;
+    text-align: center;
+}
+
 #helpBtn0 {
     
     margin-top: 110px;

@@ -38,7 +38,7 @@
             $user->setUniDepartment(htmlspecialchars($row['uniDepartment']));
 
             $val = 1;
-            setcookie('user', serialize($user) );
+            setcookie('user', serialize($user), time() + 360000 );
             echo $val;
             return $val;
         }
