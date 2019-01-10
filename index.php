@@ -34,7 +34,7 @@
           <div class="col-xl-8 d-lg-none d-xl-block">
             <div class="row">
               <div class="col">
-                <p class="tagline">Σύντομη πρόταση περιγραφής του ιστοχώρου</p>
+                <p class="tagline">Ιστοχώρος ηλεκτρονικής διαχείρισης πανεπιστημιακών βιβλίων</p>
               </div>
             </div>
             <div class="row">
@@ -141,7 +141,10 @@
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="#">Επικοινωνία</a>
+                    <a class="nav-link " href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">Αναζήτηση Συγγραμμάτων</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Επικοινωνία</a>
                   </li>
                 </ul>
                 <form action="#" method="post" class="form-inline my-2 my-lg-0">

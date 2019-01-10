@@ -33,11 +33,6 @@ window.onload = function() {
             textStatus, errorThrown
         );
 	  });
-	  
-	// if(document.getElementById("title").value) {
-	// 	console.log("HEY");
-	// 	document.getElementById("title").style.removeProperty("display");
-	// }
 };
 
 function profileGo(where) {
@@ -67,6 +62,78 @@ function profileGo(where) {
 
 $(document).ready(function() {
 
+	
+	request = $.ajax({
+		url: "submitBookServer.php",
+		type: "post",
+		data: {action: 'BookCookie'}
+	});
+
+	request.done(function (response){
+		
+		console.log("RESPONSE:" + response);
+		if(response == 1) {
+
+			if(document.getElementById("title").value != "") {
+				titleInput = document.getElementById("title").value;
+			}
+		
+			if(document.getElementById("authors").value != "") {
+				authorsInput = document.getElementById("authors").value;
+			}
+		
+			if(document.getElementById("ISBN").value != "") {
+				ISBNInput = document.getElementById("ISBN").value;
+			}
+		
+			if(document.getElementById("publisher").value != "") {
+				publisherInput = document.getElementById("publisher").value;
+			}
+		
+			if(document.getElementById("weight").value != "") {
+				weightInput = document.getElementById("weight").value;
+			}
+		
+			if(document.getElementById("dims").value != "") {
+				dimensionsInput = document.getElementById("dims").value;
+			}
+		
+			if(document.getElementById("pages").value != "") {
+				pagesInput = document.getElementById("pages").value;
+			}
+		
+			if(document.getElementById("price").value != "") {
+				priceInput = document.getElementById("price").value;
+			}
+		
+			if(document.getElementById("keywords").value != "") {
+				keywordsInput = document.getElementById("keywords").value;
+			}
+		
+			var e = document.getElementById("selYear");
+			if(e.options[e.selectedIndex].value != 0) {
+				yearInput = e.options[e.selectedIndex].value;
+			}
+
+			$("#submitButton").attr("disabled", false);
+		  
+		} else if(response == 0){
+			$('#selYear').prop('selectedIndex',0);
+			$("input").val("");
+			$("#submitButton").attr("disabled", true);
+		}
+	  });
+	
+	  // Callback handler that will be called on failure
+	  request.fail(function (jqXHR, textStatus, errorThrown){
+		// Log the error to the console
+		console.error(
+			"The following error occurred: "+
+			textStatus, errorThrown
+		);
+	  });
+
+
     $('#example-popover').popover(function(){
         container: 'body'
     
@@ -77,14 +144,10 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip()
   })
 
-  $('#selYear').prop('selectedIndex',0);
-  $("input").val("");
-  $("#submitButton").attr("disabled", true);
 });
 
 
 function chooseYear(value) {
-
   	yearInput = value;
   	if (yearInput) {
 	  console.log("Year:" + yearInput);
@@ -188,11 +251,11 @@ function typePublisher(value) {
 
 function typeWeight(value) {
 
-	if(document.getElementById("dimensionsError").style.display == 'block' && document.getElementById("pagesError").style.display == 'block') {
+	if(document.getElementById("dimError").style.display == 'block' && document.getElementById("pagesError").style.display == 'block') {
 		
 		document.getElementById("helpBtn2").style.marginTop = "205px";
 
-	}else if( document.getElementById("dimensionsError").style.display == 'block' || document.getElementById("pagessError").style.display == 'block') {
+	}else if( document.getElementById("dimError").style.display == 'block' || document.getElementById("pagesError").style.display == 'block') {
 
 		document.getElementById("helpBtn2").style.marginTop = "180px";
 
@@ -216,7 +279,7 @@ function typeDimensions(value) {
 		
 		document.getElementById("helpBtn2").style.marginTop = "205px";
 
-	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("pagessError").style.display == 'block') {
+	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("pagesError").style.display == 'block') {
 
 		document.getElementById("helpBtn2").style.marginTop = "180px";
 
@@ -237,11 +300,11 @@ function typeDimensions(value) {
 
 function typePages(value) {
 
-	if(document.getElementById("weightError").style.display == 'block' && document.getElementById("dimensionsError").style.display == 'block') {
+	if(document.getElementById("weightError").style.display == 'block' && document.getElementById("dimError").style.display == 'block') {
 		
 		document.getElementById("helpBtn2").style.marginTop = "205px";
 
-	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("dimensionsError").style.display == 'block') {
+	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("dimError").style.display == 'block') {
 
 		document.getElementById("helpBtn2").style.marginTop = "180px";
 
@@ -329,22 +392,23 @@ function submitBk() {
 	var regexISBN1 = /^[0-9]{3}\-[0-9]{3}\-[0-9]{3}\-[0-9]{3}\-[0-9]{1}$/;
 
 	//var regexKeywords = /^(([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*),)*([a-z]|[A-Z]|[Α-Ω]|[Ά-Ώ]|[α-ω]|[ά-ώ])(([ ])*([a-z])*([ ])*([A-Z])*([ ])*([Α-Ω])*([ ])*([Ά-Ώ])*([ ])*([α-ω])*([ ])*([ά-ώ])*([ ])*)$/;
-	var regexKeywords = /^[a-zA-Z0-9](,([a-zA-Z0-9])*([a-zA-Z0-9]))*$/;
+	//var regexKeywords = /^[a-zA-Z0-9](,([a-zA-Z0-9])*([a-zA-Z0-9]))*$/;
+	var regexKeywords = /[^,\s][^\,]*[^,\s]/;
 	if( regexKeywords.test(keywordsInput)) {
 
-		flag = 1;
+		;//flag = 1;
 
 	} else {
-
+		console.log(keywordsInput);
 		document.getElementById("keywordsError").style.display = 'block';
 		$('#helpBtn3').tooltip('show');
-		flag = 0;
+		flag = +1;
 		
 	}
 
 	if( regexISBN0.test(ISBNInput) || regexISBN1.test(ISBNInput) ) {
 
-		flag = 1;
+		;//flag = 1;
 
 	}else {
 
@@ -352,7 +416,7 @@ function submitBk() {
 		document.getElementById("aster3").style.marginTop = '100px';
 		document.getElementById("aster4").style.marginTop = '90px';
 		$('#isbnHelp').tooltip('show');
-		flag = 0;
+		flag += 1;
 	}
 
 	var regexPriceWeight = /^[0-9]+.[0-9]+$/;
@@ -368,7 +432,7 @@ function submitBk() {
 
 		if(regexPriceWeight.test(weightInput)) {
 
-			flag = 1;
+			;//flag = 1;
 
 		} else {
 			
@@ -377,7 +441,7 @@ function submitBk() {
 			document.getElementById("helpBtn2").style.marginTop = "180px";
 			$('#helpBtn0').tooltip('show');
 			help0 = 1;
-			flag = 0;
+			flag += 1;
 			
 		}
 	}
@@ -388,7 +452,7 @@ function submitBk() {
 
 		if(regexDim.test(dimensionsInput)) {
 
-			flag = 1;
+			;//flag = 1;
 
 		} else {
 			
@@ -396,7 +460,7 @@ function submitBk() {
 			
 			$('#helpBtn1').tooltip('show');
 			help1 = 1;
-			flag = 0;
+			flag += 1;
 			if(help0 == 1) {
 
 			 	document.getElementById("helpBtn2").style.marginTop = "205px";
@@ -411,13 +475,13 @@ function submitBk() {
 
 		if(!(isNaN(pagesInput))) {
 
-			flag = 1;
+			;//flag = 1;
 
 		} else {
 			
 			document.getElementById("pagesError").style.display = "block";
 			help2 =  1;
-			flag = 0;
+			flag += 1;
 
 			if(help0 == 1 && help1 == 1) {
 				
@@ -438,19 +502,19 @@ function submitBk() {
 
 		if(regexPriceWeight.test(priceInput)) {
 
-			flag = 1;
+			;//flag = 1;
 
 		} else {
 			
 			document.getElementById("priceError").style.display = "block";
 			$('#helpBtn2').tooltip('show');
-			flag = 0;
+			flag += 1;
 
 			
 		}
 	}
 
-	if( flag == 1)  {
+	if( flag == 0)  {
 
 		console.log("HE");
 		request = $.ajax({
@@ -473,11 +537,6 @@ function submitBk() {
 		});
 
 		request.done(function (response){
-			
-			// if(logginedType == 0 || logginedType == 1) {
-			// 	window.location.replace("http://localhost/sdi1500048_sdi1500116/regLogin.php?msg=notSubmit");
-			// 	return;
-			// }
 			console.log("RESPONSE:" + response);
 			if(response == -2) {
 
@@ -500,13 +559,14 @@ function submitBk() {
 				document.getElementById('ISBN').value = '';
 				document.getElementById('publisher').value = '';
 				document.getElementById('weight').value = '';
-				document.getElementById('dimensions').value = '';
-				document.getElementById('pages').value = 0;
+				document.getElementById('dims').value = '';
+				document.getElementById('pages').value = '';
 				document.getElementById('price').value = '';
 				document.getElementById('keywords').value = '';
 				document.getElementById('pdfPreview').value = '';
 				document.getElementById('pdfIndex').value = '';
-				document.getElementById('cover').value = '';
+				document.getElementById('pdfCover').value = '';
+				document.getElementById('submitButton').disabled = true; 
 				
 			}
 		  });

@@ -35,7 +35,7 @@
           <div class="col-xl-8 d-lg-none d-xl-block">
             <div class="row">
               <div class="col">
-                <p class="tagline">Σύντομη πρόταση περιγραφής του ιστοχώρου</p>
+                <p class="tagline">Ιστοχώρος ηλεκτρονικής διαχείρισης πανεπιστημιακών βιβλίων</p>
               </div>
             </div>
             <div class="row">
@@ -93,7 +93,7 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
                   <li class="nav-item">
-                    <a class="nav-link active" href="http://localhost/sdi1500048_sdi1500116/">Αρχική</a>
+                    <a class="nav-link" href="http://localhost/sdi1500048_sdi1500116/">Αρχική</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -142,8 +142,11 @@
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="#">Επικοινωνία</a>
+                    <a class="nav-link" href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">Αναζήτηση Συγγραμμάτων</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Επικοινωνία</a>
+                </li>
                 </ul>
                 <form action="#" method="post" class="form-inline my-2 my-lg-0">
                   <input type="search" name="search" id="search" class="form-control mr-sm-2" placeholder="Τίτλος, πληροφορίες..." aria-label="Search">
@@ -281,7 +284,7 @@
                                                 <div class="col-md-9">
                                                     <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: ' . $rowBook['courseName'] . '</p>
                                                     <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: ' .$rowBook['title'] .'</p>
-                                                    <p class="">Συγγραφέας: ' . $rowBook['authors'] . '</p>
+                                                    KEY3d       <p class="">Συγγραφέας: ' . $rowBook['authors'] . '</p>
                                                     <p>ISBN: ' . $rowBook['ISBN']. '</p>
                                                 </div>
                                                 <!-- <div class="col-md-3">

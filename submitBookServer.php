@@ -21,6 +21,9 @@
         
         SubmitBook($title, $authors, $ISBN, $publisher, $year, $keywords, $weight, $dimensions, $pages, $price, $preview, $index, $cover);
         break;
+    case 'BookCookie':
+        isBookCookieSet();
+        break;
     default:
         // unknown / missing action
     }
@@ -54,33 +57,57 @@
             $keywords = str_replace(" ", "", $keywords);
             $keywordsArray = explode(",", $keywords);
 
-            for($i = 0; $i < count($keywordsArray); $i++){
-
-                if($keywordsArray[$i] == null) {
-                    continue;
-                }
-                $word = $keywordsArray[$i];
-                $keywordQuery = "INSERT INTO `Keyword` (`word`) VALUES('$word')";
-                if(!mysqli_query($conn, $keywordQuery)) {
-                    $val = -1;
-                    debug_to_console("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
-                    return $val;
-                }
-            }
-
             if(mysqli_query($conn, $bookQuery)){  //Record added successfully
                 if( isset($_COOKIE['book'])) {
-                    setcookie('book', serialize($book), time() - 360000 );
+                    setcookie('book', "Expired", time() - 3600000 );
                 }
-                
-                $val = 1;
-                echo $val;
-                return $val;
+                $last_book = $conn->insert_id;
             } else{
                 $val = -1;
                 debug_to_console("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
                 return $val;
             }
+
+            for($i = 0; $i < count($keywordsArray); $i++){
+
+                if($keywordsArray[$i] == null) {
+                    continue;
+                }
+
+                $word = $keywordsArray[$i];
+                $selectKeywordQuery = "SELECT keywordId FROM `Keyword` WHERE word='$word'";
+                $keywordResults = mysqli_query($conn, $selectKeywordQuery);
+
+                if (mysqli_num_rows($keywordResults) > 0) {
+                    while($row = mysqli_fetch_assoc($keywordResults)) {
+                        $last_keyword = $row['keywordId'];
+                    }
+                }
+                else {
+                    $keywordQuery = "INSERT INTO `Keyword` (`word`) VALUES('$word')";
+                
+                    if(!mysqli_query($conn, $keywordQuery)) {
+                        $val = -1;
+                        debug_to_console("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
+                        return $val;
+                    }
+                    $last_keyword = $conn->insert_id;
+                }
+
+                
+
+                $keywordBookQuery = "INSERT INTO `Book_has_Keyword` (`Book_bookId`, `Keyword_keywordId`) VALUES ('$last_book', '$last_keyword');";
+                if(!mysqli_query($conn, $keywordBookQuery)) {
+                    $val = -1;
+                    debug_to_console("ERROR: Could not able to execute $keywordBookQuery. " . mysqli_error($conn));
+                    return $val;
+                }
+            }
+
+            $retVal = 1;
+            echo $retVal;
+            return $retVal;
+            
         
         
             CloseCon($conn);
@@ -110,6 +137,19 @@
 
         
         
+    }
+
+    function isBookCookieSet() {
+        if( isset($_COOKIE['book'])) {
+            $retVal = 1;
+            echo $retVal;
+            return $retVal;
+        }
+        else {
+            $retVal = 0;
+            echo $retVal;
+            return $retVal;
+        }
     }
 
 ?>

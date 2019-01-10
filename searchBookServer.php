@@ -14,10 +14,10 @@
 
     function  SearchBook($searchTerm) {
         $conn = OpenCon();
-        $sqlQuery = "SELECT `title`, `authors`, `ISBN`, `publishYear`, `pages`, `cover`, `publisher` FROM `Book_has_Keyword`, `Book`, `Keyword` 
-                     WHERE (Book.bookId = Book_has_Keyword.Book_bookId and `Keyword`.`keywordId` = `Keyword`.`keywordId` and `Keyword`.`word` = '$searchTerm')
+        $sqlQuery = "SELECT `bookId`, `title`, `authors`, `ISBN`, `publishYear`, `pages`, `cover`, `publisher` FROM `Book_has_Keyword`, `Book`, `Keyword` 
+                     WHERE (Book.bookId = Book_has_Keyword.Book_bookId and `Book_has_Keyword`.`Keyword_keywordId` = `Keyword`.`keywordId` and `Keyword`.`word` = '$searchTerm')
                      UNION
-                     SELECT `title`, `authors`, `ISBN`, `publishYear`, `pages`, `cover`, `publisher` FROM `Book`
+                     SELECT `bookId`, `title`, `authors`, `ISBN`, `publishYear`, `pages`, `cover`, `publisher` FROM `Book`
                      WHERE Book.title = '$searchTerm' or Book.authors = '$searchTerm' or Book.ISBN = '$searchTerm'";
 
         $searchResults = mysqli_query($conn, $sqlQuery);

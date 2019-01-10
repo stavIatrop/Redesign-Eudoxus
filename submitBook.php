@@ -35,7 +35,7 @@
           <div class="col-xl-8 d-lg-none d-xl-block">
             <div class="row">
               <div class="col">
-                <p class="tagline">Σύντομη πρόταση περιγραφής του ιστοχώρου</p>
+                <p class="tagline">Ιστοχώρος ηλεκτρονικής διαχείρισης πανεπιστημιακών βιβλίων</p>
               </div>
             </div>
             <div class="row">
@@ -93,7 +93,7 @@
               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-xl-0">
                   <li class="nav-item">
-                    <a class="nav-link active" href="http://localhost/sdi1500048_sdi1500116/">Αρχική</a>
+                    <a class="nav-link" href="http://localhost/sdi1500048_sdi1500116/">Αρχική</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -109,7 +109,7 @@
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Εκδότης
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -142,7 +142,10 @@
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link " href="#">Επικοινωνία</a>
+                    <a class="nav-link" href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">Αναζήτηση Συγγραμμάτων</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Επικοινωνία</a>
                   </li>
                 </ul>
                 <form action="#" method="post" class="form-inline my-2 my-lg-0">
@@ -175,7 +178,7 @@
             
         	<p id="elementsTitle">Στοιχεία Συγγράμματος</p>
 
-            <form id="elementsForm" data-toggle="validator" role="form" >
+            <!-- <form id="elementsForm" data-toggle="validator" role="form" > -->
             
 				<?php
 				
@@ -183,28 +186,55 @@
           include("login.php");
           
 					if (isset($_COOKIE['book'])) {
-            debug_to_console("iset");
 						$book = new Book();
-						$book  = unserialize($_COOKIE['book']);
+            $book  = unserialize($_COOKIE['book']);
+            debug_to_console($book->getYear());
+
 						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control"  placeholder="Τίτλος" name="title" id="title"  oninput="typeTitle(this.value)" value="' .  htmlspecialchars($book->getTitle()) .'" autocomplete="off">' 
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)" value="' .  htmlspecialchars($book->getAuthors()) .'">'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)" value="' .  htmlspecialchars($book->getISBN()) .'">'
-						. '<p id="ISBNError">Το ISBN δεν είναι συμβατό με ένα από τα δύο προτεινόμενα format!</p>'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Εκδόσεις" id="publisher" oninput="typePublisher(this.value)" value="' .  htmlspecialchars($book->getPublisher()) .'">'
-						. '<select style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" onchange="chooseYear(this.value)" name="selYear" id="selYear" class="custom-select mb-3" value="' .  htmlspecialchars($book->getYear()) .'">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Συγγραφείς" name="authors" id="authors" oninput="typeAuthors(this.value)" value="' .  htmlspecialchars($book->getAuthors()) .'" autocomplete="off">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="ISBN" name="isbn" id="ISBN" oninput="typeISBN(this.value)" value="' .  htmlspecialchars($book->getISBN()) .'" autocomplete="off">'
+						. '<p id="ISBNError">Το ISBN δεν είναι συμβατό με μία απο τις 2 προτεινόμενες μορφές!</p>'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Εκδόσεις" id="publisher" oninput="typePublisher(this.value)" value="' .  htmlspecialchars($book->getPublisher()) .'" autocomplete="off">'
+						. '<select style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" onchange="chooseYear(this.value)" name="selYear" id="selYear" class="custom-select mb-3"  >'
 						. '<option id="defYear"  value="0" >Επίλεξε Έτος Τρέχουσας Έκδοσης</option>';
 						for($i = 1997; $i < 2020; $i++ ) {
-							echo '<option id="defYear" onchange="chooseYear(this.value)" value="' . $i . '">' 
-							. $i 
-							. '</option>'; 	
-						}
-						echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος" name="weight" id="weight" oninput="typeWeight(this.value)" value="' .  htmlspecialchars($book->getWeight()) .'">'
+              if($i == $book->getYear()) {
+                debug_to_console("truee");
+                echo '<option id="defYear" selected onchange="chooseYear(this.value)" value="' . $i . '">' 
+                . $i 
+                . '</option>';
+              }
+              else {
+                echo '<option id="defYear" onchange="chooseYear(this.value)" value="' . $i . '">' 
+                . $i 
+                . '</option>'; 
+              }	
+            }
+            echo '</select>';
+            echo '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος (Kg)" name="weight" id="weight" oninput="typeWeight(this.value)" value="';
+            if($book->getWeight() != 0) {
+              //debug_to_console("aaaa");
+              echo $book->getWeight();
+            }
+             echo '" autocomplete="off">'
 						. '<p id="weightError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)" value="' .  htmlspecialchars($book->getDimensions()) .'">'
+            . '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις (cm)" name="dimensions" id="dims" oninput="typeDimensions(this.value)" value="';
+             if($book->getDimensions() != 0) {
+               echo $book->getDimensions();
+             } 
+            echo '" autocomplete="off">'
 						. '<p id="dimError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)" value="' .  htmlspecialchars($book->getPages()) .'">'
+            . '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)" value="';
+            if($book->getPages() != 0){
+              echo $book->getPages();
+            }
+            echo '" autocomplete="off">'
 						. '<p id="pagesError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)" value="' .  htmlspecialchars($book->getPrice()) .'">'
+            . '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή (€)" name="price" id="price" oninput="typePrice(this.value)" value="';
+            if($book->getPrice() != 0) {
+              echo $book->getPrice();
+            } 
+             echo '" autocomplete="off">'
 						. '<p id="priceError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>';
 
 					}
@@ -226,19 +256,19 @@
 							
 						}
 						echo '</select>'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος" name="weight" id="weight" oninput="typeWeight(this.value)">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Βάρος (Kg)" name="weight" id="weight" oninput="typeWeight(this.value)">'
 						. '<p id="weightError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις" name="dimensions" id="dims" oninput="typeDimensions(this.value)">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Διαστάσεις (cm)" name="dimensions" id="dims" oninput="typeDimensions(this.value)">'
 						. '<p id="dimError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
 						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Σελίδες" name="pages" id="pages" oninput="typePages(this.value)">'
 						. '<p id="pagesError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>'
-						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή" name="price" id="price" oninput="typePrice(this.value)">'
+						. '<input style="margin-top: 10%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:75%;" type="text" class="form-control" placeholder="Τιμή (€)" name="price" id="price" oninput="typePrice(this.value)">'
 						. '<p id="priceError">Μη αποδεκτή τιμή! Πληκτρολόγησε έναν αριθμό!</p>';
 					}
 				?>
             	
                 
-            </form>
+            <!-- </form> -->
             
 
         </div>
@@ -283,7 +313,7 @@
                     <li>   
                         <form >
                             <div class="form-group">
-                                <label for="pdfPreview">Απόσπασμα Συγγράμματος(Αρχείο pdf):</label>
+                                <label for="pdfPreview">Απόσπασμα Συγγράμματος (Αρχείο pdf):</label>
 								<?php
 									
 				
@@ -293,10 +323,11 @@
 										$book  = unserialize($_COOKIE['book']);
 										if( $book->getPreview() != 0) {
 											
-											echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)" value="' .  htmlspecialchars($book->getPreview()) .'">';
+											echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)">';
 									
 										}else {
-											echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)">';
+                      //echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)" value="' .  htmlspecialchars($book->getPreview()) .'">';
+                      echo '<input type="file" class="form-control-file" id="pdfPreview" oninput="choosePreview(this.value)">';
 										}
 									} else {
 
@@ -311,7 +342,7 @@
                     <li>
                         <form>
                             <div class="form-group">
-                                <label for="pdfIndex">Περιεχόμενα Συγγράμματος(Αρχείο pdf):</label>
+                                <label for="pdfIndex">Περιεχόμενα Συγγράμματος (Αρχείο pdf):</label>
                                 <?php
 									
 				
@@ -321,7 +352,7 @@
 										$book  = unserialize($_COOKIE['book']);
 										if( $book->getIndex() != 0) {
 											
-											echo '<input type="file" class="form-control-file" id="pdfIndex" oninput="chooseIndex(this.value)" value="' .  htmlspecialchars($book->getIndex()) .'">';
+											echo '<input type="file" class="form-control-file" id="pdfIndex" oninput="chooseIndex(this.value)" value="' .  htmlspecialchars($book->getIndex()) .'" >';
 									
 										}else {
 											echo '<input type="file" class="form-control-file" id="pdfIndex" oninput="chooseIndex(this.value)">';
@@ -338,7 +369,7 @@
                     <li>
                         <form>
                             <div class="form-group">
-                                <label for="pdfCover">Εξώφυλλο Συγγράμματος(Αρχείο εικόνας):</label>
+                                <label for="pdfCover">Εξώφυλλο Συγγράμματος (Αρχείο εικόνας):</label>
                                 <?php
 									
 				
@@ -363,8 +394,26 @@
                     </li>
                 </ul>
 
-                <input style="margin-top: 17%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:100%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά(Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)">
-                <p id="keywordsError">Μη αποδεκτό format!</p>
+                <?php
+                  if(isset($_COOKIE['book'])) {
+                    $book = new Book(0);
+										$book  = unserialize($_COOKIE['book']);
+										if( $book->getKeywords() != "") {
+                      debug_to_console("AAAA");
+                      echo '<input style="margin-top: 17%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:100%; margin-left:25px; " type="text" class="form-control" 
+                      placeholder="Λέξεις Κλειδιά (Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)" value="' . $book->getKeywords() . '">';
+                    }
+                    else {
+                      echo '<input style="margin-top: 17%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:100%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά (Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)">';
+                    }
+
+                  }
+                  else {
+                    echo '<input style="margin-top: 17%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:100%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά (Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)">';
+                  }
+                ?>
+                <!-- <input style="margin-top: 17%; box-shadow: 1px 1px 2px rgb(221, 218, 218); width:100%; margin-left:25px; " type="text" class="form-control" placeholder="Λέξεις Κλειδιά(Χωρισμένες με κόμμα)" name="keywords" id="keywords" oninput="typeKeywords(this.value)"> -->
+                <p id="keywordsError">Οι λέξεις πρέπει να είναι χωρισμένες με κόμμα</p>
 
             </form>
             <button id="submitButton"  onclick="submitBk()" type="submit" class="btn btn-success" disabled>Καταχώρηση</button>
