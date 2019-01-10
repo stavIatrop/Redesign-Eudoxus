@@ -114,7 +114,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/submitBook.php">Καταχώρηση Συγγράμματος</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Διαχείρηση Συγγραμμάτων</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Διαχείρηση Συγγραμμάτων</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Βοήθεια</a>
                   </li>
@@ -123,28 +123,28 @@
                       Γραμματεία
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Εισαγωγή Π.Σ.</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Εισαγωγή Π.Σ.</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Επεξεργασία Π.Σ.</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Επεξεργασία Π.Σ.</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Βοήθεια</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Βοήθεια</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Σημεια Διανομής
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Επικύρωση Παραλαβής</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Επικύρωση Παραλαβής</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Επεξεργασία Πληροφοριών</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Επεξεργασία Πληροφοριών</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Βοήθεια</a>
+                      <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Βοήθεια</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="http://localhost/sdi1500048_sdi1500116/searchbooks.php">Αναζήτηση Συγγραμμάτων</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Επικοινωνία</a>
+                    <a class="nav-link" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Επικοινωνία</a>
                   </li>
                 </ul>
                 <form action="#" method="post" class="form-inline my-2 my-lg-0">
