@@ -106,7 +106,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" onclick="profileGo('curr')">Τρέχουσα Δήλωση</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Βοήθεια</a>
+                        <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/help.php?who=stud">Βοήθεια</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -117,7 +117,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/underConstruction.php">Διαχείρηση Συγγραμμάτων</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Βοήθεια</a>
+                        <a class="dropdown-item" href="http://localhost/sdi1500048_sdi1500116/help.php?who=pub">Βοήθεια</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -176,16 +176,16 @@
             <div class="col-1"></div>
             <div class="col-2">
                 <div class="list-group menuCard ml-3" id="list-tab" role="tablist" >
-                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpFoit" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Είμαι φοιτητής</button>
-                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpEkd" data-toggle="list" href="#list-current" role="tab" aria-controls="current">Είμαι εκδότης</button>
-                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action"  id="helpGramm" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Είμαι γραμματεία σχολής</button>            
-                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action"  id="helpΔΙαν" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Είμαι σημείο διανομής</button>            
+                    <button onclick="activateHelp(this.id, 'foitAccord')" class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpFoit" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Είμαι φοιτητής</button>
+                    <button onclick="activateHelp(this.id, 'pubAccord')" class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpEkd" data-toggle="list" href="#list-current" role="tab" aria-controls="current">Είμαι εκδότης</button>
+                    <button onclick="activateHelp(this.id, 'secAccord')" class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action"  id="helpGramm" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Είμαι γραμματεία σχολής</button>            
+                    <button onclick="activateHelp(this.id, 'dianAccord')" class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action"  id="helpDian" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Είμαι σημείο διανομής</button>            
                 </div>
             </div>
 
                 
             <div class="col-1"></div>
-            <div id="foitAccord" class="col-6">
+            <div style="display: none;" id="foitAccord" class="col-6">
                 <div class="card-header" id="headingFoitOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFoitOne" aria-expanded="false" aria-controls="collapseFoitOne">
@@ -310,7 +310,7 @@
                 </div>
             </div>
 
-            <div id="pubAccord" class="col-6">
+            <div style="display: none;" id="pubAccord" class="col-6">
                 <div class="card-header" id="headingPubOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapsePubOne" aria-expanded="false" aria-controls="collapsePubOne">
@@ -409,6 +409,12 @@
 
                     </div>
                 </div>
+            </div>
+            <div style="display: none;" id="secAccord" class="col-6">
+                <h2>Υπό Κατασκευή</h2>
+            </div>
+            <div style="display: none;" id="dianAccord" class="col-6">
+                <h2>Υπό Κατασκευή</h2>
             </div>
         </div>
 
