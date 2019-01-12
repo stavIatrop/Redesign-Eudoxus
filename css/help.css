@@ -13,214 +13,53 @@
     color: rgb(35, 105, 33);
 } */
 
-.helpMenu {
-
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: italic;
-    padding-bottom: 10%;
-}
-
-/* #foititis > a:link {
-
+.helpNav {
+    background-color: white;
+    font-weight: bold;
+    font-size: 100%;
     color: black;
 }
 
-#foititis > a:visited {
+.helpNav:hover {
+    cursor: pointer;
+    background-color: #3D8A3A !important;
+    color: white !important;
+    border: #3D8A3A;
+}
 
+#list-tab > .active {
+    background-color: #3D8A3A !important;
+    border: #3D8A3A;
+}
+
+#list-tab {
+    box-shadow: 2px 2px 3px rgb(112, 111, 111);
+}
+
+.card-header
+{
+  box-shadow: 1px 1px 2px rgb(173, 171, 171);
+  /* background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(151, 219, 143)); */
+  background-color: rgb(245, 245, 245);
+}
+
+.card-header > h5 > button {
     color: black;
+    font-weight: bold;  
+    font-size: 18px;
 }
 
-#foititis > a:hover {
+.card-header > h5 > button:hover {
+    text-decoration: none;
+    color: #3D8A3A;
+  }
 
-    color:rgb(35, 105, 33);
+  .card-body
+{
+  box-shadow: 2px 2px 8px grey;
 }
 
-#foititis  > a:active {
-
-    color: rgb(25, 88, 23);
-}
-
-#ekdotis > a:link {
-
-    color: black;
-}
-
-#ekdotis > a:visited {
-
-    color: black;
-}
-
-#ekdotis > a:hover {
-
-    color:rgb(35, 105, 33);
-}
-
-#ekdotis  > a:active {
-
-    color: rgb(25, 88, 23);
-}
-
-#grammateia > a:link {
-
-    color: black;
-}
-
-#grammateia > a:visited {
-
-    color: black;
-}
-
-#grammateia > a:hover {
-
-    color:rgb(35, 105, 33);
-}
-
-#grammateia  > a:active {
-
-    color: rgb(25, 88, 23);
-} */
-
-
-.nav-item > a:link {
-
-    color: black;
-}
-
-.nav-item > a:visited {
-
-    color: black;
-}
-
-.nav-item > a:hover {
-
-    color:rgb(35, 105, 33);
-}
-
-.nav-item > a:active {
-
-    color: rgb(25, 88, 23);
-}
-
-/* #helpFoit2 > a:link {
-
-    color: black;
-}
-
-#helpFoit2 > a:visited {
-
-    color: black;
-}
-
-#helpFoit2 > a:hover {
-
-    color:rgb(35, 105, 33);
-}
-
-#helpFoit2 > a:active {
-
-    color: rgb(25, 88, 23);
-}
-
-#helpFoit3 > a:link {
-
-    color: black;
-}
-
-#helpFoit3 > a:visited {
-
-    color: black;
-}
-
-#helpFoit3 > a:hover {
-
-    color:rgb(35, 105, 33);
-}
-
-#helpFoit3 > a:active {
-
-    color: rgb(25, 88, 23);
-} */
-
-
-
-#subListFoit{
-
-    margin-top: 30px;
-    display: none;
-    
-}
-
-#subListFoit a{
-
-    font-size: 70%;
-    
-}
-
-#subListEkdot{
-
-    margin-top: 30px;
-    display: none;
-    
-}
-
-#subListEkdot a{
-
-    font-size: 70%;
-    
-}
-
-#subListGram{
-
-    margin-top: 30px;
-    display: none;
-    
-}
-
-#subListGram a{
-
-    font-size: 70%;
-    
-}
-
-.subListMenu {
-
-    list-style:none;
-    padding: 0;
-    margin: 0;
-}
-
-
-#helpDhlwsh {
-
-    display: none;
-}
-
-#helpAcc {
-
-    display: none;
-}
-
-#helpMe {
-
-    display: none;
-}
-
-#helpKata {
-
-    display: none;
-}
-
-#helpAccEkdot {
-
-    display: none;
-}
-
-#helpPro {
-
-    display: none;
-}
-
-#helpAccGram {
-
-    display: none;
+.card-body > h4 {
+    font-weight: bold;
+    margin-top: 7%;
 }

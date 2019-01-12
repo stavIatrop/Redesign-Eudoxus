@@ -1,5 +1,5 @@
 <head>
-  <title>Εύδοξος - Σύνδεση</title>
+  <title>Εύδοξος - Βοήθεια</title>
   <link rel="icon" href="images/favicon.ico" type="image/ico">
 
   <link href="css/bootstrap.min.css" rel="stylesheet"/>
@@ -166,146 +166,160 @@
                 </ul>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-12">
+                <p style="margin-bottom: 4%; text-align: center; font-size: 170%; font-weight: bold;">Βοήθεια - Συχνές ερωτήσεις</p>
+            </div>
+        </div>
         <div class="row"> 
 
             <div class="col-1"></div>
             <div class="col-2">
-                <ul class="nav flex-column">
-
-                    <h2 class="helpMenu">
-                        Βοήθεια...
-                    </h2>
-
-                    <li class="nav-item" id="foititis">
-                        <a id="foititoLink" onclick="showSubMenuFoit()" class="nav-link" data-toggle="collapse" data-target="#subListFoit" href="#">...για τον Φοιτητή</a>
-                        <div id="subListFoit" class="collapse show" aria-labelledby="headingOne" data-parent="#foititis">
-                            <ul class="nav-list colapse flex-column subListMenu" >
-                                <li class="nav-item"  >
-                                    <a id="helpFoit1" onclick="showHelpDhl()" class="nav-link" data-toggle="collapse" data-target="#helpDhlwsh" href="#">Πώς να δηλώσω Συγγράμματα</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpFoit2" onclick="showHelpAccount()" class="nav-link" data-toggle="collapse" data-target="#helpAcc" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpFoit3" onclick="showHelp()" class="nav-link" data-toggle="collapse" data-target="#helpMe" href="#">Τι κάνω σε αυτή τη ζωή;;</a>
-                                </li>
-                            
-                            </ul>
-                    
-                        </div>
-                    
-                    </li>
-                    
-                    <li class="nav-item" id="ekdotis">
-                        <a id="ekdotoLink" onclick="showSubMenuEkdot()" class="nav-link" data-toggle="collapse" data-target="#subListEkdot" href="#">...για τον Εκδότη</a>
-                        <div id="subListEkdot" class="collapse show" aria-labelledby="headingOne" data-parent="#ekdotis">
-                            <ul class="nav-list colapse flex-column subListMenu" >
-                                <li class="nav-item"  >
-                                    <a id="helpEkdot1" onclick="showHelpKata()" class="nav-link" data-toggle="collapse" data-target="#helpKata" href="#">Πώς να καταχωρήσω Συγγράμματα</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpEkdot2" onclick="showHelpAccountEkdot()" class="nav-link" data-toggle="collapse" data-target="#helpAccEkdot" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
-                                </li>
-                                
-                            
-                            </ul>
-                    
-                        </div>
-                    </li>
-
-                    <li class="nav-item" id="grammateia">
-                        <a id="gramLink" onclick="showSubMenuGram()" class="nav-link" data-toggle="collapse" data-target="#subListGram" href="#">...για τη Γραμματεία</a>
-                        <div id="subListGram" class="collapse show" aria-labelledby="headingOne" data-parent="#grammateia">
-                            <ul class="nav-list colapse flex-column subListMenu" >
-                                <li class="nav-item"  >
-                                    <a id="helpGram1" onclick="showHelpPro()" class="nav-link" data-toggle="collapse" data-target="#helpPro" href="#">Πώς να καταχωρήσω Πρόγραμμα Σπουδών</a>
-                                </li>
-                                <li class="nav-item" >
-                                    <a id="helpGram2" onclick="showHelpAccountGram()" class="nav-link" data-toggle="collapse" data-target="#helpAccGram" href="#">Πώς να Δημιουργήσω Λογαριασμό</a>
-                                </li>
-                                
-                            
-                            </ul>
-                    
-                        </div>
-                    </li>
-                    
-                </ul>
-
-                
+                <div class="list-group menuCard ml-3" id="list-tab" role="tablist" >
+                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpFoit" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Είμαι φοιτητής</button>
+                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpEkd" data-toggle="list" href="#list-current" role="tab" aria-controls="current">Είμαι εκδότης</button>
+                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action"  id="helpGramm" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Είμαι γραμματεία σχολής</button>            
+                </div>
             </div>
 
                 
             <div class="col-1"></div>
-            <div class="col-4">
-
-                <div class="card" id="helpDhlwsh">
-                    <div class="card-header"> Οδηγίες για τη Δήλωση Συγγραμμάτων</div>
-                    <div class="card-body">
-
-                    
-                    </div>
-
+            <div class="col-6">
+                <div class="card-header" id="headingFoitOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFoitOne" aria-expanded="false" aria-controls="collapseFoitOne">
+                            Πώς να κάνω δήλωση συγγραμμάτων?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFoitOne" aria-expanded="true" aria-controls="collapseFoitOne">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
                 </div>
 
-                <div class="card" id="helpAcc">
-                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
+                <div id="collapseFoitOne" class="collapse" aria-labelledby="headingFoitOne" data-parent="#accordionExample">
                     <div class="card-body">
-
+                        <h4>Βήμα 1</h4>
+                        <p>Από την μπάρα πλοήγησης επιλέγω <b>Φοιτητής > Δήλωση Συγγραμμάτων</b> όπως στην παρακάτω φωτογραφία.</p>
+                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/startState.png" alt="Missing start state image">
+                        <h4>Βήμα 2</h4>
+                        <p>Επιλέγω <b>πανεπιστήμιο, τμήμα, εξάμηνο και μάθημα</b> για να εμφανιστούν τα συγγράμματα του συγκεκριμένου μαθήματος.</p>
+                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseUni.png" alt="Missing start state image">
+                        <h4>Βήμα 3</h4>
+                        <p>Πατάω <b class="text-success">"Προσθήκη"</b> στο σύγγραμμα που θέλω. Το σύγραμμα προστίθεται σε μια προσωρινή δήλωση.</p>
+                        <p style="font-weight: bold;" class="text-center text-danger">Επιτρέπεται να δηλωθεί 1 σύγγραμμα ανά μάθημα!</p>
+                        <p>Σε περίπτωση που θέλω να αφαιρεθεί το σύγγραμμα από την δήλωση επιλέγω 
+                            <b class="text-danger">"Αφαίρεση"</b> από την λίστα ή κάνω κλικ στον κόκκινο κάδο στα δεξιά.</p>
                         
-                    </div>
+                        <p style="font-weight: bold; text-align: center;">Επαναλαμβάνω τα βήματα 2 και 3 μέχρι να επιλέξω όλα τα επιθυμητά συγγράμματα.</p>
 
-                </div>
-
-                <div class="card" id="helpMe">
-                    <div class="card-header"> ΈΛΑ ΝΤΕ?!</div>
-                    <div class="card-body">
-
+                        <h4>Βήμα 4</h4>
+                        <p>Στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση".</b></p>
                         
-                    </div>
+                        <p><b>Αν δεν είμαι συνδεδεμένος</b> αυτόματα μεταβιβάζομαι να κάνω εγγραφή ή σύνδεση 
+                            <b>(η προσωρινή δήλωση παραμένει αποθηκευμένη)</b> και ξαναεπιλέγω <b class="text-primary">"Ολοκλήρωση".</b></p>
+                        <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
 
+                        <p>Αυτόματα μεταβιβάζομαι στο <b>Προφίλ μου > Τρέχουσα δήλωση</b> όπου βρίσκω τις απαραίτητες πληροφορίες για
+                            την παραλαβή των συγγραμμάτων.</p>
+                    </div>
                 </div>
 
-                <div class="card" id="helpKata">
-                    <div class="card-header"> Οδηγίες για την Καταχώρηση Συγγραμμάτων</div>
-                    <div class="card-body">
-
-                    
-                    </div>
-
+                <div class="card-header" id="headingFoitTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFoitTwo" aria-expanded="false" aria-controls="collapseFoitTwo">
+                            Πώς να επεξεργαστώ την τρέχουσα δήλωση?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFoitTwo" aria-expanded="true" aria-controls="collapseFoitTwo">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
                 </div>
 
-                <div class="card" id="helpAccEkdot">
-                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
+                <div id="collapseFoitTwo" class="collapse" aria-labelledby="headingFoitTwo" data-parent="#accordionExample">
                     <div class="card-body">
+                        <h4>Βήμα 1</h4>
+                        <p>Αφού έχω συνδεθεί επιλέγω <b>Προφίλ</b> και στη συνέχεια <b>Τρέχουσα Δήλωση</b>.</p>
+                        <span><img style="width: 35%; height 35%; margin-left: 4%; " src="images/chooseProfile.png" alt="Missing start state image"></span>
+                        <span><img style="width: 35%; height 25%; margin-left: 13%; " src="images/chooseCurrent.png" alt="Missing start state image"></span>
 
+                        <h4>Βήμα 2</h4>
+                        <p>Επιλέγω <b class="text-success"style="font-weight: bold;">Τροποποίηση Δήλωσης</b>.</p>
+                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseEdit.png" alt="Missing start state image">
                         
-                    </div>
+                        <h4>Βήμα 3</h4>
+                        <p> <b class="text-center text-danger">Αφαιρώ</b> και <b class="text-success">Προσθέτω</b> συγγράμματα τροποποιώντας κατάλληλα την δήλωση μου.</p>
 
+                        <h4>Βήμα 4</h4>
+                        <p>Όταν τελειώσω στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση"</b> για την κατοχύρωση της νέας δήλωσης.</p>
+                        <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
+
+                    </div>
                 </div>
 
-                <div class="card" id="helpPro">
-                    <div class="card-header"> Οδηγίες για την Καταχώρηση Προγράμματος Σπουδών</div>
-                    <div class="card-body">
-
-                    
-                    </div>
-
+                <div class="card-header" id="headingFoitThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFoitThree" aria-expanded="false" aria-controls="collapseFoitThree">
+                            Πώς να αναζητήσω συγγράμματα?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFoitThree" aria-expanded="true" aria-controls="collapseFoitThree">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
                 </div>
 
-                <div class="card" id="helpAccGram">
-                    <div class="card-header"> Οδηγίες για τη Δημιουργία Λογαριασμού</div>
+                <div id="collapseFoitThree" class="collapse" aria-labelledby="headingFoitThree" data-parent="#accordionExample">
                     <div class="card-body">
+                        <h4>Βήμα 1</h4>
+                        <p>Αφού έχω συνδεθεί επιλέγω <b>Προφίλ</b> και στη συνέχεια <b>Τρέχουσα Δήλωση</b>.</p>
+                        <span><img style="width: 35%; height 35%; margin-left: 4%; " src="images/chooseProfile.png" alt="Missing start state image"></span>
+                        <span><img style="width: 35%; height 25%; margin-left: 13%; " src="images/chooseCurrent.png" alt="Missing start state image"></span>
 
+                        <h4>Βήμα 2</h4>
+                        <p>Επιλέγω <b class="text-success"style="font-weight: bold;">Τροποποίηση Δήλωσης</b>.</p>
+                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseEdit.png" alt="Missing start state image">
                         
-                    </div>
+                        <h4>Βήμα 3</h4>
+                        <p> <b class="text-center text-danger">Αφαιρώ</b> και <b class="text-success">Προσθέτω</b> συγγράμματα τροποποιώντας κατάλληλα την δήλωση μου.</p>
 
+                        <h4>Βήμα 4</h4>
+                        <p>Όταν τελειώσω στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση"</b> για την κατοχύρωση της νέας δήλωσης.</p>
+                        <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
+
+                    </div>
                 </div>
 
+                <div class="card-header" id="headingFoitFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFoitFour" aria-expanded="false" aria-controls="collapseFoitFour">
+                            Πώς να επεξεργαστώ το Προφίλ μου?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapseFoitFour" aria-expanded="true" aria-controls="collapseFoitFour">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapseFoitFour" class="collapse" aria-labelledby="headingFoitFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <h4>Βήμα 1</h4>
+                        <p>Αφού έχω συνδεθεί επιλέγω <b>Προφίλ</b> και στη συνέχεια <b>Τρέχουσα Δήλωση</b>.</p>
+                        <span><img style="width: 35%; height 35%; margin-left: 4%; " src="images/chooseProfile.png" alt="Missing start state image"></span>
+                        <span><img style="width: 35%; height 25%; margin-left: 13%; " src="images/chooseCurrent.png" alt="Missing start state image"></span>
+
+                        <h4>Βήμα 2</h4>
+                        <p>Επιλέγω <b class="text-success"style="font-weight: bold;">Τροποποίηση Δήλωσης</b>.</p>
+                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseEdit.png" alt="Missing start state image">
+                        
+                        <h4>Βήμα 3</h4>
+                        <p> <b class="text-center text-danger">Αφαιρώ</b> και <b class="text-success">Προσθέτω</b> συγγράμματα τροποποιώντας κατάλληλα την δήλωση μου.</p>
+
+                        <h4>Βήμα 4</h4>
+                        <p>Όταν τελειώσω στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση"</b> για την κατοχύρωση της νέας δήλωσης.</p>
+                        <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
+
+                    </div>
+                </div>
             </div>
-
-
         </div>
 
         <div class="row" style="min-height:50px"> </div>
