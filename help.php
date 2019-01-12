@@ -179,12 +179,13 @@
                     <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpFoit" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Είμαι φοιτητής</button>
                     <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action" id="helpEkd" data-toggle="list" href="#list-current" role="tab" aria-controls="current">Είμαι εκδότης</button>
                     <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action"  id="helpGramm" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Είμαι γραμματεία σχολής</button>            
+                    <button class="btnPointer helpNav list-group-item-success list-group-item list-group-item-action"  id="helpΔΙαν" data-toggle="list" href="#list-history" role="tab" aria-controls="history">Είμαι σημείο διανομής</button>            
                 </div>
             </div>
 
                 
             <div class="col-1"></div>
-            <div class="col-6">
+            <div id="foitAccord" class="col-6">
                 <div class="card-header" id="headingFoitOne">
                     <h5 class="mb-0">
                         <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapseFoitOne" aria-expanded="false" aria-controls="collapseFoitOne">
@@ -199,24 +200,24 @@
                 <div id="collapseFoitOne" class="collapse" aria-labelledby="headingFoitOne" data-parent="#accordionExample">
                     <div class="card-body">
                         <h4>Βήμα 1</h4>
-                        <p>Από την μπάρα πλοήγησης επιλέγω <b>Φοιτητής > Δήλωση Συγγραμμάτων</b> όπως στην παρακάτω φωτογραφία.</p>
+                        <p>Από την μπάρα πλοήγησης επιλέγω <b>Φοιτητής > Δήλωση Συγγραμμάτων</b>.</p>
                         <img style="width: 65%; height 45%; margin-left: 13%; " src="images/startState.png" alt="Missing start state image">
                         <h4>Βήμα 2</h4>
                         <p>Επιλέγω <b>πανεπιστήμιο, τμήμα, εξάμηνο και μάθημα</b> για να εμφανιστούν τα συγγράμματα του συγκεκριμένου μαθήματος.</p>
                         <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseUni.png" alt="Missing start state image">
                         <h4>Βήμα 3</h4>
-                        <p>Πατάω <b class="text-success">"Προσθήκη"</b> στο σύγγραμμα που θέλω. Το σύγραμμα προστίθεται σε μια προσωρινή δήλωση.</p>
+                        <p>Επιλέγω <b class="text-success">Προσθήκη</b> στο σύγγραμμα που θέλω. Το σύγραμμα προστίθεται σε μια προσωρινή δήλωση.</p>
                         <p style="font-weight: bold;" class="text-center text-danger">Επιτρέπεται να δηλωθεί 1 σύγγραμμα ανά μάθημα!</p>
                         <p>Σε περίπτωση που θέλω να αφαιρεθεί το σύγγραμμα από την δήλωση επιλέγω 
-                            <b class="text-danger">"Αφαίρεση"</b> από την λίστα ή κάνω κλικ στον κόκκινο κάδο στα δεξιά.</p>
+                            <b class="text-danger">Αφαίρεση</b> από την λίστα ή κάνω κλικ στον <b class="text-danger">κόκκινο κάδο</b> στα δεξιά.</p>
                         
                         <p style="font-weight: bold; text-align: center;">Επαναλαμβάνω τα βήματα 2 και 3 μέχρι να επιλέξω όλα τα επιθυμητά συγγράμματα.</p>
 
                         <h4>Βήμα 4</h4>
-                        <p>Στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση".</b></p>
+                        <p>Στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">Ολοκλήρωση.</b></p>
                         
                         <p><b>Αν δεν είμαι συνδεδεμένος</b> αυτόματα μεταβιβάζομαι να κάνω εγγραφή ή σύνδεση 
-                            <b>(η προσωρινή δήλωση παραμένει αποθηκευμένη)</b> και ξαναεπιλέγω <b class="text-primary">"Ολοκλήρωση".</b></p>
+                            <b>(η προσωρινή δήλωση παραμένει αποθηκευμένη)</b> και ξαναεπιλέγω <b class="text-primary">Ολοκλήρωση.</b></p>
                         <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
 
                         <p>Αυτόματα μεταβιβάζομαι στο <b>Προφίλ μου > Τρέχουσα δήλωση</b> όπου βρίσκω τις απαραίτητες πληροφορίες για
@@ -250,7 +251,7 @@
                         <p> <b class="text-center text-danger">Αφαιρώ</b> και <b class="text-success">Προσθέτω</b> συγγράμματα τροποποιώντας κατάλληλα την δήλωση μου.</p>
 
                         <h4>Βήμα 4</h4>
-                        <p>Όταν τελειώσω στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση"</b> για την κατοχύρωση της νέας δήλωσης.</p>
+                        <p>Όταν τελειώσω στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">Ολοκλήρωση</b> για την κατοχύρωση της νέας δήλωσης.</p>
                         <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
 
                     </div>
@@ -270,20 +271,22 @@
                 <div id="collapseFoitThree" class="collapse" aria-labelledby="headingFoitThree" data-parent="#accordionExample">
                     <div class="card-body">
                         <h4>Βήμα 1</h4>
-                        <p>Αφού έχω συνδεθεί επιλέγω <b>Προφίλ</b> και στη συνέχεια <b>Τρέχουσα Δήλωση</b>.</p>
-                        <span><img style="width: 35%; height 35%; margin-left: 4%; " src="images/chooseProfile.png" alt="Missing start state image"></span>
-                        <span><img style="width: 35%; height 25%; margin-left: 13%; " src="images/chooseCurrent.png" alt="Missing start state image"></span>
+                        <p>Επιλέγω Αναζήτηση Συγγραμμάτων από την μπάρα πλοήγησης</p>
+                        <span><img style="width: 65%; height 65%; margin-left: 13%; " src="images/chooseSearch.png" alt="Missing start state image"></span>
 
                         <h4>Βήμα 2</h4>
-                        <p>Επιλέγω <b class="text-success"style="font-weight: bold;">Τροποποίηση Δήλωσης</b>.</p>
-                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseEdit.png" alt="Missing start state image">
+                        <p>Γράφω τον όρο αναζήτησης μου και πατάω <b class="text-success">Αναζήτηση</b>.</p>
+                        <p>O όρος αυτός μπορεί να είναι:</p>
+                        <ul>
+                            <li>Τίτλος βιβλίου</li>
+                            <li>Συγγραφέας</li>
+                            <li>ISBN</li>
+                            <li>Λέξη κλειδί</li>
+                        </ul>
                         
                         <h4>Βήμα 3</h4>
-                        <p> <b class="text-center text-danger">Αφαιρώ</b> και <b class="text-success">Προσθέτω</b> συγγράμματα τροποποιώντας κατάλληλα την δήλωση μου.</p>
-
-                        <h4>Βήμα 4</h4>
-                        <p>Όταν τελειώσω στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση"</b> για την κατοχύρωση της νέας δήλωσης.</p>
-                        <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
+                        <p>Σε περίπτωση που θέλω να περιορίσω τα αποτελέσματα χρησιμοποιώ τα <b>φίλτρα</b> στα αριστερά.</p>
+                        <img style="width: 19%; height 14%; margin-left: 5%; " src="images/filter.png" alt="Missing start state image">
 
                     </div>
                 </div>
@@ -301,21 +304,108 @@
 
                 <div id="collapseFoitFour" class="collapse" aria-labelledby="headingFoitFour" data-parent="#accordionExample">
                     <div class="card-body">
+                        <h2>Υπο κατασκευή</h2>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="pubAccord" class="col-6">
+                <div class="card-header" id="headingPubOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapsePubOne" aria-expanded="false" aria-controls="collapsePubOne">
+                            Πώς να καταχωρήσω ένα σύγγραμμα?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapsePubOne" aria-expanded="true" aria-controls="collapsePubOne">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapsePubOne" class="collapse" aria-labelledby="headingPubOne" data-parent="#accordionExample">
+                    <div class="card-body">
                         <h4>Βήμα 1</h4>
-                        <p>Αφού έχω συνδεθεί επιλέγω <b>Προφίλ</b> και στη συνέχεια <b>Τρέχουσα Δήλωση</b>.</p>
-                        <span><img style="width: 35%; height 35%; margin-left: 4%; " src="images/chooseProfile.png" alt="Missing start state image"></span>
-                        <span><img style="width: 35%; height 25%; margin-left: 13%; " src="images/chooseCurrent.png" alt="Missing start state image"></span>
+                        <p>Από την μπάρα πλοήγησης επιλέγω <b>Εκδότης > Καταχώρηση Συγγράμματος</b>.</p>
+                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseSubmit.png" alt="Missing start state image">
+                        <h4>Βήμα 2</h4>
+                        <p>Συμπληρώνω κατάλληλα τα πεδία. Τα πεδία με αστερίσκο ειναι <b>υποχρεωτικά</b></p>
+                        <ul>
+                            <li><b>ISBN</b> Σε μία από τις 2 αποδεκτές μορφές π.χ. 90-12345-09-7 ή 978-960-530-165-1</li>
+                            <li><b>Βάρος</b>: Σε κιλά και πάντα σε δεκαδική μορφή (ως υποδιαστολή βάζουμε τελεία) π.χ. 4.3 ή 1.0</li>
+                            <li><b>Διαστάσεις</b>: Σε εκατοστά χωρισμένες με x (λατινικό χ) π.χ. 14x23</li>
+                            <li><b>Τιμή</b>: Σε ευρώ και πάντα σε δεκαδική μορφή (ως υποδιαστολή βάζουμε τελεία) π.χ. 24.3 ή 31.0</li>
+                            <li><b>Λέξεις κλειδιά</b>: Λέξεις που εκφράζουν το περιεχόμενο του βιβλίου (τουλάχιστον μία) χωρισμένες με κόμμα π.χ. Φυσική, Μηχανική</li>
+                        </ul>
+                        <h4>Βήμα 3</h4>
+                        <p>Επιλέγω <b class="text-success">Καταχώρηση</b> όταν έχω συμπληρώσει  τα επιθυμητά πεδία.</p>
+                        <p><b>Αν δεν είμαι συνδεδεμένος</b> αυτόματα μεταβιβάζομαι να κάνω εγγραφή ή σύνδεση 
+                            <b>(η προσωρινή καταχώρηση παραμένει αποθηκευμένη)</b> και ξαναεπιλέγω <b class="text-success">Καταχώρηση.</b></p>
+                    </div>
+                </div>
+
+                <div class="card-header" id="headingPubTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapsePubTwo" aria-expanded="false" aria-controls="collapsePubTwo">
+                            Πώς να διαχειριστώ (επεξεργαστώ, διαγράψω) ένα σύγγραμμα μου?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapsePubTwo" aria-expanded="true" aria-controls="collapsePubTwo">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapsePubTwo" class="collapse" aria-labelledby="headingPubTwo" data-parent="#accordionExample">
+                    <h2>Υπο κατασκευή</h2>
+                </div>
+
+                <div class="card-header" id="headingPubThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapsePubThree" aria-expanded="false" aria-controls="collapsePubThree">
+                            Πώς να αναζητήσω συγγράμματα?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapsePubThree" aria-expanded="true" aria-controls="collapsePubThree">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapsePubThree" class="collapse" aria-labelledby="headingPubThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <h4>Βήμα 1</h4>
+                        <p>Επιλέγω Αναζήτηση Συγγραμμάτων από την μπάρα πλοήγησης</p>
+                        <span><img style="width: 65%; height 65%; margin-left: 13%; " src="images/chooseSearch.png" alt="Missing start state image"></span>
 
                         <h4>Βήμα 2</h4>
-                        <p>Επιλέγω <b class="text-success"style="font-weight: bold;">Τροποποίηση Δήλωσης</b>.</p>
-                        <img style="width: 65%; height 45%; margin-left: 13%; " src="images/chooseEdit.png" alt="Missing start state image">
+                        <p>Γράφω τον όρο αναζήτησης μου και πατάω <b class="text-success">Αναζήτηση</b>.</p>
+                        <p>O όρος αυτός μπορεί να είναι:</p>
+                        <ul>
+                            <li>Τίτλος βιβλίου</li>
+                            <li>Συγγραφέας</li>
+                            <li>ISBN</li>
+                            <li>Λέξη κλειδί</li>
+                        </ul>
                         
                         <h4>Βήμα 3</h4>
-                        <p> <b class="text-center text-danger">Αφαιρώ</b> και <b class="text-success">Προσθέτω</b> συγγράμματα τροποποιώντας κατάλληλα την δήλωση μου.</p>
+                        <p>Σε περίπτωση που θέλω να περιορίσω τα αποτελέσματα χρησιμοποιώ τα <b>φίλτρα</b> στα αριστερά.</p>
+                        <img style="width: 19%; height 14%; margin-left: 5%; " src="images/filter.png" alt="Missing start state image">
 
-                        <h4>Βήμα 4</h4>
-                        <p>Όταν τελειώσω στο δεξί μέρος της οθόνης επιλέγω <b class="text-primary">"Ολοκλήρωση"</b> για την κατοχύρωση της νέας δήλωσης.</p>
-                        <img style="width: 25%; height 25%; margin-left: 29%; " src="images/completeState.png" alt="Missing start state image">
+                    </div>
+                </div>
+
+                <div class="card-header" id="headingPubFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link mr-5 btnState" type="button" data-toggle="collapse" data-target="#collapsePubFour" aria-expanded="false" aria-controls="collapsePubFour">
+                            Πώς να επεξεργαστώ το Προφίλ μου?
+                        </button>
+                        <button style="font-size: 150%;" class="btn btn-link float-right btnState" type="button" data-toggle="collapse" data-target="#collapsePubFour" aria-expanded="true" aria-controls="collapsePubFour">
+                            <i class="fas fa-caret-down" id="caret1"></i>
+                        </button>
+                    </h5>
+                </div>
+
+                <div id="collapsePubFour" class="collapse" aria-labelledby="headingPubFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <h2>Υπο κατασκευή</h2>
 
                     </div>
                 </div>
