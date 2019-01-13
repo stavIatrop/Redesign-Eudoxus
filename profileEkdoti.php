@@ -71,7 +71,7 @@
 
                     $user = new User(0);
                     $user  = unserialize($_COOKIE['user']);
-                    echo '<p class="loginText">'. $user->getUsername() . ' </p>';
+                    echo '<p id="loginUsername" class="loginText">'. $user->getUsername() . ' </p>';
                 }
                 else {
                     echo '<p class="loginText">Προφίλ</p>';
@@ -186,24 +186,40 @@
 
                     <div class="card-body">
 
-                        <form>
+                        <!-- <form> -->
                             <div class="form-group">
                                 <label for="exampleInputName">Όνομα Χρήστη</label>
-                                <input type="text" class="form-control" id="exampleInputName" value="AchilleasPap" autocomplete="off">
-                                
+                                <?php
+                                    
+                                    if (isset($_COOKIE['user'])) {
+
+                                        $user = new User(0);
+                                        $user  = unserialize($_COOKIE['user']);
+                                        echo '<input type="text" oninput="typeUsername(this.value)" class="form-control" id="username" value="'. htmlspecialchars($user->getUsername()) . '" autocomplete="off">';
+                                    }
+                                ?>
+                            </div>
+                            <div>
+                                <p id="errorUsername">Το Όνομα Χρήστη είναι απαραίτητο!</p>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Νέος Κωδικός</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Νέος Κωδικός">
+                                <label for="password">Νέος Κωδικός</label>
+                                <input type="password" class="form-control" oninput="typeNewPass(this.value)" id="password" placeholder="Νέος Κωδικός">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Επιβεβαίωση Νέου Κωδικού</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                                <label for="passwordVer">Επιβεβαίωση Νέου Κωδικού</label>
+                                <input type="password" class="form-control" oninput="typeNewPassVer(this.value)" id="passwordVer" placeholder="">
+                            </div>
+                            <div>
+                            <p id="errorPassword">Οι κωδικοί δεν ταιριάζουν!</p>
                             </div>
                             <div class="text-center" style="margin-top: 25px">
-                                <button type="submit" class="btn btn-success" >Αποθήκευση</button>
+                                <button type="submit" class="btn btn-success" onclick="save()"  >Αποθήκευση</button>
                             </div>
-                        </form>
+                            <div>
+                                <p id="updateSuccess">Οι πληροφορίες του προφίλ ενημερώθηκαν με επιτυχία!</p>
+                            </div>
+                        <!-- </form> -->
 
 
                     </div>

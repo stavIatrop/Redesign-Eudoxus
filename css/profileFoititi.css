@@ -86,3 +86,32 @@
 .closePoint {
   color: rgb(206, 8, 8);
 }
+
+#errorPassword {
+
+  color: red;
+  font-style: italic;
+  font-size: 18px;
+  display: none;
+  text-align: center;
+}
+
+#errorUsername {
+ 
+  color: red;
+  font-style: italic;
+  font-size: 18px;
+  display: none;
+  text-align: center;
+}
+
+#updateSuccess {
+
+  color: rgb(5, 110, 14);
+  margin-bottom: 0%;
+  margin-top: 5%;
+  font-style: italic;
+  font-size: 18px;
+  display: none;
+  text-align: center;
+}

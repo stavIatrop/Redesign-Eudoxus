@@ -68,3 +68,146 @@ window.onload = function() {
 
 }
 
+function handleForm(event) { 
+    event.preventDefault(); 
+}
+
+function typeUsername(value) {
+
+    document.getElementById("updateSuccess").style.display = 'none';
+    document.getElementById("errorUsername").style.display = 'none';
+
+}
+
+function typeNewPass(value) {
+
+    document.getElementById("updateSuccess").style.display = 'none';
+    if(value != document.getElementById("passwordVer").value) {
+
+        document.getElementById("errorPassword").style.display = 'block';
+
+    } else {
+
+        document.getElementById("errorPassword").style.display = 'none';
+
+    }
+}
+
+function typeNewPassVer(value) {
+
+    document.getElementById("updateSuccess").style.display = 'none';
+    if(value != document.getElementById("password").value) {
+
+        document.getElementById("errorPassword").style.display = 'block';
+
+    } else {
+
+        document.getElementById("errorPassword").style.display = 'none';
+
+    }
+}
+
+function changeUni(value) {
+
+    document.getElementById("updateSuccess").style.display = 'none';
+    if(value == 0) {
+        document.getElementById("selDep").setAttribute("disabled", true);
+    }
+    else {
+        document.getElementById("selDep").removeAttribute("disabled");
+    }
+    document.getElementById("selDep").selectedIndex = 0;
+
+    if(value != 0) {
+        
+        request = $.ajax({
+          url: "profileServer.php",
+          type: "post",
+          data: {action: 'ShowDeps',
+                  uniName: value}
+        });
+    
+        
+        request.done(function (response){
+          document.getElementById("selDep").innerHTML = '<option id="defDep" onclick="chooseDep(this.value)" value="0" selected>Επίλεξε Τμήμα</option>' + response;
+        });
+    
+        // Callback handler that will be called on failure
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+    
+      }
+    
+}
+
+function changeDep(value) {
+
+    document.getElementById("updateSuccess").style.display = 'none';
+}
+
+
+	
+function save() {
+
+    
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var passVer = document.getElementById('passwordVer').value;
+    var uniName = document.getElementById('selUni').value;
+    var uniDepart = document.getElementById('selDep').value;
+
+    if(username == '') {
+
+        document.getElementById("errorUsername").style.display = 'block';
+        return;
+    }
+    if(password != passVer) {
+        document.getElementById("errorPassword").style.display = 'block';
+        return;
+    }
+
+    console.log(uniName + " " + uniDepart);
+
+    request = $.ajax({
+        url: "profileServer.php",
+        type: "post",
+        data: {action: 'UpdateProfile',
+                username: username,
+                password: password,
+                uniName: uniName,
+                uniDepart: uniDepart}
+    });
+
+    request.done(function (response){
+        console.log(response);
+        if(response == 1) {
+
+            document.getElementById("loginUsername").innerHTML = username;
+            document.getElementById("password").value = '';
+            document.getElementById("passwordVer").value = '';
+            document.getElementById("updateSuccess").style.display = 'block';
+        }else if(response == 0) {
+            console.log('Sth went wrong');
+        }
+        
+
+    });
+  
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+  
+
+
+}
+

@@ -1,7 +1,7 @@
 <head>
   <title>Εύδοξος - Προφίλ</title>
   <link rel="icon" href="images/favicon.ico" type="image/ico">
-
+  <meta charset="UTF-8">
   <link href="css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"></head>
   <link href="css/gridLayouts.css" rel="stylesheet" type="text/css"  media="all">
@@ -71,7 +71,7 @@
 
                 $user = new User(0);
                 $user  = unserialize($_COOKIE['user']);
-                echo '<p class="loginText">'. $user->getUsername() . ' </p>';
+                echo '<p id="loginUsername" class="loginText">'. $user->getUsername() . ' </p>';
               }
               else {
                 echo '<p class="loginText">Προφίλ</p>';
@@ -188,37 +188,126 @@
 
                     <div class="card-body">
 
-                        <form>
+                        <!-- <form id="profileForm"> -->
                             <div class="form-group">
-                                <label for="exampleInputName">Όνομα Χρήστη</label>
-                                <input type="text" class="form-control" id="exampleInputName" value="AchilleasPap" autocomplete="off">
+                                <label for="username">Όνομα Χρήστη</label>
+                                <?php
+                                    
+                                    if (isset($_COOKIE['user'])) {
+
+                                        $user = new User(0);
+                                        $user  = unserialize($_COOKIE['user']);
+                                        echo '<input type="text" oninput="typeUsername(this.value)" class="form-control" id="username" value="'. htmlspecialchars($user->getUsername()) . '" autocomplete="off">';
+                                    }
+                                ?>
+                                <!-- <input type="text" class="form-control" id="exampleInputName" value="AchilleasPap" autocomplete="off"> -->
                                 
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Νέος Κωδικός</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Νέος Κωδικός">
+                            <div>
+                                <p id="errorUsername">Το Όνομα Χρήστη είναι απαραίτητο!</p>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Επιβεβαίωση Νέου Κωδικού</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+                                <label for="password">Νέος Κωδικός</label>
+                                <input type="password" oninput="typeNewPass(this.value)" class="form-control" id="password" placeholder="Νέος Κωδικός">
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordVer">Επιβεβαίωση Νέου Κωδικού</label>
+                                <input type="password" oninput="typeNewPassVer(this.value)" class="form-control" id="passwordVer" placeholder="">
+                            </div>
+                            <div>
+                            <p id="errorPassword">Οι κωδικοί δεν ταιριάζουν!</p>
                             </div>
                             <label for="selUni" >Σχολή:</label>
-                            <select id="selUni" class="custom-select mb-3" >
-                                <option id="defUni" value="0" selected>Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών - ΕΚΠΑ</option>
-                                <option  value="1">Εθνικό Μετσόβιο Πολυτεχνείο -ΕΜΠ</option>
-                                <option  value="2">Πανεπιστήμιο Πειραιώς</option>
+                            <select name="selUni" id="selUni" class="uniSelect custom-select mb-3">
+                                <option id="defUni" onclick="changeUni(this.value)"  value="0">Επίλεξε Πανεπιστήμιο</option>
+                                
+                                <?php
+                                    include 'login.php';
+
+                                    if (isset($_COOKIE['user'])) {
+
+                                        $user = new User(0);
+                                        $user  = unserialize($_COOKIE['user']);
+                                        
+                                    }
+
+                                    $conn = OpenCon();
+                                    
+                                    $uniesQuery = "SELECT DISTINCT(uniName) FROM `Course`";
+                                    $unies = $conn->query($uniesQuery);
+                                    if ($unies->num_rows > 0) {
+                                    
+                                        while($row = $unies->fetch_assoc()) {
+                                            
+                                            if( $row['uniName'] == $user->getUniName()) {
+
+                                                echo '<option onclick="changeUni(this.value)" value="' . htmlspecialchars($row['uniName']) . '" selected>' 
+                                                . htmlspecialchars($row['uniName']) 
+                                                . '</option>';
+                                            } else {
+                                                
+                                                echo '<option onclick="changeUni(this.value)" value="' . htmlspecialchars($row['uniName']) . '">' 
+                                                . htmlspecialchars($row['uniName']) 
+                                                . '</option>';
+                                            }
+                                            
+                                        }
+                                    } 
+                                    else {
+                                        echo "0 results";
+                                    }
+                                    CloseCon($conn);
+                                ?>
                             </select>
+                            
                             <label for="selDep" >Τμήμα:</label>
-                            <select id="selDep" class=" custom-select mb-3" >
-                                <option id="defDep"  value="0" selected>Ιστορίας και Αρχαιολογίας</option>
-                                <option  value="1">Πληροφορικής και Τηλεπικοινωνιών</option>
-                                <option  value="2">Μαθηματικό</option>
-                                <option  value="3">Φυσικό</option>
+                            <select id="selDep" disabled class=" custom-select mb-3" >
+                                <option id="defDep" onclick="changeDep(this.value)"  value="0" >Επίλεξε Τμήμα</option>
+                                
+                                <?php
+                                    
+                                    if (isset($_COOKIE['user'])) {
+
+                                        $user = new User(0);
+                                        $user  = unserialize($_COOKIE['user']);
+                                        
+                                    }
+
+                                    $conn = OpenCon();
+                                    
+                                    $depsQuery = "SELECT DISTINCT(uniDepartment) FROM `Course`";
+                                    $deps = $conn->query($depsQuery);
+                                    if ($deps->num_rows > 0) {
+                                    
+                                        while($row = $deps->fetch_assoc()) {
+                                            
+                                            if( $row['uniDepartment'] == $user->getUniDepartment()) {
+
+                                                echo '<option onclick="changeDep(this.value)" value="' . htmlspecialchars($row['uniDepartment']) . '" selected>' 
+                                                . htmlspecialchars($row['uniDepartment']) 
+                                                . '</option>';
+                                            } else {
+                                                
+                                                echo '<option onclick="changeDep(this.value)" value="' . htmlspecialchars($row['uniDepartment']) . '">' 
+                                                . htmlspecialchars($row['uniDepartment']) 
+                                                . '</option>';
+                                            }
+                                            
+                                        }
+                                    } 
+                                    else {
+                                        echo "0 results";
+                                    }
+                                    CloseCon($conn);
+                                ?>
                             </select>
                             <div class="text-center" style="margin-top: 25px">
-                                <button type="submit" class="btn btn-success" >Αποθήκευση</button>
+                                <button type="submit" class="btn btn-success" onclick="save()" >Αποθήκευση</button>
                             </div>
-                        </form>
+                            <div>
+                                <p id="updateSuccess">Οι πληροφορίες του προφίλ ενημερώθηκαν με επιτυχία!</p>
+                            </div>
+                        <!-- </form> -->
 
 
                     </div>

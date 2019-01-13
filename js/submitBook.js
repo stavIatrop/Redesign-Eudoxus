@@ -253,17 +253,17 @@ function typeWeight(value) {
 
 	if(document.getElementById("dimError").style.display == 'block' && document.getElementById("pagesError").style.display == 'block') {
 		
-		document.getElementById("helpBtn2").style.marginTop = "205px";
+		document.getElementById("helpBtn2").style.marginTop = "230px";
 
 	}else if( document.getElementById("dimError").style.display == 'block' || document.getElementById("pagesError").style.display == 'block') {
 
-		document.getElementById("helpBtn2").style.marginTop = "180px";
+		document.getElementById("helpBtn2").style.marginTop = "205px";
 
 	}else {
 
 		document.getElementById("helpBtn2").style.marginTop = "177px";
 	}
-	document.getElementById("helpBtn2").style.marginTop = "177px";
+	// document.getElementById("helpBtn2").style.marginTop = "177px";
 	document.getElementById("helpBtn1").style.marginTop = "80px";
 	document.getElementById("weightError").style.display = 'none';
 	$('#helpBtn0').tooltip('hide');
@@ -279,16 +279,21 @@ function typeDimensions(value) {
 		
 		document.getElementById("helpBtn2").style.marginTop = "205px";
 
-	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("pagesError").style.display == 'block') {
+	}else if(  document.getElementById("pagesError").style.display == 'block') {
+
+		document.getElementById("helpBtn2").style.marginTop = "205px";
+
+	}else if( document.getElementById("weightError").style.display == 'block') {
 
 		document.getElementById("helpBtn2").style.marginTop = "180px";
 
-	}else {
+	}
+	else {
 
 		document.getElementById("helpBtn2").style.marginTop = "177px";
 	}
 	
-	document.getElementById("helpBtn2").style.marginTop = "177px";
+	// document.getElementById("helpBtn2").style.marginTop = "177px";
 	document.getElementById("dimError").style.display = 'none';
 	$('#helpBtn1').tooltip('hide');
     dimensionsInput = value;
@@ -304,16 +309,20 @@ function typePages(value) {
 		
 		document.getElementById("helpBtn2").style.marginTop = "205px";
 
-	}else if( document.getElementById("weightError").style.display == 'block' || document.getElementById("dimError").style.display == 'block') {
+	}else if( document.getElementById("weightError").style.display == 'block' ) {
 
 		document.getElementById("helpBtn2").style.marginTop = "180px";
 
-	}else {
+	}else if (document.getElementById("dimError").style.display == 'block') {
+
+		document.getElementById("helpBtn2").style.marginTop = "205px";
+	}
+	else {
 
 		document.getElementById("helpBtn2").style.marginTop = "177px";
 	}
 	
-	document.getElementById("helpBtn2").style.marginTop = "177px";
+	// document.getElementById("helpBtn2").style.marginTop = "177px";
 	document.getElementById("pagesError").style.display = 'none';
 
 	pagesInput = value;
