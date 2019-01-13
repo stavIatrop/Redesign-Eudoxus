@@ -45,14 +45,29 @@
     }
     
     function Register($username, $email, $password, $category, $categoryId) {
+
+        include("user.class.php");
         $conn = OpenCon();
+        
         //debug_to_console("reach");
         $emailQuery = "INSERT INTO User (username, email, password, userCategory, categoryId) VALUES ('$username', '$email', '$password', '$category', '$categoryId')";
 
         if(mysqli_query($conn, $emailQuery)){  //Record added successfully
+            $last_id = $conn->insert_id;
+            $user = new User(htmlspecialchars($last_id));
+            $user->setUsername(htmlspecialchars($username));
+            $user->setEmail(htmlspecialchars($email));
+            $user->setPassword(htmlspecialchars($password));
+            $user->setCategory(htmlspecialchars($category));
+            $user->setCategoryId(htmlspecialchars($categoryId));
+            $user->setUniName(htmlspecialchars(null));
+            $user->setUniDepartment(htmlspecialchars(null));
+            setcookie('user', serialize($user), time() + 360000 );
+
             $val = 1;
             echo $val;
             return $val;
+            
         } else{
             debug_to_console("ERROR: Could not able to execute $sql. " . mysqli_error($conn));
         }

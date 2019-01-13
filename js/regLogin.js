@@ -348,9 +348,7 @@ function register() {
                         document.getElementById('catIdEkdot').value = '';
                         $("#studNumb").hide();
                         $("#publNumb").hide();
-                        docLocation();
-                        
-                        
+                        docLocation();                     
 
                     } else {
 
