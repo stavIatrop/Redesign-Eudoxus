@@ -272,10 +272,12 @@
                                         $user  = unserialize($_COOKIE['user']);
                                         
                                     }
+                                    $uniName = $user->getUniName();
+
 
                                     $conn = OpenCon();
                                     
-                                    $depsQuery = "SELECT DISTINCT(uniDepartment) FROM `Course`";
+                                    $depsQuery = "SELECT DISTINCT(uniDepartment) FROM `Course` WHERE uniName = '$uniName'";
                                     $deps = $conn->query($depsQuery);
                                     if ($deps->num_rows > 0) {
                                     
