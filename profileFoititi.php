@@ -319,7 +319,6 @@
                 <div class="accordion" id="accordionExample">
 
                     <?php
-                        include("login.php");
                         if(isset($_COOKIE['user'])) {
                             $conn = OpenCon();
                             $user = new User(0);
