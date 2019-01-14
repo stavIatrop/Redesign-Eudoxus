@@ -4,12 +4,10 @@
   margin-bottom: 0%;
   font-family: Helvetica, sans-serif;
   margin-left: 10px;
-  /* font-weight: bold; */
 }
 
 .navbar {
   min-height: 50px !important;
-  /* background-color: #3D8A3A; */
   box-shadow: 2px 2px 8px grey;
   background-image: linear-gradient(to bottom right, rgb(77, 161, 74), rgb(35, 105, 33));
   z-index: 99;

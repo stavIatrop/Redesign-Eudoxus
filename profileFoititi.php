@@ -401,28 +401,6 @@
                 </div>
             </div>
             <div id="currentContent" style="display: none;" class="col-md-6">
-                <!-- <h4 class="mb-5" style="text-align: center;">Τρέχουσα Δήλωση - Χειμερινού Εξαμήνου 2018-2019</h4>
-                <div class="row">
-                    <div class="col-10"></div>
-                    <div class="col-2">
-                        <button style="width:180%;" onclick="getbooks()" class="btn btn-md btn-success"><i class="fas fa-edit mr-2"></i>Τροποποίηση Δήλωσης</button>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-10">
-                        <div class="row">
-                            <div class="col-5"><p class="stateHeaders">PIN παραλαβής: 123123213</p></div>
-                            <div class="col-6"><p class="stateHeaders">Προθεσμία Παραλαβής: 30/12/2018</p></div>
-                        </div>                        
-
-                    </div>
-                    <div class="col-2">
-                        <button style="width:180%;" class="btn btn-md btn-danger"><i class="fas fa-file-pdf mr-2"></i>Κατέβασμα ως PDF</button>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <div class="card historyCard"> -->
                             <?php
                                 if(isset($_COOKIE['user'])) {
                                     $conn = OpenCon();

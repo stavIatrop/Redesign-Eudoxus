@@ -169,10 +169,6 @@
 
 
     <div style="min-height: -23px;" class="row">
-    <!-- <button id="example-popover" type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
-        Tooltip on right
-    </button>           -->
         <div class="col-1"></div>
         <div class="col-4">
             

@@ -1,8 +1,6 @@
 <?php
 
-    //$action = '';
     include("login.php");
-    //debug_to_console("aaaaaaaaaaa");
     switch($_POST['action']) {
     case 'CheckEmail':
         $emailReg = $_POST['email'];
@@ -22,9 +20,7 @@
     }
 
     function CheckEmail($email){
-        //include("login.php");
         $conn = OpenCon();
-        //debug_to_console("reach");
         $emailQuery = "SELECT email FROM `User` WHERE email = '$email'";
 
         $emailResults = mysqli_query($conn, $emailQuery);
@@ -40,7 +36,6 @@
         }
         
         CloseCon($conn);
-        //debug_to_console($optionsString);
         
     }
     
@@ -49,7 +44,6 @@
         include("user.class.php");
         $conn = OpenCon();
         
-        //debug_to_console("reach");
         $emailQuery = "INSERT INTO User (username, email, password, userCategory, categoryId) VALUES ('$username', '$email', '$password', '$category', '$categoryId')";
 
         if(mysqli_query($conn, $emailQuery)){  //Record added successfully

@@ -75,11 +75,9 @@
     
     function ShowBooks($chosenCourse) {
         $conn = OpenCon();
-        //debug_to_console("reach");
         $bookAdded = -1;
         if(isset($_COOKIE['statement'])) {
             $statements = json_decode($_COOKIE['statement'], false);
-            //getcookie('statement');
             foreach($statements as $whichState) {
                 if($whichState->courseId == $chosenCourse) {
                     $bookAdded = $whichState->bookId;
@@ -128,14 +126,12 @@
             debug_to_console("NO COURSES");
         }
         CloseCon($conn);
-        //debug_to_console($booksString);
         echo $booksString;
         return $booksString;
     }
 
     function UpdateCourses($chosenUni, $chosenDep, $chosenSem) {
         $conn = OpenCon();
-        //debug_to_console("reach");
         $courseQuery = "SELECT * FROM `Course` WHERE uniName = '$chosenUni' AND uniDepartment='$chosenDep' AND semester = $chosenSem";
 
         $courseResults = mysqli_query($conn, $courseQuery);
@@ -146,7 +142,6 @@
                 $optionsString .= '<option onclick="chooseCourse(this.value)" value="' . htmlspecialchars($row['courseId']) . '">' 
                 . htmlspecialchars($row['courseName']) 
                 . '</option>'; 
-                //debug_to_console($row['uniDepartment']);
             }
             
         }
@@ -154,7 +149,6 @@
             debug_to_console("NO COURSES");
         }
         CloseCon($conn);
-        //debug_to_console($optionsString);
         echo $optionsString;
         return $optionsString;
     }
@@ -165,16 +159,13 @@
     }
 
     function AddBook($selCourse, $selBook) {
-        //global $lastAdded;
         $newState = new AddedBook();
         $newState->bookId = $selBook;
         $newState->courseId = $selCourse;
-        //$lastAdded = $newState;
         $conn = OpenCon();
         if(!isset($_COOKIE['statement'])) {
             setcookie('statement', json_encode(array($newState)), time()+360000);
             getcookie('statement');
-            //$_COOKIE['statement'] = json_encode(array($newState));
             $statements = array($newState);
         }
         else {
@@ -182,12 +173,10 @@
             $statements[] = $newState;
             setcookie('statement', json_encode($statements), time()+360000);
             getcookie('statement');
-            //$_COOKIE['statement'] = json_encode($statements);
         }
         //Case: User is not logged in
         $stateString = "";
         foreach($statements as $whichState) {
-            //debug_to_console("aaaa " . $whichState->bookId);
             $stateQuery = "SELECT Book.title, Course.courseName, Course.semester 
                             FROM Book, Course 
                             WHERE Book.bookId = '$whichState->bookId' and Course.courseId = '$whichState->courseId'";
@@ -215,7 +204,6 @@
                                     </div>
                                     </div>
                                 </li>'; 
-                    //debug_to_console($row['uniDepartment']);
                 }
                 
             }
@@ -224,7 +212,6 @@
             }
         }
         
-        //debug_to_console($stateString);
         echo $stateString;
 
         CloseCon($conn);
@@ -255,23 +242,6 @@
 
     function DeleteStatedBook($courseId) {
         $statements = json_decode($_COOKIE['statement'], true);
-        //$statements = json_decode(getcookie('statement'), true);
-        //debug_to_console();
-
-        // global $lastAdded;
-        // if($lastAdded != null) {
-        //     debug_to_console("REACH1");
-        //     if($statements[count($statements) - 1]['courseId'] != $lastAdded->courseId
-        //     && $statements[count($statements) - 1]['bookId'] != $lastAdded->bookId) {
-        //         debug_to_console("REACH2");
-        //         if(!isset($_COOKIE['statement'])) {
-        //             $statements = array($lastAdded);
-        //         }
-        //         else {
-        //             $statements[] = $lastAdded;
-        //         }
-        //     }
-        // }
         
         for ($whichState = 0; $whichState < count($statements); $whichState++) {
             if($statements[$whichState]['courseId'] == $courseId) {
@@ -280,23 +250,16 @@
                 $statements = array_values($statements);
                 break;
             }
-            //if($whichState == count($statements) - 1) {
-            //   unset($statements[$whichState]);
-            //   $statements = array_values($statements);
-            //}
         }
         setcookie('statement', json_encode($statements), time()+360000);
 
         if(empty($statements)) {
             echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';
-            //writeButton(1);
         }
         else {
             $conn = OpenCon();
             $stateString = "";
-            //writeButton(0);
             foreach($statements as $whichState) {
-                //debug_to_console("aaaa " . $whichState->bookId);
                 $tempBookId = $whichState['bookId'];
                 $tempCourseId = $whichState['courseId'];
                 $stateQuery = "SELECT Book.title, Course.courseName, Course.semester 
@@ -326,7 +289,6 @@
                                         </div>
                                         </div>
                                     </li>'; 
-                        //debug_to_console($row['uniDepartment']);
                     }
                     
                 }
@@ -335,7 +297,6 @@
                 }
             }
             CloseCon($conn);
-            //debug_to_console($stateString);
             echo $stateString;
         }
     }
@@ -343,7 +304,6 @@
     function getcookie($name) {
         $cookies = [];
         $headers = headers_list();
-        // see http://tools.ietf.org/html/rfc6265#section-4.1.1
         foreach($headers as $header) {
             if (strpos($header, 'Set-Cookie: ') === 0) {
                 $value = str_replace('&', urlencode('&'), substr($header, 12));

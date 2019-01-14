@@ -39,7 +39,6 @@
 .card-header
 {
   box-shadow: 1px 1px 2px rgb(173, 171, 171);
-  /* background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(151, 219, 143)); */
   background-color: rgb(245, 245, 245);
 }
 
