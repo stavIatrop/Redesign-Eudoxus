@@ -182,13 +182,6 @@
           <div style="display: none;" id="searchList" class="row">
             <div class="col-md-2">
               <p class="filterTitle">Φίλτρα</p>
-              <!-- <div class="row" style="border-bottom: 2px solid #3D8A3A; padding-bottom: 5%;">
-                <div class="col-md-10">
-                  <i class="fas fa-times mr-1 btn filterCancel"></i><span>Σελίδες 100-199</span>
-                </div>
-                <div class="col-md-2">
-                </div>
-              </div> -->
               <div style="margin-top: 16%;" class="row">
                 <div class="col-md-2">
                 </div>
@@ -244,78 +237,6 @@
             <div class="col-lg-8 col-md-10">
               <div id="showBooks" style="margin-top:-5%;">
                 <ul id="bookListId" class="bookList">
-                  <!-- <li><div class="row bookRow">
-                    <div class="col-md-2">
-                      <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
-                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
-                      <p class="text-center">Σελίδες: 156</p>
-                    </div>
-                    <div class="col-lg-3 d-md-none d-lg-block">
-                      <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
-                      <p>Έτος Έκδοσης: 2016</p>
-                      <p>ISBN: 90-54321-76-1</p>
-                    </div>
-                    <div class="col-md-3">
-                      <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Περισσότερα </button>
-                    </div>
-                  </div></li>
-                  <li><div class="row bookRow">
-                    <div class="col-md-2">
-                      <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
-                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
-                      <p class="text-center">Σελίδες: 156</p>
-                    </div>
-                    <div class="col-lg-3 d-md-none d-lg-block">
-                      <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
-                      <p>Έτος Έκδοσης: 2016</p>
-                      <p>ISBN: 90-54321-76-1</p>
-                    </div>
-                    <div class="col-md-3">
-                      <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Περισσότερα </button>
-                    </div>
-                  </div></li>
-                  <li><div class="row bookRow">
-                    <div class="col-md-2">
-                      <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
-                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
-                      <p class="text-center">Σελίδες: 156</p>
-                    </div>
-                    <div class="col-lg-3 d-md-none d-lg-block">
-                      <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
-                      <p>Έτος Έκδοσης: 2016</p>
-                      <p>ISBN: 90-54321-76-1</p>
-                    </div>
-                    <div class="col-md-3">
-                      <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Περισσότερα </button>
-                    </div>
-                  </div></li>
-                  <li><div class="row bookRow">
-                    <div class="col-md-2">
-                      <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                      <p style="font-weight: bold; font-size: 120%; margin-top: 2%; text-align: center;">Τίτλος Συγγράμματος</p>
-                      <p class="text-center">Συγγραφέας: Όνομα Επίθετο</p>
-                      <p class="text-center">Σελίδες: 156</p>
-                    </div>
-                    <div class="col-lg-3 d-md-none d-lg-block">
-                      <p style= "margin-top: 2%;">Εκδόσεις: Όνομα Εκδόσεων</p>
-                      <p>Έτος Έκδοσης: 2016</p>
-                      <p>ISBN: 90-54321-76-1</p>
-                    </div>
-                    <div class="col-md-3">
-                      <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Περισσότερα </button>
-                    </div>
-                  </div></li> -->
                 </ul>
               </div>
             </div>

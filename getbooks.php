@@ -179,20 +179,13 @@
             <span class="dropdownTitles" style="vertical-align: middle;">Πανεπιστήμιο:</span>
             <select name="selUni" id="selUni" class="uniSelect custom-select mb-3">
               <option id="defUni" onclick="chooseUni(this.value)" value="0" selected>Επίλεξε Πανεπιστήμιο</option>
-              <!-- <option onclick="chooseUni(this.value)" value="1">Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών - ΕΚΠΑ</option>
-              <option onclick="chooseUni(this.value)" value="2">Εθνικό Μετσόβιο Πολυτεχνείο -ΕΜΠ</option>
-              <option onclick="chooseUni(this.value)" value="3">Πανεπιστήμιο Πειραιώς</option> -->
               <?php
                 include 'login.php';
                 $conn = OpenCon();
-                //debug_to_console("Connected");
                 $uniesQuery = "SELECT DISTINCT(uniName) FROM `Course`";
                 $unies = $conn->query($uniesQuery);
                 if ($unies->num_rows > 0) {
-                  // output data of each row
                   while($row = $unies->fetch_assoc()) {
-                      //echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-                      //debug_to_console($row["uniName"]);
                       echo '<option onclick="chooseUni(this.value)" value="' . htmlspecialchars($row['uniName']) . '">' 
                       . htmlspecialchars($row['uniName']) 
                       . '</option>';  
@@ -209,9 +202,6 @@
             <span class="dropdownTitles" style="vertical-align: middle;">Τμήμα:</span>
             <select id="selDep" style="margin-left: 8%;" disabled class="uniSelect custom-select mb-3">
               <option id="defDep" onclick="chooseDep(this.value)" value="0" selected>Επίλεξε Τμήμα</option>
-                <!-- <option onclick="chooseDep(this.value)" value="1">One</option>
-                <option onclick="chooseDep(this.value)" value="2">Two</option>
-                <option onclick="chooseDep(this.value)" value="3">Three</option> -->
               
             </select>
           </div>
@@ -243,58 +233,6 @@
         </div>
         <div id="showBooks" style="display: none;">
           <ul id="showBooksList" class="bookList">
-            <!-- <li><div class="row bookRow">
-              <div class="col-md-3">
-                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-              </div>
-              <div class="col-md-6">
-                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                <p>Συγγραφέας: Όνομα Επίθετο</p>
-                <p>Σελίδες: 156</p>
-              </div>
-              <div class="col-md-3">
-                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
-              </div>
-            </div></li>
-            <li><div class="row bookRow">
-              <div class="col-md-3">
-                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-              </div>
-              <div class="col-md-6">
-                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                <p>Συγγραφέας: Όνομα Επίθετο</p>
-                <p>Σελίδες: 156</p>
-              </div>
-              <div class="col-md-3">
-                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
-              </div>
-            </div></li>
-            <li><div class="row bookRow">
-              <div class="col-md-3">
-                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-              </div>
-              <div class="col-md-6">
-                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                <p>Συγγραφέας: Όνομα Επίθετο</p>
-                <p>Σελίδες: 156</p>
-              </div>
-              <div class="col-md-3">
-                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
-              </div>
-            </div></li>
-            <li><div class="row bookRow" style="">
-              <div class="col-md-3">
-                <img class="rounded" src="images/book.jpeg" alt="Book cover missing">
-              </div>
-              <div class="col-md-6">
-                <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος Συγγράμματος</p>
-                <p>Συγγραφέας: Όνομα Επίθετο</p>
-                <p>Σελίδες: 156</p>
-              </div>
-              <div class="col-md-3">
-                <button type="button" style="margin-top: 15%; box-shadow: 3px 3px 3px rgb(80, 78, 78);" class="btn shadow btn-success btn-lg">Προσθήκη</button>
-              </div>
-            </div></li> -->
           </ul>
         </div>
       </div>
@@ -310,20 +248,16 @@
               <?php
                 if(!isset($_COOKIE['statement'])) {
                   echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';
-                  //writeButton(1);
                 }
                 else {
                   $statements = json_decode($_COOKIE['statement'], false);
                   if(empty($statements)) {
                     echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';
-                    //writeButton(1);
                   }
                   else {
                     $conn = OpenCon();
                     $stateString = "";
-                    //writeButton(0);
                     foreach($statements as $whichState) {
-                        //debug_to_console("aaaa " . $whichState->bookId);
                         $stateQuery = "SELECT Book.title, Course.courseName, Course.semester 
                                         FROM Book, Course 
                                         WHERE Book.bookId = '$whichState->bookId' and Course.courseId = '$whichState->courseId'";
@@ -351,7 +285,6 @@
                                                 </div>
                                                 </div>
                                             </li>'; 
-                                //debug_to_console($row['uniDepartment']);
                             }
                             
                         }
@@ -360,88 +293,13 @@
                         }
                     }
                     CloseCon($conn);
-                    //debug_to_console($stateString);
                     echo $stateString;
                   }
                 }
               ?>
 
-              <!-- <li>
-                <div style="padding-bottom: 7%; border-bottom: 2px solid grey;" class="row">
-                  <div class="col-lg-2 d-md-none d-lg-block">
-                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
-                  </div>
-                  <div class="col-lg-1 d-md-none d-lg-block">
-                  </div>
-                  <div style="margin-top: 2%;" class="col-lg-6 col-md-9">
-                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
-                    <p>Μάθημα</p>
-                    <p>Εξάμηνο</p>
-                  </div>
-                  <div class="col-lg-3">
-                    <button style="margin-top:60%;" class='btn btn-lg btn-danger'>
-                      <i class="fas fa-trash-alt"></i>
-                    </button>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div style="padding-bottom: 7%; margin-top:7%; border-bottom: 2px solid grey;" class="row">
-                  <div class="col-md-2">
-                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
-                  </div>
-                  <div class="col-md-1">
-                  </div>
-                  <div style="margin-top: 2%;" class="col-md-6">
-                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
-                    <p>Μάθημα Εξάμηνο</p>
-                  </div>
-                  <div class="col-md-3">
-                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div style="padding-bottom: 7%; margin-top:7%; border-bottom: 2px solid grey;" class="row">
-                  <div class="col-md-2">
-                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
-                  </div>
-                  <div class="col-md-1">
-                  </div>
-                  <div style="margin-top: 2%;" class="col-md-6">
-                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
-                    <p>Μάθημα Εξάμηνο</p>
-                  </div>
-                  <div class="col-md-3">
-                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div style="padding-bottom: 7%; margin-top:7%; border-bottom: 2px solid grey;" class="row">
-                  <div class="col-md-2">
-                    <img class="mybookImage rounded" src="images/book.jpeg" alt="Book cover missing">
-                  </div>
-                  <div class="col-md-1">
-                  </div>
-                  <div style="margin-top: 2%;" class="col-md-6">
-                    <p style="font-size: 110%;">Τίτλος Συγγράμματος</p>
-                    <p>Μάθημα Εξάμηνο</p>
-                  </div>
-                  <div class="col-md-3">
-                  <button style="margin-top:30%;" class='btn btn-lg btn-danger'>
-                    <i class="fas fa-trash-alt"></i>
-                  </button>
-                  </div>
-                </div>
-              </li> -->
             </ul>
             <div id="SubmitState">
-              <!-- <button style="box-shadow: 2px 2px 3px rgb(112, 111, 111); margin-left:35%; margin-top:2%; margin-bottom:10%;" class="btn btn-lg btn-primary">Ολοκλήρωση</button> -->
             </div>
           </div>
         </div>

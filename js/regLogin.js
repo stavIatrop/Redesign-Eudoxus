@@ -1,9 +1,3 @@
-// window.onload = function() {
-//     document.getElementById("selUni").selectedIndex = 0;
-//     document.getElementById("selDep").selectedIndex = 0;
-//     document.getElementById("selSem").selectedIndex = 0;
-//     document.getElementById("selCourse").selectedIndex = 0;
-//   };
 
 var selCat = 0;
 var selUsername = 0;
@@ -403,22 +397,6 @@ function typeEmailLog(value) {
             
     } else {
         
-        // if(emailLog != 0) {
-
-        //     document.getElementById('notPassLog').style.display = 'block';
-        //     document.getElementById('emailLogError').style.display = 'none';
-
-        // }else if (passLog != 0) {
-            
-        //     document.getElementById('notPassLog').style.display = 'none';
-        //     document.getElementById('emailLogError').style.display = 'block';
-           
-        // } else {
-
-        //     document.getElementById('notPassLog').style.display = 'block';
-        //     document.getElementById('emailLogError').style.display = 'block';
-        // }
-
         document.getElementById('logButton').disabled = true;
     }
 }
@@ -438,22 +416,6 @@ function typePasswordLog(value) {
         document.getElementById('emailLogError').style.display = 'none';
             
     } else {
-        
-        // if(emailLog != 0) {
-
-        //     document.getElementById('emailLogError').style.display = 'none';
-        //     document.getElementById('notPassLog').style.display = 'block';
-
-        // }else if (passLog != 0) {
-            
-        //     document.getElementById('notPassLog').style.display = 'none';
-        //     document.getElementById('emailLogError').style.display = 'block';
-  
-        // } else {
-
-        //     document.getElementById('notPassLog').style.display = 'block';
-        //     document.getElementById('emailLogError').style.display = 'block';
-        // }
 
         document.getElementById('logButton').disabled = true;
     }

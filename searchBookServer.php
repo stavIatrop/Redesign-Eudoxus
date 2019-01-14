@@ -22,9 +22,7 @@
 
         $searchResults = mysqli_query($conn, $sqlQuery);
         $searchString = "";
-        //$rowsExist = -1;
         if (mysqli_num_rows($searchResults) > 0) {
-            //$rowsExist = 1;
             while($row = mysqli_fetch_assoc($searchResults)) {
                 $searchString .= '<li><div class="row bookRow">
                                     <div class="col-md-2">
@@ -47,18 +45,10 @@
             }
             
         }
-        // else {
-        //     $rowsExist = 0;
-        // }
 
-        //if($rowsExist == 1) {
-            echo $searchString;
-            return $searchString;
-        //}
-        // else {
-        //     echo $rowsExist;
-        //     return $rowsExist;
-        // }
+        echo $searchString;
+        return $searchString;
+
 
     }
 ?>

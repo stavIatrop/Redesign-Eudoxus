@@ -39,7 +39,6 @@ function submitStateButton() {
     data: {action: 'isStateCookieEmpty'}
   });
 
-  //console.log("reach");
   request.done(function (response){
     // Log a message to the console
     if(response == 0) {
@@ -241,28 +240,6 @@ function addBook(bookId) {
       button  = document.getElementById( "addButton" + counter);
     }
     submitStateButton();
-    // request = $.ajax({
-    //   url: "getbooksServer.php",
-    //   type: "post",
-    //   data: {action: 'RefreshCookie'}
-    // });
-
-    // request.done(function (response){
-    //   // Log a message to the console
-    //   //console.log("RESPONSE WAS: " + response);
-    //   //$("#depOptions").html("aaaaaaaaaa");
-    //   console.log("Refreshed");
-    // });
-
-    // // Callback handler that will be called on failure
-    // request.fail(function (jqXHR, textStatus, errorThrown){
-    //   // Log the error to the console
-    //   console.error(
-    //       "The following error occurred: "+
-    //       textStatus, errorThrown
-    //   );
-    // });
-
   });
 
   // Callback handler that will be called on failure
@@ -305,38 +282,10 @@ function deleteStatedBook(courseId) {
     }
   }
   request.done(function (response){
-    // Log a message to the console
-    //$("#depOptions").html("aaaaaaaaaa");
 
     document.getElementById("statedBooksList").innerHTML = response;
 
     submitStateButton();
-
-    
-    // request2 = $.ajax({
-    //   url: "getbooksServer.php",
-    //   type: "post",
-    //   data: {action: 'DeleteStatedBook',
-    //           course: courseId}
-    // });
-    // request2.done(function (response){
-    //   // Log a message to the console
-    //   console.log("RESPONSE WAS: " + response);
-    //   //$("#depOptions").html("aaaaaaaaaa");
-    //   console.log("REAACH");
-  
-    //   document.getElementById("statedBooksList").innerHTML = response;
-    //   submitStateButton();
-    // });
-  
-    // // Callback handler that will be called on failure
-    // request2.fail(function (jqXHR, textStatus, errorThrown){
-    //   // Log the error to the console
-    //   console.error(
-    //       "The following error occurred: "+
-    //       textStatus, errorThrown
-    //   );
-    // });
 
   });
 
@@ -364,11 +313,7 @@ function completeStatement() {
   });
 
   request.done(function (response){
-    // Log a message to the console
-    //console.log("RESPONSE WAS: " + response);
-    //$("#depOptions").html("aaaaaaaaaa");
     if(response == 1) {
-      //window.location.replace("http://localhost/sdi1500048_sdi1500116/profileFoititi.php");
       window.location.href = "http://localhost/sdi1500048_sdi1500116/profileFoititi.php?choice=curr";
     }
     else if(response == -1){
@@ -419,11 +364,3 @@ function profileGo(where) {
       }
   }
 }
-
-
-
-// $(document).ready(function(){
-//   $("#hide").click(function(){
-//     $("p").hide();
-//   });
-// });

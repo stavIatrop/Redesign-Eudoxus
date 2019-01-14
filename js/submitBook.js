@@ -293,7 +293,6 @@ function typeDimensions(value) {
 		document.getElementById("helpBtn2").style.marginTop = "177px";
 	}
 	
-	// document.getElementById("helpBtn2").style.marginTop = "177px";
 	document.getElementById("dimError").style.display = 'none';
 	$('#helpBtn1').tooltip('hide');
     dimensionsInput = value;
@@ -511,7 +510,7 @@ function submitBk() {
 
 		if(regexPriceWeight.test(priceInput)) {
 
-			;//flag = 1;
+			;
 
 		} else {
 			

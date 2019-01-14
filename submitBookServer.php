@@ -52,10 +52,7 @@
 
             $bookQuery = "INSERT INTO `Book` ( `title`, `authors`, `ISBN`, `publisher`, `publishYear`, `weight`, `pages`, `dimensions`, `price`, `pdfPreview`, `pdfIndex`, `User_userId`, `cover`)
              VALUES ('$title', '$authors', '$ISBN','$publisher', '$year', '$weight', '$pages', '$dimensions', '$price', '$preview', '$index', '$userId', '$cover')";
-            //debug_to_console($keywords);
-            //$keywords = preg_replace('/s+/', '', $keywords);
-            //debug_to_console($keywords);
-
+             
             $keywords = str_replace(" ", "", $keywords);
             $keywordsArray = explode(",", $keywords);
 

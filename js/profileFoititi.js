@@ -63,7 +63,6 @@ window.onload = function() {
     }
     else {
         setActive('profileManage', 'current', 'history');
-        //activate('profileManage', 'current', 'history');
     }
 
     
