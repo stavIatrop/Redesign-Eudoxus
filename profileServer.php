@@ -57,12 +57,10 @@
             $user = new User(0);
             $user  = unserialize($_COOKIE['user']);
             $userId = $user->getUserId();
-            if($user->getUsername() != $username ) {
+            
 
-                setcookie('user', serialize($user), time() - 360000 );
-                $user->setUsername($username);
-                setcookie('user', serialize($user), time() + 360000 );
-            }
+            
+            
             if($password == '' ) {
 
                 if($uniDepart === 0 && $uniName === 0) {
@@ -78,7 +76,13 @@
                     $updateQuery = "UPDATE `User` SET `username` = '$username', `uniName` = '$uniName', `uniDepartment` = '$uniDepart' WHERE `User`.`userId` = '$userId' ";
 
                 }
-                    
+                
+                setcookie('user', serialize($user), time() - 360000 );
+                $user->setUsername($username);
+                $user->setUniName($uniName);
+                $user->setUniDepartment($uniDepart);
+            
+                setcookie('user', serialize($user), time() + 360000 );
                     
                 
                 if (mysqli_query($conn, $updateQuery)) {
@@ -110,6 +114,13 @@
                     $updateQuery = "UPDATE `User` SET `username` = '$username', `password` = '$password', `uniName` = '$uniName', `uniDepartment` = '$uniDepart' WHERE `User`.`userId` = '$userId' ";
             
                 }
+
+                setcookie('user', serialize($user), time() - 360000 );
+                $user->setUsername($username);
+                $user->setUniName($uniName);
+                $user->setUniDepartment($uniDepart);
+                $user->setPassword($password);
+                setcookie('user', serialize($user), time() + 360000 );
 
 
                 if (mysqli_query($conn, $updateQuery)) {

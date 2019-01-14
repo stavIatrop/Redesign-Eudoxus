@@ -261,7 +261,7 @@
                             </select>
                             
                             <label for="selDep" >Τμήμα:</label>
-                            <select id="selDep" disabled class=" custom-select mb-3" >
+                            <select id="selDep"  class=" custom-select mb-3" >
                                 <option id="defDep" onclick="changeDep(this.value)"  value="0" >Επίλεξε Τμήμα</option>
                                 
                                 <?php
