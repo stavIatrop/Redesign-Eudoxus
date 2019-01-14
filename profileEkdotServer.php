@@ -22,17 +22,17 @@
             $user = new User(0);
             $user  = unserialize($_COOKIE['user']);
             $userId = $user->getUserId();
-            if($user->getUsername() != $username ) {
-
-                setcookie('user', serialize($user), time() - 360000 );
-                $user->setUsername($username);
-                setcookie('user', serialize($user), time() + 360000 );
-            }
+            
+            
+            
             if($password == '' ) {
 
                 $updateQuery = "UPDATE `User` SET `username` = '$username' WHERE `User`.`userId` = '$userId' ";
                     
-                
+                setcookie('user', serialize($user), time() - 360000 );
+                $user->setUsername($username);
+                setcookie('user', serialize($user), time() + 360000 );
+                    
                 if (mysqli_query($conn, $updateQuery)) {
                     CloseCon($conn);
                     $val = 1;
@@ -50,6 +50,12 @@
             } else {
                     
                 $updateQuery = "UPDATE `User` SET `username` = '$username', `password` = '$password' WHERE `User`.`userId` = '$userId' ";
+                
+                setcookie('user', serialize($user), time() - 360000 );
+                $user->setUsername($username);
+                $user->setPassword($password);
+                
+                setcookie('user', serialize($user), time() + 360000 );
                 
                 if (mysqli_query($conn, $updateQuery)) {
                     CloseCon($conn);

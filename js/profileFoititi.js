@@ -66,6 +66,10 @@ window.onload = function() {
         //activate('profileManage', 'current', 'history');
     }
 
+    if(document.getElementById("selUni").value == 0) {
+        document.getElementById("selDep").setAttribute("disabled", true);
+    }
+
 }
 
 function handleForm(event) { 
