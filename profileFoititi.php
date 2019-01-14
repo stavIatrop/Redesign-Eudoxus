@@ -372,7 +372,7 @@
                                                 <div class="col-md-9">
                                                     <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Μάθημα: ' . $rowBook['courseName'] . '</p>
                                                     <p style="font-weight: bold; font-size: 120%; margin-top: 2%;">Τίτλος: ' .$rowBook['title'] .'</p>
-                                                    KEY3d       <p class="">Συγγραφέας: ' . $rowBook['authors'] . '</p>
+                                                    <p class="">Συγγραφέας: ' . $rowBook['authors'] . '</p>
                                                     <p>ISBN: ' . $rowBook['ISBN']. '</p>
                                                 </div>
                                                 <!-- <div class="col-md-3">

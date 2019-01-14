@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 13, 2019 at 07:47 PM
+-- Generation Time: Jan 14, 2019 at 12:00 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sdi1500048`
+-- Database: `eamDatabase`
 --
 
 -- --------------------------------------------------------
@@ -152,7 +152,8 @@ INSERT INTO `Course` (`courseId`, `courseName`, `uniName`, `uniDepartment`, `sem
 (12, 'Inorganic Chemistry', 'MIT', 'Chemistry', 3),
 (13, 'Classical Mechanics', 'MIT', 'Physics', 1),
 (14, 'Thermodynamics', 'MIT', 'Physics', 1),
-(15, 'Analytical Chemistry', 'MIT', 'Chemistry', 1);
+(15, 'Analytical Chemistry', 'MIT', 'Chemistry', 1),
+(16, 'Full Stack', 'Ulster University', 'Computer Science', 8);
 
 -- --------------------------------------------------------
 
@@ -200,10 +201,12 @@ CREATE TABLE `StatedBooks` (
 --
 
 INSERT INTO `StatedBooks` (`statedBooksId`, `bookId`, `courseId`, `Statement_statementId`, `Statement_User_userId`) VALUES
-(61, 29, 10, 32, 7),
-(62, 36, 11, 32, 7),
-(63, 38, 12, 32, 7),
-(64, 39, 15, 32, 7);
+(85, 29, 10, 38, 7),
+(86, 39, 15, 38, 7),
+(87, 36, 11, 38, 7),
+(88, 38, 12, 38, 7),
+(89, 40, 13, 39, 7),
+(90, 42, 14, 39, 7);
 
 -- --------------------------------------------------------
 
@@ -223,7 +226,8 @@ CREATE TABLE `Statement` (
 --
 
 INSERT INTO `Statement` (`statementId`, `semesterStatement`, `current`, `User_userId`) VALUES
-(32, 5, 1, 7);
+(38, 5, 1, 7),
+(39, 4, 0, 7);
 
 -- --------------------------------------------------------
 
@@ -247,7 +251,7 @@ CREATE TABLE `User` (
 --
 
 INSERT INTO `User` (`userId`, `username`, `password`, `email`, `userCategory`, `categoryId`, `uniName`, `uniDepartment`) VALUES
-(7, 'student', '123456789', 'student@mail.com', 1, 123124124234, NULL, NULL),
+(7, 'student', '123456789', 'student@mail.com', 1, 123124124234, 'Ulster University', 'Computer Science'),
 (9, 'publisher', '123456789', 'publisher@mail.com', 2, 123214214234, NULL, NULL);
 
 --
@@ -317,37 +321,37 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Book`
 --
 ALTER TABLE `Book`
-  MODIFY `bookId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `bookId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `Course`
 --
 ALTER TABLE `Course`
-  MODIFY `courseId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `courseId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `Keyword`
 --
 ALTER TABLE `Keyword`
-  MODIFY `keywordId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `keywordId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `StatedBooks`
 --
 ALTER TABLE `StatedBooks`
-  MODIFY `statedBooksId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `statedBooksId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 
 --
 -- AUTO_INCREMENT for table `Statement`
 --
 ALTER TABLE `Statement`
-  MODIFY `statementId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `statementId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
