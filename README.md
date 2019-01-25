@@ -11,12 +11,12 @@
  ## Our goal  
  This redesigning project is part of a university assignment of a course called Human-Computer Interaction. The main goal was to find the problems of the current website, redesign it and implement the new design. 
  The project consisted of 3 parts:  
- 1. **Heuristic evaluation** of the current website and report of the problems. The heuristic evaluation was mainly based on Nielsen's [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/). 
+ 1. **Heuristic evaluation** of the current website and report of the problems. The heuristic evaluation was mainly based on Nielsen's [10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/).  
  The report: EudoxosUsabilityReport.pdf (currently only in Greek)  
  2.  **Designing the new website** based on UCD (User-Centered Design)     
      1. Decide the two of the above groups which we will develop (we chose the student and the publisher) and write representative **personas** about them. [More on personas](https://www.nngroup.com/articles/persona/).
      2. Analyze their requirements, write state diagrams about them, write scenarios and conclude in specifications which will be used to make the scenario fulfilled.
-     3. Design a sitemap and low fidelity wireframes based on the above specifications using Balsamiq Wireframes.
+     3. Design a sitemap and low fidelity wireframes based on the above specifications using Balsamiq Wireframes.  
 The report: RedesigningEudoxos.pdf (currently only in Greek)
 3. **Implement** the design developing a fully functional website using the above wireframes and state diagrams. The content of the website is in Greek.
 
