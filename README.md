@@ -24,7 +24,7 @@
 ## Technologies Used
 
 * **Design**: StarUML and Balsamiq wireframes
-* **Development**: HTML5, CSS, Javascript (with Bootstrap4 and jQuery) and XAMPP as a PHP development environment. The database model was created in MySQL workbench and used the export script in phpmyadmin (eudoxosDBscript.sql).
+* **Development**: HTML5, CSS, Javascript (with Bootstrap4 and jQuery) and XAMPP as a PHP development environment. The database model was created in MySQL workbench and used the exported script in phpmyadmin (eudoxosDBscript.sql).
 
 ## Services implemented
 
