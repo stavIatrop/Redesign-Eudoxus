@@ -2,12 +2,13 @@
    **Collaborator**: Stavroula Iatropoulou https://gitlab.com/stavIatrop
   ## What is Eudoxos  
   Eudoxos is a greek state website used for managing university books.   
-  **The website**: https://eudoxus.gr/ (only Greek version)    
+  **The website**: https://eudoxus.gr/ (only Greek version)  
+  
   There are **four main groups** using this website:  
   * **Students** who will state each semester which books want for their courses  
-  * * **Publishers** who will state which books they offer  
-  * * **University officials** who will "connect" courses and books  
-  * * **Pickup up points** like bookshops which the student will go to receive his book
+  * **Publishers** who will state which books they offer  
+  * **University officials** who will "connect" courses and books  
+  * **Pickup up points** like bookshops which the student will go to receive his book
  ## Our goal  
  This redesigning project is part of a university assignment of a course called Human-Computer Interaction. The main goal was to find the problems of the current website, redesign it and implement the new design. 
  The project consisted of 3 parts:  
