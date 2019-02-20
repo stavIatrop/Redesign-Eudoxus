@@ -2,7 +2,7 @@
 
     //$lastAdded = null;
     //$action = '';
-    include("login.php");
+    include("../login.php");
     //debug_to_console("aaaaaaaaaaa");
     switch($_POST['action']) {
     case 'UpdateDeps':
@@ -164,14 +164,14 @@
         $newState->courseId = $selCourse;
         $conn = OpenCon();
         if(!isset($_COOKIE['statement'])) {
-            setcookie('statement', json_encode(array($newState)), time()+360000);
+            setcookie('statement', json_encode(array($newState)), time()+360000, "/sdi1500048_sdi1500116");
             getcookie('statement');
             $statements = array($newState);
         }
         else {
             $statements = json_decode($_COOKIE['statement'], false);
             $statements[] = $newState;
-            setcookie('statement', json_encode($statements), time()+360000);
+            setcookie('statement', json_encode($statements), time()+360000, "/sdi1500048_sdi1500116");
             getcookie('statement');
         }
         //Case: User is not logged in
@@ -251,7 +251,7 @@
                 break;
             }
         }
-        setcookie('statement', json_encode($statements), time()+360000);
+        setcookie('statement', json_encode($statements), time()+360000, "/sdi1500048_sdi1500116");
 
         if(empty($statements)) {
             echo '<p style=" font-size: 24px; text-align: center; margin-right: 10%; margin-top:10%;">Η δήλωση είναι κενή</p>';
@@ -321,7 +321,7 @@
     }
 
     function CompleteStatement() {
-        include("user.class.php");
+        include("../classes/user.class.php");
 
         $statements = json_decode($_COOKIE['statement'], false);
         
@@ -378,7 +378,7 @@
     }
 
     function UserType() {
-        include("user.class.php");
+        include("../classes/user.class.php");
         if(isset($_COOKIE['user'])) {
             $user = new User(0);
             $user  = unserialize($_COOKIE['user']);

@@ -83,7 +83,7 @@ function save() {
 
 
     request = $.ajax({
-        url: "profileEkdotServer.php",
+        url: "servers/profileEkdotServer.php",
         type: "post",
         data: {action: 'UpdateProfileEkdot',
                 username: username,
@@ -92,7 +92,7 @@ function save() {
     });
 
     request.done(function (response){
-        console.log(response);
+        //console.log(response);
         if(response == 1) {
 
             document.getElementById("loginUsername").innerHTML = username;

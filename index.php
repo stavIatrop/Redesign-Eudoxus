@@ -24,6 +24,7 @@
 
 </head>
 <body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
   <div class="container-fluid">
     <div class="row topPart">
       <div class="col-md-12">
@@ -64,8 +65,7 @@
             <!-- <p class="loginText">Προφίλ</p> -->
             <?php
               
-              include("user.class.php");
-              
+              include("classes/user.class.php");
               if (isset($_COOKIE['user'])) {
 
                 $user = new User(0);

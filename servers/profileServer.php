@@ -1,7 +1,7 @@
 <?php
 
-    include("login.php");
-    include('user.class.php');
+    include("../login.php");
+    include('../classes/user.class.php');
     switch($_POST['action']) {
     case 'ShowDeps':
         $uniName = $_POST['uniName'];
@@ -77,12 +77,12 @@
 
                 }
                 
-                setcookie('user', serialize($user), time() - 360000 );
+                setcookie('user', serialize($user), time() - 360000, "/sdi1500048_sdi1500116");
                 $user->setUsername($username);
                 $user->setUniName($uniName);
                 $user->setUniDepartment($uniDepart);
             
-                setcookie('user', serialize($user), time() + 360000 );
+                setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116");
                     
                 
                 if (mysqli_query($conn, $updateQuery)) {
@@ -115,12 +115,12 @@
             
                 }
 
-                setcookie('user', serialize($user), time() - 360000 );
+                setcookie('user', serialize($user), time() - 360000, "/sdi1500048_sdi1500116");
                 $user->setUsername($username);
                 $user->setUniName($uniName);
                 $user->setUniDepartment($uniDepart);
                 $user->setPassword($password);
-                setcookie('user', serialize($user), time() + 360000 );
+                setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116");
 
 
                 if (mysqli_query($conn, $updateQuery)) {

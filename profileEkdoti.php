@@ -65,7 +65,7 @@
                 <!-- <p class="loginText">Προφίλ</p> -->
                 <?php
                 
-                include("user.class.php");
+                include("classes/user.class.php");
                 
                 if (isset($_COOKIE['user'])) {
 

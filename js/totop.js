@@ -18,7 +18,7 @@ function topFunction() {
 function logout() {
 
   request = $.ajax({
-    url: "loginServer.php",
+    url: "servers/loginServer.php",
     type: "post",
     data: {action: 'Logout'}
   });

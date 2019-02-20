@@ -18,7 +18,7 @@ var openAccord = "";
 
 window.onload = function() {
     request = $.ajax({
-        url: "getbooksServer.php",
+        url: "servers/getbooksServer.php",
         type: "post",
         data: {action: 'UserType'}
       });

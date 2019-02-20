@@ -1,7 +1,7 @@
 <?php
 
-    include("login.php");
-    include('classes/user.class.php');
+    include("../login.php");
+    include('../classes/user.class.php');
     switch($_POST['action']) {
     case 'UpdateProfileEkdot':
         $username = $_POST['username'];
@@ -31,7 +31,7 @@
                     
                 setcookie('user', serialize($user), time() - 360000, "/sdi1500048_sdi1500116");
                 $user->setUsername($username);
-                setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116");
+                setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116" );
                     
                 if (mysqli_query($conn, $updateQuery)) {
                     CloseCon($conn);
@@ -55,7 +55,7 @@
                 $user->setUsername($username);
                 $user->setPassword($password);
                 
-                setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116" );
+                setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116");
                 
                 if (mysqli_query($conn, $updateQuery)) {
                     CloseCon($conn);

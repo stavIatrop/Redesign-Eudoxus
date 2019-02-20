@@ -126,7 +126,7 @@ function changeUni(value) {
     if(value != 0) {
         
         request = $.ajax({
-          url: "profileServer.php",
+          url: "servers/profileServer.php",
           type: "post",
           data: {action: 'ShowDeps',
                   uniName: value}
@@ -176,10 +176,10 @@ function save() {
         return;
     }
 
-    console.log(uniName + " " + uniDepart);
+    //console.log(uniName + " " + uniDepart);
 
     request = $.ajax({
-        url: "profileServer.php",
+        url: "servers/profileServer.php",
         type: "post",
         data: {action: 'UpdateProfile',
                 username: username,
@@ -189,7 +189,7 @@ function save() {
     });
 
     request.done(function (response){
-        console.log(response);
+        //console.log(response);
         if(response == 1) {
 
             document.getElementById("loginUsername").innerHTML = username;

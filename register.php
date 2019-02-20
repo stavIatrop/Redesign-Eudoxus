@@ -41,7 +41,7 @@
     
     function Register($username, $email, $password, $category, $categoryId) {
 
-        include("user.class.php");
+        include("classes/user.class.php");
         $conn = OpenCon();
         
         $emailQuery = "INSERT INTO User (username, email, password, userCategory, categoryId) VALUES ('$username', '$email', '$password', '$category', '$categoryId')";
@@ -56,7 +56,7 @@
             $user->setCategoryId(htmlspecialchars($categoryId));
             $user->setUniName(htmlspecialchars(null));
             $user->setUniDepartment(htmlspecialchars(null));
-            setcookie('user', serialize($user), time() + 360000 );
+            setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116" );
 
             $val = 1;
             echo $val;

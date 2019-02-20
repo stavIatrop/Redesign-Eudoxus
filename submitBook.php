@@ -65,7 +65,7 @@
             <!-- <p class="loginText">Προφίλ</p> -->
             <?php
               
-              include("user.class.php");
+              include("classes/user.class.php");
               
               if (isset($_COOKIE['user'])) {
 
@@ -178,7 +178,7 @@
             
 				<?php
 				
-					include("book.class.php");
+					include("classes/book.class.php");
           include("login.php");
           
 					if (isset($_COOKIE['book'])) {

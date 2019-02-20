@@ -18,7 +18,7 @@ var logginedType = -1;
 
 window.onload = function() {
 	request = $.ajax({
-        url: "getbooksServer.php",
+        url: "servers/getbooksServer.php",
         type: "post",
         data: {action: 'UserType'}
       });
@@ -64,7 +64,7 @@ $(document).ready(function() {
 
 	
 	request = $.ajax({
-		url: "submitBookServer.php",
+		url: "servers/submitBookServer.php",
 		type: "post",
 		data: {action: 'BookCookie'}
 	});
@@ -526,7 +526,7 @@ function submitBk() {
 
 		console.log("HE");
 		request = $.ajax({
-            url: "submitBookServer.php",
+            url: "servers/submitBookServer.php",
             type: "post",
             data: {action: 'SubmitBook',
 					title: titleInput, 

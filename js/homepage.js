@@ -3,14 +3,14 @@ var selectedInfoCategory = "foititis";
 var logginedType = -1;
 window.onload = function() {
     request = $.ajax({
-        url: "getbooksServer.php",
+        url: "servers/getbooksServer.php",
         type: "post",
         data: {action: 'UserType'}
       });
 
       request.done(function (response){
         logginedType =  response;
-        console.log(logginedType);
+        //console.log(logginedType);
       });
     
       request.fail(function (jqXHR, textStatus, errorThrown){

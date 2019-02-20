@@ -17,7 +17,7 @@ window.onload = function() {
     document.getElementById("pag5").checked = false;
 
     request = $.ajax({
-        url: "getbooksServer.php",
+        url: "servers/getbooksServer.php",
         type: "post",
         data: {action: 'UserType'}
       });
@@ -86,7 +86,7 @@ function search() {
         document.getElementById("searchInp").style.backgroundColor='white';
 
         request = $.ajax({
-            url: "searchBookServer.php",
+            url: "servers/searchBookServer.php",
             type: "post",
             data: {action: 'SearchBook',
                    searchTerm: document.getElementById("searchInp").value }

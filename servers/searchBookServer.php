@@ -1,6 +1,6 @@
 <?php
 
-    include("login.php");
+    include("../login.php");
     //debug_to_console("aaaaaaaaaaa");
     switch($_POST['action']) {
     case 'SearchBook':

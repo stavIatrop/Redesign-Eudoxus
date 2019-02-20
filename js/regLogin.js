@@ -13,7 +13,7 @@ var logginedType = -1;
 
 window.onload = function(){
     request = $.ajax({
-        url: "getbooksServer.php",
+        url: "servers/getbooksServer.php",
         type: "post",
         data: {action: 'UserType'}
       });
@@ -427,7 +427,7 @@ function login() {
     form.addEventListener('submit', handleForm);
 
     request = $.ajax({
-        url: "loginServer.php",
+        url: "servers/loginServer.php",
         type: "post",
         data: {action: 'AuthUser',
                 email: emailLog,

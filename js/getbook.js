@@ -11,7 +11,7 @@ window.onload = function() {
   document.getElementById("selCourse").disabled = true;
 
   request = $.ajax({
-    url: "getbooksServer.php",
+    url: "servers/getbooksServer.php",
     type: "post",
     data: {action: 'UserType'}
   });
@@ -34,7 +34,7 @@ $( document ).ready(function() {
 
 function submitStateButton() {
   request = $.ajax({
-    url: "getbooksServer.php",
+    url: "servers/getbooksServer.php",
     type: "post",
     data: {action: 'isStateCookieEmpty'}
   });
@@ -79,7 +79,7 @@ function chooseUni(val) {
   if(val != 0) {
                
     request = $.ajax({
-      url: "getbooksServer.php",
+      url: "servers/getbooksServer.php",
       type: "post",
       data: {action: 'UpdateDeps',
               uni: val}
@@ -143,7 +143,7 @@ function chooseSem(val) {
     //var valSem = selectedSem.options[selectedSem.selectedIndex].value;
 
     request = $.ajax({
-      url: "getbooksServer.php",
+      url: "servers/getbooksServer.php",
       type: "post",
       data: {action: 'UpdateCourses',
               uni: valUni,
@@ -182,7 +182,7 @@ function chooseCourse(val) {
 
   if(val != 0) {
     request = $.ajax({
-      url: "getbooksServer.php",
+      url: "servers/getbooksServer.php",
       type: "post",
       data: {action: 'ShowBooks',
               course: val}
@@ -212,7 +212,7 @@ function addBook(bookId) {
   var valCourse = selectedCourse.options[selectedCourse.selectedIndex].value;
 
   request = $.ajax({
-    url: "getbooksServer.php",
+    url: "servers/getbooksServer.php",
     type: "post",
     data: {action: 'AddBook',
             course: valCourse,
@@ -255,7 +255,7 @@ function addBook(bookId) {
 function deleteStatedBook(courseId) {
   //console.log(courseId);
   request = $.ajax({
-    url: "getbooksServer.php",
+    url: "servers/getbooksServer.php",
     type: "post",
     data: {action: 'DeleteStatedBook',
             course: courseId}
@@ -307,7 +307,7 @@ function completeStatement() {
   }
 
   request = $.ajax({
-    url: "getbooksServer.php",
+    url: "servers/getbooksServer.php",
     type: "post",
     data: {action: 'CompleteStatement'}
   });

@@ -1,7 +1,7 @@
 <?php
 
     //$action = '';
-    include("login.php");
+    include("../login.php");
     //debug_to_console("aaaaaaaaaaa");
     switch($_POST['action']) {
     case 'AuthUser':
@@ -16,7 +16,7 @@
     }
 
     function AuthUser($email, $password){
-        include("user.class.php");
+        include("../classes/user.class.php");
         $conn = OpenCon();
         
         $userQuery = "SELECT * FROM `User` WHERE email = '$email' AND password = '$password'";
@@ -40,7 +40,7 @@
             $user->setUniDepartment(htmlspecialchars($row['uniDepartment']));
 
             $val = 1;
-            setcookie('user', serialize($user), time() + 360000 );
+            setcookie('user', serialize($user), time() + 360000, "/sdi1500048_sdi1500116");
             echo $val;
             return $val;
         }
@@ -54,7 +54,7 @@
 
         if(isset($_COOKIE['user'])) {
 
-            setcookie('user', serialize(user), time() - 360000);
+            setcookie('user', serialize(user), time() - 360000, "/sdi1500048_sdi1500116");
 
         }
         return;

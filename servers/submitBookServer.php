@@ -1,7 +1,7 @@
 <?php
 
     //$action = '';
-    include("login.php");
+    include("../login.php");
     //debug_to_console("aaaaaaaaaaa");
     switch($_POST['action']) {
     case 'SubmitBook':
@@ -30,8 +30,8 @@
 
     function SubmitBook($title, $authors, $ISBN, $publisher, $year, $keywords, $weight, $dimensions, $pages, $price, $preview, $index, $cover){
         
-        include("user.class.php");
-        include("book.class.php");
+        include("../classes/user.class.php");
+        include("../classes/book.class.php");
 
         if( isset($_COOKIE['user']) ) {
 
@@ -58,7 +58,7 @@
 
             if(mysqli_query($conn, $bookQuery)){  //Record added successfully
                 if( isset($_COOKIE['book'])) {
-                    setcookie('book', "Expired", time() - 3600000 );
+                    setcookie('book', "Expired", time() - 3600000, "/sdi1500048_sdi1500116");
                 }
                 $last_book = $conn->insert_id;
             } else{
@@ -128,7 +128,7 @@
             $book->setIndex($index);
             $book->setCover($cover);
 
-            setcookie('book', serialize($book), time() + 360000 );
+            setcookie('book', serialize($book), time() + 360000, "/sdi1500048_sdi1500116");
             $val = 0;      //User not connected
             echo $val;
             return $val;
