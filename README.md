@@ -5,9 +5,9 @@
   **The (current) website**: https://eudoxus.gr/ (only Greek version)    
   There are **four main groups** using this website:  
   * **Students** who will state each semester which books want for their courses  
-  * * **Publishers** who will state which books they offer  
-  * * **University officials** who will "connect" courses and books  
-  * * **Pickup up points** like bookshops which the student will go to receive his book
+  * **Publishers** who will state which books they offer  
+  * **University officials** who will "connect" courses and books  
+  * **Pickup up points** like bookshops which the student will go to receive his book
  ## Our goal  
  This redesigning project is part of a university assignment of a course called Human-Computer Interaction. The main goal was to find the problems of the current website, redesign it and implement the new design. 
  The project consisted of 3 parts:  
@@ -23,7 +23,7 @@
 ## Technologies Used
 
 * **Design**: StarUML and Balsamiq wireframes
-* **Development**: HTML5, CSS, Javascript (with Bootstrap4 and jQuery) and XAMPP as a PHP development environment. The database model was created in MySQL workbench and used the export script in phpmyadmin (eudoxosDBscript.sql).
+* **Development**: HTML5, CSS, Javascript (with Bootstrap4 and jQuery) and XAMPP as a PHP development environment. The database model was created in MySQL workbench and used the exported script in phpmyadmin (eudoxosDBscript.sql).
 
 ## Services implemented
 
