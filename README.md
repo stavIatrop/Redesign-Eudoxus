@@ -2,7 +2,8 @@
    **Collaborator**: Stavroula Iatropoulou https://gitlab.com/stavIatrop
   ## What is Eudoxos  
   Eudoxos is a greek state website used for managing university books.   
-  **The (current) website**: https://eudoxus.gr/ (only Greek version)    
+  **The (current) website**: https://eudoxus.gr/ (only Greek version)  
+  
   There are **four main groups** using this website:  
   * **Students** who will state each semester which books want for their courses  
   * **Publishers** who will state which books they offer  
